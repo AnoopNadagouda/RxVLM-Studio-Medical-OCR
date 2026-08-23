@@ -18,6 +18,8 @@ avi-kai/
 corpora/
 eka/
 cropped/
+data/
+tavishm/
 
 # Python Bytecode & Cache
 __pycache__/
