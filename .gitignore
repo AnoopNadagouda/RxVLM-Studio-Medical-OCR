@@ -1,0 +1,32 @@
+# Large Archives and Binaries (>100MB)
+AnnotateServer.zip
+Prescription_Dataset(600).zip
+models/
+
+# Raw Dataset Directories (Images & Raw Corpora)
+composite_medocr/
+processed/
+kaggle_bd_rx/
+rxhandbd/
+kalashsh/
+Prescription_Dataset(600)/
+chinmays/
+chhavimohitkar/
+chaithanyakota/
+mehaksingal/
+avi-kai/
+corpora/
+eka/
+cropped/
+
+# Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Databases & IDE Config
+*.db
+.opencode/
+.venv/
+env/
+venv/

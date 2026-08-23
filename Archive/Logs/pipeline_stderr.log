@@ -1,0 +1,437 @@
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_section'}
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/608 [00:00<?, ?it/s]Loading weights:  64%|######3   | 387/608 [00:00<00:00, 3857.41it/s]Loading weights: 100%|##########| 608/608 [00:00<00:00, 3938.42it/s]
+C:\Users\Noodl\Projects\FuckAround\MJ\OCRs\H-1\.venv\Lib\site-packages\torch\nn\modules\module.py:1370: UserWarning: expandable_segments not supported on this platform (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\c10/cuda/CUDAAllocatorConfig.h:39.)
+  return t.to(
+[transformers] `PaddleOCRVLProcessor` defines `image_processor_class = 'AutoImageProcessor'`, which is deprecated. Register the correct mapping in `AutoImageProcessor` instead.
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_section'}
+Spotting:   0%|          | 0/281 [00:00<?, ?img/s]Spotting:   0%|          | 1/281 [02:57<13:48:08, 177.46s/img]Spotting:   1%|          | 2/281 [02:58<5:43:39, 73.90s/img]  Spotting:   1%|1         | 3/281 [02:59<3:07:04, 40.38s/img]Spotting:   1%|1         | 4/281 [02:59<1:53:33, 24.60s/img]Spotting:   2%|1         | 5/281 [03:00<1:12:50, 15.84s/img]Spotting:   2%|2         | 6/281 [03:00<48:27, 10.57s/img]  Spotting:   2%|2         | 7/281 [03:00<32:55,  7.21s/img]Spotting:   3%|2         | 8/281 [03:00<22:47,  5.01s/img]Spotting:   3%|3         | 9/281 [03:01<16:00,  3.53s/img]Spotting:   4%|3         | 10/281 [03:01<11:37,  2.57s/img]Spotting:   4%|3         | 11/281 [03:01<08:23,  1.87s/img]Spotting:   4%|4         | 12/281 [03:02<06:13,  1.39s/img]Spotting:   5%|4         | 13/281 [03:02<05:05,  1.14s/img]Spotting:   5%|4         | 14/281 [03:03<03:55,  1.14img/s]Spotting:   5%|5         | 15/281 [03:03<03:05,  1.43img/s]Spotting:   6%|5         | 16/281 [03:03<02:34,  1.72img/s]Spotting:   6%|6         | 17/281 [03:03<02:08,  2.05img/s]Spotting:   6%|6         | 18/281 [03:04<01:52,  2.35img/s]Spotting:   7%|6         | 19/281 [03:04<01:39,  2.64img/s]Spotting:   7%|7         | 20/281 [03:04<01:29,  2.90img/s]Spotting:   7%|7         | 21/281 [03:05<01:21,  3.18img/s]Spotting:   8%|7         | 22/281 [03:05<01:18,  3.32img/s]Spotting:   8%|8         | 23/281 [03:05<01:15,  3.43img/s]Spotting:   9%|8         | 24/281 [03:05<01:12,  3.53img/s]Spotting:   9%|8         | 25/281 [03:06<01:08,  3.74img/s]Spotting:   9%|9         | 26/281 [03:06<01:06,  3.82img/s]Spotting:  10%|9         | 27/281 [03:06<01:04,  3.91img/s]Spotting:  10%|9         | 28/281 [03:06<01:03,  3.97img/s]Spotting:  10%|#         | 29/281 [03:07<01:07,  3.73img/s]Spotting:  11%|#         | 30/281 [03:07<01:03,  3.93img/s]Spotting:  11%|#1        | 31/281 [03:07<01:01,  4.04img/s]Spotting:  11%|#1        | 32/281 [03:07<01:04,  3.84img/s]Spotting:  12%|#1        | 33/281 [03:08<01:04,  3.84img/s]Spotting:  12%|#2        | 34/281 [03:08<01:06,  3.70img/s]Spotting:  12%|#2        | 35/281 [03:08<01:21,  3.01img/s]Spotting:  13%|#2        | 36/281 [03:09<01:16,  3.19img/s]Spotting:  13%|#3        | 37/281 [03:09<01:21,  2.98img/s]Spotting:  14%|#3        | 38/281 [03:09<01:25,  2.83img/s]Spotting:  14%|#3        | 39/281 [03:10<01:28,  2.74img/s]Spotting:  14%|#4        | 40/281 [03:10<01:31,  2.63img/s]Spotting:  15%|#4        | 41/281 [03:11<01:30,  2.67img/s]Spotting:  15%|#4        | 42/281 [03:11<01:24,  2.82img/s]Spotting:  15%|#5        | 43/281 [03:11<01:23,  2.86img/s]Spotting:  16%|#5        | 44/281 [03:12<01:29,  2.63img/s]Spotting:  16%|#6        | 45/281 [03:12<01:37,  2.43img/s]Spotting:  16%|#6        | 46/281 [03:13<01:36,  2.43img/s]Spotting:  17%|#6        | 47/281 [03:13<01:48,  2.15img/s]Spotting:  17%|#7        | 48/281 [03:14<01:40,  2.31img/s]Spotting:  17%|#7        | 49/281 [03:14<01:34,  2.45img/s]Spotting:  18%|#7        | 50/281 [03:14<01:31,  2.54img/s]Spotting:  18%|#8        | 51/281 [03:15<01:28,  2.61img/s]Spotting:  19%|#8        | 52/281 [03:15<01:26,  2.65img/s]Spotting:  19%|#8        | 53/281 [03:15<01:22,  2.77img/s]Spotting:  19%|#9        | 54/281 [03:16<01:18,  2.89img/s]Spotting:  20%|#9        | 55/281 [03:16<01:20,  2.82img/s]Spotting:  20%|#9        | 56/281 [03:16<01:16,  2.96img/s]Spotting:  20%|##        | 57/281 [03:17<01:15,  2.98img/s]Spotting:  21%|##        | 58/281 [03:17<01:14,  2.99img/s]Spotting:  21%|##        | 59/281 [03:17<01:15,  2.94img/s]Spotting:  21%|##1       | 60/281 [03:18<01:14,  2.97img/s]Spotting:  22%|##1       | 61/281 [03:18<01:14,  2.96img/s]Spotting:  22%|##2       | 62/281 [03:18<01:11,  3.05img/s]Spotting:  22%|##2       | 63/281 [03:19<01:12,  2.99img/s]Spotting:  23%|##2       | 64/281 [03:19<01:15,  2.87img/s]Spotting:  23%|##3       | 65/281 [03:19<01:21,  2.65img/s]Spotting:  23%|##3       | 66/281 [03:20<01:15,  2.84img/s]Spotting:  24%|##3       | 67/281 [03:20<01:12,  2.96img/s]Spotting:  24%|##4       | 68/281 [03:20<01:09,  3.08img/s]Spotting:  25%|##4       | 69/281 [03:21<01:06,  3.18img/s]Spotting:  25%|##4       | 70/281 [03:21<01:05,  3.21img/s]Spotting:  25%|##5       | 71/281 [03:21<01:09,  3.02img/s]Spotting:  26%|##5       | 72/281 [03:22<01:34,  2.21img/s]Spotting:  26%|##5       | 73/281 [03:23<01:35,  2.18img/s]Spotting:  26%|##6       | 74/281 [03:23<01:25,  2.43img/s]Spotting:  27%|##6       | 75/281 [03:23<01:19,  2.58img/s]Spotting:  27%|##7       | 76/281 [03:24<01:16,  2.67img/s]Spotting:  27%|##7       | 77/281 [03:24<01:13,  2.79img/s]Spotting:  28%|##7       | 78/281 [03:24<01:10,  2.87img/s]Spotting:  28%|##8       | 79/281 [03:24<01:10,  2.86img/s]Spotting:  28%|##8       | 80/281 [03:25<01:07,  3.00img/s]Spotting:  29%|##8       | 81/281 [03:25<01:05,  3.06img/s]Spotting:  29%|##9       | 82/281 [03:25<01:03,  3.13img/s]Spotting:  30%|##9       | 83/281 [03:26<01:05,  3.04img/s]Spotting:  30%|##9       | 84/281 [03:26<01:20,  2.45img/s]Spotting:  30%|###       | 85/281 [03:27<01:23,  2.35img/s]Spotting:  31%|###       | 86/281 [03:27<01:29,  2.17img/s]Spotting:  31%|###       | 87/281 [03:28<01:32,  2.10img/s]Spotting:  31%|###1      | 88/281 [03:28<01:21,  2.38img/s]Spotting:  32%|###1      | 89/281 [03:28<01:13,  2.62img/s]Spotting:  32%|###2      | 90/281 [03:29<01:07,  2.81img/s]Spotting:  32%|###2      | 91/281 [03:29<01:04,  2.95img/s]Spotting:  33%|###2      | 92/281 [03:29<01:01,  3.08img/s]Spotting:  33%|###3      | 93/281 [03:30<01:00,  3.12img/s]Spotting:  33%|###3      | 94/281 [03:30<00:59,  3.14img/s]Spotting:  34%|###3      | 95/281 [03:30<00:58,  3.19img/s]Spotting:  34%|###4      | 96/281 [03:31<00:57,  3.23img/s]Spotting:  35%|###4      | 97/281 [03:31<00:56,  3.25img/s]Spotting:  35%|###4      | 98/281 [03:31<00:58,  3.15img/s]Spotting:  35%|###5      | 99/281 [03:32<00:57,  3.16img/s]Spotting:  36%|###5      | 100/281 [03:32<00:56,  3.20img/s]Spotting:  36%|###5      | 101/281 [03:32<00:55,  3.25img/s]Spotting:  36%|###6      | 102/281 [03:32<00:56,  3.14img/s]Spotting:  37%|###6      | 103/281 [03:33<00:56,  3.15img/s]Spotting:  37%|###7      | 104/281 [03:33<00:54,  3.24img/s]Spotting:  37%|###7      | 105/281 [03:33<00:52,  3.34img/s]Spotting:  38%|###7      | 106/281 [03:34<00:51,  3.38img/s]Spotting:  38%|###8      | 107/281 [03:34<00:51,  3.38img/s]Spotting:  38%|###8      | 108/281 [03:34<00:51,  3.39img/s]Spotting:  39%|###8      | 109/281 [03:35<00:50,  3.42img/s]Spotting:  39%|###9      | 110/281 [03:35<00:49,  3.46img/s]Spotting:  40%|###9      | 111/281 [03:35<00:48,  3.50img/s]Spotting:  40%|###9      | 112/281 [03:35<00:47,  3.55img/s]Spotting:  40%|####      | 113/281 [03:36<00:47,  3.56img/s]Spotting:  41%|####      | 114/281 [03:36<00:47,  3.52img/s]Spotting:  41%|####      | 115/281 [03:36<00:47,  3.49img/s]Spotting:  41%|####1     | 116/281 [03:36<00:47,  3.49img/s]Spotting:  42%|####1     | 117/281 [03:37<00:47,  3.47img/s]Spotting:  42%|####1     | 118/281 [03:37<00:46,  3.49img/s]Spotting:  42%|####2     | 119/281 [03:37<00:45,  3.53img/s]Spotting:  43%|####2     | 120/281 [03:38<00:45,  3.55img/s]Spotting:  43%|####3     | 121/281 [03:38<00:44,  3.58img/s]Spotting:  43%|####3     | 122/281 [03:38<00:44,  3.60img/s]Spotting:  44%|####3     | 123/281 [03:38<00:44,  3.57img/s]Spotting:  44%|####4     | 124/281 [03:39<00:44,  3.53img/s]Spotting:  44%|####4     | 125/281 [03:39<00:45,  3.44img/s]Spotting:  45%|####4     | 126/281 [03:39<00:46,  3.35img/s]Spotting:  45%|####5     | 127/281 [03:40<00:46,  3.33img/s]Spotting:  46%|####5     | 128/281 [03:40<00:45,  3.37img/s]Spotting:  46%|####5     | 129/281 [03:40<00:46,  3.30img/s]Spotting:  46%|####6     | 130/281 [03:41<00:43,  3.45img/s]Spotting:  47%|####6     | 131/281 [03:41<00:43,  3.45img/s]Spotting:  47%|####6     | 132/281 [03:41<00:42,  3.51img/s]Spotting:  47%|####7     | 133/281 [03:41<00:41,  3.56img/s]Spotting:  48%|####7     | 134/281 [03:42<00:40,  3.60img/s]Spotting:  48%|####8     | 135/281 [03:42<00:40,  3.60img/s]Spotting:  48%|####8     | 136/281 [03:42<00:39,  3.66img/s]Spotting:  49%|####8     | 137/281 [03:42<00:39,  3.68img/s]Spotting:  49%|####9     | 138/281 [03:43<00:37,  3.78img/s]Spotting:  49%|####9     | 139/281 [03:43<00:38,  3.72img/s]Spotting:  50%|####9     | 140/281 [03:43<00:37,  3.74img/s]Spotting:  50%|#####     | 141/281 [03:44<00:38,  3.65img/s]Spotting:  51%|#####     | 142/281 [03:44<00:38,  3.65img/s]Spotting:  51%|#####     | 143/281 [03:44<00:37,  3.64img/s]Spotting:  51%|#####1    | 144/281 [03:44<00:37,  3.66img/s]Spotting:  52%|#####1    | 145/281 [03:45<00:37,  3.67img/s]Spotting:  52%|#####1    | 146/281 [03:45<00:36,  3.67img/s]Spotting:  52%|#####2    | 147/281 [03:45<00:36,  3.69img/s]Spotting:  53%|#####2    | 148/281 [03:45<00:35,  3.70img/s]Spotting:  53%|#####3    | 149/281 [03:46<00:35,  3.69img/s]Spotting:  53%|#####3    | 150/281 [03:46<00:35,  3.74img/s]Spotting:  54%|#####3    | 151/281 [03:46<00:34,  3.72img/s]Spotting:  54%|#####4    | 152/281 [03:47<00:34,  3.74img/s]Spotting:  54%|#####4    | 153/281 [03:47<00:34,  3.74img/s]Spotting:  55%|#####4    | 154/281 [03:47<00:34,  3.71img/s]Spotting:  55%|#####5    | 155/281 [03:47<00:33,  3.75img/s]Spotting:  56%|#####5    | 156/281 [03:48<00:33,  3.77img/s]Spotting:  56%|#####5    | 157/281 [03:48<00:32,  3.78img/s]Spotting:  56%|#####6    | 158/281 [03:48<00:32,  3.77img/s]Spotting:  57%|#####6    | 159/281 [03:48<00:32,  3.79img/s]Spotting:  57%|#####6    | 160/281 [03:49<00:32,  3.78img/s]Spotting:  57%|#####7    | 161/281 [03:49<00:31,  3.79img/s]Spotting:  58%|#####7    | 162/281 [03:49<00:30,  3.87img/s]Spotting:  58%|#####8    | 163/281 [03:49<00:30,  3.88img/s]Spotting:  58%|#####8    | 164/281 [03:50<00:30,  3.82img/s]Spotting:  59%|#####8    | 165/281 [03:50<00:30,  3.78img/s]Spotting:  59%|#####9    | 166/281 [03:50<00:30,  3.76img/s]Spotting:  59%|#####9    | 167/281 [03:50<00:29,  3.82img/s]Spotting:  60%|#####9    | 168/281 [03:51<00:29,  3.81img/s]Spotting:  60%|######    | 169/281 [03:51<00:29,  3.84img/s]Spotting:  60%|######    | 170/281 [03:51<00:28,  3.86img/s]Spotting:  61%|######    | 171/281 [03:51<00:28,  3.84img/s]Spotting:  61%|######1   | 172/281 [03:52<00:28,  3.81img/s]Spotting:  62%|######1   | 173/281 [03:52<00:27,  3.87img/s]Spotting:  62%|######1   | 174/281 [03:52<00:27,  3.84img/s]Spotting:  62%|######2   | 175/281 [03:53<00:27,  3.86img/s]Spotting:  63%|######2   | 176/281 [03:53<00:27,  3.88img/s]Spotting:  63%|######2   | 177/281 [03:53<00:26,  3.88img/s]Spotting:  63%|######3   | 178/281 [03:53<00:26,  3.82img/s]Spotting:  64%|######3   | 179/281 [03:54<00:27,  3.77img/s]Spotting:  64%|######4   | 180/281 [03:54<00:26,  3.86img/s]Spotting:  64%|######4   | 181/281 [03:54<00:26,  3.82img/s]Spotting:  65%|######4   | 182/281 [03:54<00:25,  3.87img/s]Spotting:  65%|######5   | 183/281 [03:55<00:25,  3.79img/s]Spotting:  65%|######5   | 184/281 [03:55<00:25,  3.87img/s]Spotting:  66%|######5   | 185/281 [03:55<00:24,  3.86img/s]Spotting:  66%|######6   | 186/281 [03:55<00:24,  3.89img/s]Spotting:  67%|######6   | 187/281 [03:56<00:24,  3.91img/s]Spotting:  67%|######6   | 188/281 [03:56<00:23,  3.97img/s]Spotting:  67%|######7   | 189/281 [03:56<00:23,  3.94img/s]Spotting:  68%|######7   | 190/281 [03:56<00:22,  4.00img/s]Spotting:  68%|######7   | 191/281 [03:57<00:22,  4.03img/s]Spotting:  68%|######8   | 192/281 [03:57<00:22,  3.94img/s]Spotting:  69%|######8   | 193/281 [03:57<00:22,  3.92img/s]Spotting:  69%|######9   | 194/281 [03:57<00:21,  3.98img/s]Spotting:  69%|######9   | 195/281 [03:58<00:21,  3.96img/s]Spotting:  70%|######9   | 196/281 [03:58<00:21,  3.98img/s]Spotting:  70%|#######   | 197/281 [03:58<00:21,  4.00img/s]Spotting:  70%|#######   | 198/281 [03:58<00:20,  4.02img/s]Spotting:  71%|#######   | 199/281 [03:59<00:19,  4.12img/s]Spotting:  71%|#######1  | 200/281 [03:59<00:19,  4.21img/s]Spotting:  72%|#######1  | 201/281 [03:59<00:18,  4.33img/s]Spotting:  72%|#######1  | 202/281 [03:59<00:18,  4.36img/s]Spotting:  72%|#######2  | 203/281 [04:00<00:18,  4.27img/s]Spotting:  73%|#######2  | 204/281 [04:00<00:18,  4.23img/s]Spotting:  73%|#######2  | 205/281 [04:00<00:17,  4.28img/s]Spotting:  73%|#######3  | 206/281 [04:00<00:17,  4.36img/s]Spotting:  74%|#######3  | 207/281 [04:00<00:17,  4.17img/s]Spotting:  74%|#######4  | 208/281 [04:01<00:17,  4.10img/s]Spotting:  74%|#######4  | 209/281 [04:01<00:17,  4.22img/s]Spotting:  75%|#######4  | 210/281 [04:01<00:16,  4.33img/s]Spotting:  75%|#######5  | 211/281 [04:01<00:16,  4.35img/s]Spotting:  75%|#######5  | 212/281 [04:02<00:15,  4.43img/s]Spotting:  76%|#######5  | 213/281 [04:02<00:15,  4.34img/s]Spotting:  76%|#######6  | 214/281 [04:02<00:14,  4.51img/s]Spotting:  77%|#######6  | 215/281 [04:02<00:14,  4.58img/s]Spotting:  77%|#######6  | 216/281 [04:03<00:14,  4.47img/s]Spotting:  77%|#######7  | 217/281 [04:03<00:14,  4.37img/s]Spotting:  78%|#######7  | 218/281 [04:03<00:14,  4.45img/s]Spotting:  78%|#######7  | 219/281 [04:03<00:13,  4.58img/s]Spotting:  78%|#######8  | 220/281 [04:03<00:13,  4.54img/s]Spotting:  79%|#######8  | 221/281 [04:04<00:13,  4.53img/s]Spotting:  79%|#######9  | 222/281 [04:04<00:12,  4.67img/s]Spotting:  79%|#######9  | 223/281 [04:04<00:12,  4.75img/s]Spotting:  80%|#######9  | 224/281 [04:04<00:11,  4.80img/s]Spotting:  80%|########  | 225/281 [04:04<00:11,  4.68img/s]Spotting:  80%|########  | 226/281 [04:05<00:12,  4.57img/s]Spotting:  81%|########  | 227/281 [04:05<00:11,  4.70img/s]Spotting:  81%|########1 | 228/281 [04:05<00:11,  4.73img/s]Spotting:  81%|########1 | 229/281 [04:05<00:10,  4.86img/s]Spotting:  82%|########1 | 230/281 [04:05<00:10,  4.90img/s]Spotting:  82%|########2 | 231/281 [04:06<00:09,  5.02img/s]Spotting:  83%|########2 | 232/281 [04:06<00:09,  5.05img/s]Spotting:  83%|########2 | 233/281 [04:06<00:09,  5.06img/s]Spotting:  83%|########3 | 234/281 [04:06<00:09,  4.99img/s]Spotting:  84%|########3 | 235/281 [04:06<00:09,  5.03img/s]Spotting:  84%|########3 | 236/281 [04:07<00:08,  5.08img/s]Spotting:  84%|########4 | 237/281 [04:07<00:08,  5.00img/s]Spotting:  85%|########4 | 238/281 [04:07<00:08,  5.05img/s]Spotting:  85%|########5 | 239/281 [04:07<00:08,  5.07img/s]Spotting:  85%|########5 | 240/281 [04:07<00:08,  5.11img/s]Spotting:  86%|########5 | 241/281 [04:08<00:07,  5.08img/s]Spotting:  86%|########6 | 242/281 [04:08<00:07,  5.21img/s]Spotting:  86%|########6 | 243/281 [04:08<00:07,  5.29img/s]Spotting:  87%|########6 | 244/281 [04:08<00:06,  5.36img/s]Spotting:  87%|########7 | 245/281 [04:08<00:06,  5.44img/s]Spotting:  88%|########7 | 246/281 [04:09<00:06,  5.51img/s]Spotting:  88%|########7 | 247/281 [04:09<00:06,  5.44img/s]Spotting:  88%|########8 | 248/281 [04:09<00:05,  5.53img/s]Spotting:  89%|########8 | 249/281 [04:09<00:05,  5.53img/s]Spotting:  89%|########8 | 250/281 [04:09<00:05,  5.61img/s]Spotting:  89%|########9 | 251/281 [04:09<00:05,  5.64img/s]Spotting:  90%|########9 | 252/281 [04:10<00:05,  5.61img/s]Spotting:  90%|######### | 253/281 [04:10<00:04,  5.68img/s]Spotting:  90%|######### | 254/281 [04:10<00:04,  5.78img/s]Spotting:  91%|######### | 255/281 [04:10<00:04,  5.72img/s]Spotting:  91%|#########1| 256/281 [04:10<00:04,  5.74img/s]Spotting:  91%|#########1| 257/281 [04:10<00:04,  5.66img/s]Spotting:  92%|#########1| 258/281 [04:11<00:03,  5.80img/s]Spotting:  92%|#########2| 259/281 [04:11<00:03,  5.84img/s]Spotting:  93%|#########2| 260/281 [04:11<00:03,  5.84img/s]Spotting:  93%|#########2| 261/281 [04:11<00:03,  5.86img/s]Spotting:  93%|#########3| 262/281 [04:11<00:03,  5.89img/s]Spotting:  94%|#########3| 263/281 [04:11<00:03,  5.90img/s]Spotting:  94%|#########3| 264/281 [04:12<00:02,  5.81img/s]Spotting:  94%|#########4| 265/281 [04:12<00:02,  5.81img/s]Spotting:  95%|#########4| 266/281 [04:12<00:02,  5.82img/s]Spotting:  95%|#########5| 267/281 [04:12<00:02,  5.92img/s]Spotting:  95%|#########5| 268/281 [04:12<00:02,  5.79img/s]Spotting:  96%|#########5| 269/281 [04:13<00:02,  5.94img/s]Spotting:  96%|#########6| 270/281 [04:13<00:01,  5.83img/s]Spotting:  96%|#########6| 271/281 [04:13<00:01,  5.77img/s]Spotting:  97%|#########6| 272/281 [04:13<00:01,  5.66img/s]Spotting:  97%|#########7| 273/281 [04:13<00:01,  5.63img/s]Spotting:  98%|#########7| 274/281 [04:13<00:01,  5.65img/s]Spotting:  98%|#########7| 275/281 [04:14<00:01,  5.75img/s]Spotting:  98%|#########8| 276/281 [04:14<00:00,  5.80img/s]Spotting:  99%|#########8| 277/281 [04:14<00:00,  5.85img/s]Spotting:  99%|#########8| 278/281 [04:14<00:00,  5.91img/s]Spotting:  99%|#########9| 279/281 [04:14<00:00,  5.79img/s]Spotting: 100%|#########9| 280/281 [04:14<00:00,  5.90img/s]Spotting: 100%|##########| 281/281 [04:15<00:00,  5.62img/s]Spotting: 100%|##########| 281/281 [04:15<00:00,  1.10img/s]
+127.0.0.1 - - [07/May/2026 03:19:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:33] "GET /api/med-names HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /spottings.json HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data15.2.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data21.2.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data24.5.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data2.2.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data26.3.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data14.4.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data9.2.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data30.3.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data23.4.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data28.6.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data11.5.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data4.6.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data14.1.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data12.2.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data24.6.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data11.12.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data17.1.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data16.1.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data2.3.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data17.6.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data18.1.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data10.7.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data24.4.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data14.3.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data4.2.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data27.3.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data23.6.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data11.3.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data3.4.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data27.4.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data26.7.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data2.1.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data21.7.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data2.6.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data30.5.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data23.7.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data26.1.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data19.2.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data18.4.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data12.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data15.3.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data18.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data8.6.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data11.10.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data26.2.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data20.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data12.3.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data15.1.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data21.3.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0000.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0001.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data16.2.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data17.4.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data14.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data23.8.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data8.3.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data3.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data12.6.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data30.6.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data23.2.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data30.2.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data28.1.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data21.6.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data27.1.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data9.3.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data14.2.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data30.1.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data27.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data27.5.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data12.1.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data23.1.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data19.5.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data14.6.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data19.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data20.1.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data10.3.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data2.8.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data15.4.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data9.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data28.5.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data18.5.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data26.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data28.3.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data21.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data6.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data19.4.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data24.3.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data3.1.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data26.6.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data4.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data21.1.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data30.7.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data11.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data17.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data16.3.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data24.2.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data17.2.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data24.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data2.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data25.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data15.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data23.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data28.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data4.7.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data14.5.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data8.1.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data10.6.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data28.2.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data4.1.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data25.1.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data11.1.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data8.7.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data4.4.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data23.5.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data16.5.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data19.6.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data30.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data10.5.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data23.3.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data19.1.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data11.2.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data3.2.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data25.3.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data11.4.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data9.1.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data2.7.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data15.5.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data6.3.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data9.6.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /mehaksingal/data/117.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /mehaksingal/data/47.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /mehaksingal/data/69.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /mehaksingal/data/16.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /mehaksingal/data/35.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data3.5.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /mehaksingal/data/120.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /mehaksingal/data/77.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /mehaksingal/data/43.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /mehaksingal/data/26.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /mehaksingal/data/93.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /mehaksingal/data/31.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /mehaksingal/data/129.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /mehaksingal/data/70.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /mehaksingal/data/18.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /mehaksingal/data/56.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /mehaksingal/data/122.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data19.3.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data11.6.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data20.2.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chhavimohitkar/data11.8.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0005.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0006.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0011.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0012.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0015.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0016.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0021.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0022.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0025.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0026.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0031.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0032.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0033.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0038.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0039.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0044.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0046.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0049.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0050.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0053.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0054.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0057.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0059.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0065.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0066.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0071.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0072.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:34] "GET /chaithanyakota/images/chaithanyakota_0077.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0078.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0081.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0082.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0087.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0088.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0091.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0092.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0097.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0098.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/107.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/110.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/113.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/114.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/115.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/116.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chhavimohitkar/data26.4.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/121.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/128.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/13.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/21.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/23.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/28.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/29.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/34.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/36.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/4.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/40.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/45.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/46.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/51.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/52.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/55.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/57.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/62.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/63.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/66.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/67.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/71.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/72.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/79.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/8.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/84.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/85.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/88.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/9.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/98.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/99.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0004.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0042.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0064.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chhavimohitkar/data17.5.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chhavimohitkar/data4.5.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chhavimohitkar/data11.11.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chhavimohitkar/data9.4.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chhavimohitkar/data4.3.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chhavimohitkar/data8.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chhavimohitkar/data16.6.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chhavimohitkar/data8.4.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chhavimohitkar/data18.2.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chhavimohitkar/data6.1.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/76.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/127.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/109.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/39.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/20.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chhavimohitkar/data21.4.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/48.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/3.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/123.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/49.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/22.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/25.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/32.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/126.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/90.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/41.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/103.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/89.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/15.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chhavimohitkar/data2.5.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chhavimohitkar/data11.9.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chhavimohitkar/data8.2.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chhavimohitkar/data26.5.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chhavimohitkar/data17.3.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chhavimohitkar/data30.4.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chhavimohitkar/data16.4.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0007.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0008.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0009.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0010.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0013.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0014.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0017.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0018.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0019.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0020.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0023.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0024.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0027.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0028.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0029.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0030.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0034.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0035.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0036.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0037.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0040.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0041.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0047.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0048.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0051.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0052.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0055.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0056.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0060.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0062.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0067.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0068.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0069.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0070.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0073.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0074.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0075.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0076.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0079.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0080.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0083.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0084.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0085.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chhavimohitkar/data16.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0089.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0094.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0095.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/100.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/101.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/105.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/111.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/119.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/12.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/19.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/2.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/30.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/33.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/5.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/50.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/58.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/6.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/64.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/65.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/73.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/74.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/80.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/81.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/86.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/87.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/94.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/95.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0043.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0058.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0090.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0093.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0099.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/102.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/104.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/112.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/118.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/124.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/125.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/14.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/17.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/24.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/38.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/42.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/54.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/60.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/7.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/75.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/83.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/91.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0003.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0061.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/27.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/37.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/44.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/82.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/92.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0002.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0063.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/53.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/61.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/68.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/78.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/96.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /mehaksingal/data/97.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0086.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:19:35] "GET /chaithanyakota/images/chaithanyakota_0096.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:22:10] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:23:23] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:03] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:03] "GET /chhavimohitkar/data16.0.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:03] "GET /chaithanyakota/images/chaithanyakota_0055.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:03] "GET /chaithanyakota/images/chaithanyakota_0056.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:03] "GET /chaithanyakota/images/chaithanyakota_0060.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:03] "GET /chaithanyakota/images/chaithanyakota_0062.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:03] "GET /chaithanyakota/images/chaithanyakota_0067.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:03] "GET /chaithanyakota/images/chaithanyakota_0099.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:03] "GET /chaithanyakota/images/chaithanyakota_0068.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:03] "GET /chaithanyakota/images/chaithanyakota_0070.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:03] "GET /chaithanyakota/images/chaithanyakota_0073.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:03] "GET /chaithanyakota/images/chaithanyakota_0074.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:03] "GET /chaithanyakota/images/chaithanyakota_0075.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:03] "GET /chaithanyakota/images/chaithanyakota_0076.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:03] "GET /chaithanyakota/images/chaithanyakota_0079.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /chaithanyakota/images/chaithanyakota_0080.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /chaithanyakota/images/chaithanyakota_0083.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /chaithanyakota/images/chaithanyakota_0084.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /chaithanyakota/images/chaithanyakota_0085.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /chaithanyakota/images/chaithanyakota_0089.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /chaithanyakota/images/chaithanyakota_0093.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /chaithanyakota/images/chaithanyakota_0094.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /chaithanyakota/images/chaithanyakota_0095.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /mehaksingal/data/100.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /mehaksingal/data/101.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /mehaksingal/data/102.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /mehaksingal/data/105.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /mehaksingal/data/111.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /mehaksingal/data/119.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /chaithanyakota/images/chaithanyakota_0069.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /mehaksingal/data/37.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /mehaksingal/data/44.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /mehaksingal/data/53.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /mehaksingal/data/24.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /mehaksingal/data/74.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /mehaksingal/data/78.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /mehaksingal/data/80.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /mehaksingal/data/81.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /mehaksingal/data/82.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /mehaksingal/data/92.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /mehaksingal/data/96.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /mehaksingal/data/97.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /mehaksingal/data/61.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /mehaksingal/data/68.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:26:04] "GET /mehaksingal/data/27.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 03:28:56] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 09:15:53] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 09:15:53] "GET /api/med-names HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 09:15:53] "GET /spottings.json HTTP/1.1" 200 -
+127.0.0.1 - - [07/May/2026 09:16:03] "POST /api/save HTTP/1.1" 200 -

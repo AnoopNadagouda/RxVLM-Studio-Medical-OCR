@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-08-20 21:48:17",
+  "model": "models/PaddleOCR-VL-1.6",
+  "checkpoint": "base_baseline",
+  "samples_evaluated": 5,
+  "metrics": {
+    "mean_cer": 2.7083,
+    "mean_wer": 1.8,
+    "exact_match_accuracy_pct": 0.0,
+    "exact_matches": 0
+  },
+  "sample_details": [
+    {
+      "sample_id": 1,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\kaggle_bd_rx\\Train_Set\\P3539.jpg",
+      "ground_truth": "Voltalin",
+      "prediction": "i",
+      "cer": 0.875,
+      "wer": 1.0,
+      "exact_match": false
+    },
+    {
+      "sample_id": 2,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\kaggle_bd_rx\\Train_Set\\P2152.jpg",
+      "ground_truth": "Nexe-mups",
+      "prediction": "\u610f\u7684\u56fe\u7247\u4e2d\u7684\u56fe\u50cf\u5185\u5bb9\u4e3a\uff1a",
+      "cer": 1.3333,
+      "wer": 1.0,
+      "exact_match": false
+    },
+    {
+      "sample_id": 3,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\rxhandbd\\doctors-handwritten-prescription-bd-dataset\\Doctor\u2019s Handwritten Prescription BD dataset\\Validation\\validation_words\\440.png",
+      "ground_truth": "Lumona",
+      "prediction": "i.\u3007",
+      "cer": 1.0,
+      "wer": 1.0,
+      "exact_match": false
+    },
+    {
+      "sample_id": 4,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\kaggle_bd_rx\\Train_Set\\P2025.jpg",
+      "ground_truth": "maxrin",
+      "prediction": "\u91cd\u8981\u7684, is \"120, is \"",
+      "cer": 2.8333,
+      "wer": 5.0,
+      "exact_match": false
+    },
+    {
+      "sample_id": 5,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\kaggle_bd_rx\\Test_Set\\P0801.jpg",
+      "ground_truth": "Barbit",
+      "prediction": "i.https://www.https://www.https://www.https://",
+      "cer": 7.5,
+      "wer": 1.0,
+      "exact_match": false
+    }
+  ]
+}

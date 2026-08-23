@@ -1,0 +1,173 @@
+{
+  "file": "chaithanyakota/images/chaithanyakota_0005.jpg",
+  "image_labels": [],
+  "words": [
+    {
+      "text": "Presenting",
+      "type": "",
+      "x": 115,
+      "y": 59,
+      "w": 162,
+      "h": 25,
+      "shape": "rect",
+      "angle": 0,
+      "points": ""
+    },
+    {
+      "text": "Complaints",
+      "type": "",
+      "x": 112,
+      "y": 85,
+      "w": 143,
+      "h": 32,
+      "shape": "rect",
+      "angle": 0,
+      "points": ""
+    },
+    {
+      "text": "days",
+      "type": "",
+      "x": 359,
+      "y": 59,
+      "w": 530,
+      "h": 50,
+      "shape": "rect",
+      "angle": 0,
+      "points": ""
+    },
+    {
+      "text": "days",
+      "type": "",
+      "x": 401,
+      "y": 101,
+      "w": 376,
+      "h": 46,
+      "shape": "rect",
+      "angle": 0,
+      "points": ""
+    },
+    {
+      "text": "days",
+      "type": "",
+      "x": 406,
+      "y": 147,
+      "w": 409,
+      "h": 54,
+      "shape": "rect",
+      "angle": 0,
+      "points": ""
+    },
+    {
+      "text": "⊕",
+      "type": "",
+      "x": 496,
+      "y": 190,
+      "w": 140,
+      "h": 43,
+      "shape": "rect",
+      "angle": 0,
+      "points": ""
+    },
+    {
+      "text": "days",
+      "type": "",
+      "x": 496,
+      "y": 228,
+      "w": 279,
+      "h": 45,
+      "shape": "rect",
+      "angle": 0,
+      "points": ""
+    },
+    {
+      "text": "Emphysema!",
+      "type": "",
+      "x": 406,
+      "y": 264,
+      "w": 463,
+      "h": 61,
+      "shape": "rect",
+      "angle": 0,
+      "points": ""
+    },
+    {
+      "text": "Notes:",
+      "type": "",
+      "x": 183,
+      "y": 416,
+      "w": 79,
+      "h": 28,
+      "shape": "rect",
+      "angle": 0,
+      "points": ""
+    },
+    {
+      "text": "Call",
+      "type": "",
+      "x": 357,
+      "y": 487,
+      "w": 500,
+      "h": 71,
+      "shape": "rect",
+      "angle": 0,
+      "points": ""
+    },
+    {
+      "text": "80%",
+      "type": "",
+      "x": 359,
+      "y": 556,
+      "w": 332,
+      "h": 63,
+      "shape": "rect",
+      "angle": 0,
+      "points": ""
+    },
+    {
+      "text": "2000)",
+      "type": "",
+      "x": 322,
+      "y": 602,
+      "w": 380,
+      "h": 76,
+      "shape": "rect",
+      "angle": 0,
+      "points": ""
+    },
+    {
+      "text": "00",
+      "type": "",
+      "x": 327,
+      "y": 663,
+      "w": 371,
+      "h": 71,
+      "shape": "rect",
+      "angle": 0,
+      "points": ""
+    },
+    {
+      "text": "Improved",
+      "type": "",
+      "x": 329,
+      "y": 712,
+      "w": 398,
+      "h": 78,
+      "shape": "rect",
+      "angle": 0,
+      "points": ""
+    },
+    {
+      "text": "km",
+      "type": "",
+      "x": 322,
+      "y": 767,
+      "w": 384,
+      "h": 77,
+      "shape": "rect",
+      "angle": 0,
+      "points": ""
+    }
+  ],
+  "image_ocr": "",
+  "saved_at": "2026-05-19T20:02:31.183962"
+}

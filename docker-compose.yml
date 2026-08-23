@@ -1,0 +1,19 @@
+services:
+  ocr-annotate:
+    build: .
+    ports:
+      - "8090:8090"
+    environment:
+      - PORT=8090
+      - HOST=0.0.0.0
+      - DATA_DIR=/data
+      - IMAGES_DIR=/images
+    volumes:
+      - ocr-data:/data
+      - ./mehaksingal:/images/mehaksingal:ro
+      - ./chaithanyakota:/images/chaithanyakota:ro
+      - ./chhavimohitkar:/images/chhavimohitkar:ro
+    restart: unless-stopped
+
+volumes:
+  ocr-data:

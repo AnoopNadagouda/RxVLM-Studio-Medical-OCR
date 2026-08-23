@@ -1,0 +1,433 @@
+{
+  "builder_name": "imagefolder",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "100-handwritten-medical-records",
+  "dataset_size": 16013,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/0fmQCjuf.jpg": {
+      "num_bytes": 1439674,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/0waC2LqO.jpg": {
+      "num_bytes": 287106,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/1wMr9ofP.jpg": {
+      "num_bytes": 286368,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/2nPPipXy.jpg": {
+      "num_bytes": 291775,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/4J7Jyojz.jpg": {
+      "num_bytes": 264680,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/62qlxpSw.jpg": {
+      "num_bytes": 313686,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/68eycMkU.jpg": {
+      "num_bytes": 445462,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/6Qj1oIlL.jpg": {
+      "num_bytes": 317949,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/6aQTpGja.jpg": {
+      "num_bytes": 104095,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/7en1FhHP.jpg": {
+      "num_bytes": 197257,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/8BkPCKTK.jpg": {
+      "num_bytes": 380558,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/8E7HL1bW.JPG": {
+      "num_bytes": 670495,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/8RQQmApQ.jpg": {
+      "num_bytes": 338859,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/8aTCyXjA.jpg": {
+      "num_bytes": 349167,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/A9Dx6iCN.jpg": {
+      "num_bytes": 438038,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/ANQONi6m.jpg": {
+      "num_bytes": 418999,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/AUKd7YVd.jpg": {
+      "num_bytes": 312441,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/AUtlCUOe.jpg": {
+      "num_bytes": 132809,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/BMfPWBSX.jpg": {
+      "num_bytes": 305417,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/BZ7CmZYv.jpg": {
+      "num_bytes": 1120668,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/By829MQ1.jpg": {
+      "num_bytes": 341785,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/CKYFueDu.JPG": {
+      "num_bytes": 475061,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/D5FMZChe.jpg": {
+      "num_bytes": 361437,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/D8MLkpsp.jpg": {
+      "num_bytes": 306683,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/E2EJtbhx.jpg": {
+      "num_bytes": 289417,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/ECkULEZ8.jpg": {
+      "num_bytes": 300880,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/FJNHOZ7o.jpg": {
+      "num_bytes": 386466,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/FLuDypWX.jpg": {
+      "num_bytes": 211116,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/FNPEJJDL.jpg": {
+      "num_bytes": 323821,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/H7NS52XZ.jpg": {
+      "num_bytes": 252636,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/Hr7f3rr0.jpg": {
+      "num_bytes": 367748,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/Hy77IZJz.jpg": {
+      "num_bytes": 1302521,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/J46LUNZc.jpg": {
+      "num_bytes": 295494,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/Jdj453gS.jpg": {
+      "num_bytes": 283901,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/Juv1n2wH.jpg": {
+      "num_bytes": 298071,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/KHanl90w.jpg": {
+      "num_bytes": 333238,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/KOsXO4VY.jpg": {
+      "num_bytes": 355636,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/KVia84Mn.jpg": {
+      "num_bytes": 1535875,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/O6ymyIEU.jpg": {
+      "num_bytes": 294811,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/OTVK8y3c.jpg": {
+      "num_bytes": 338174,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/Oeel8Rfr.jpg": {
+      "num_bytes": 297507,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/PatAG49S.jpg": {
+      "num_bytes": 358621,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/S9tPXhzz.jpg": {
+      "num_bytes": 1455809,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/SGLxPcHa.jpg": {
+      "num_bytes": 374806,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/STtmFxpH.jpg": {
+      "num_bytes": 229530,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/U4VlK0fQ.jpg": {
+      "num_bytes": 403179,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/UOL5tzyD.jpg": {
+      "num_bytes": 324361,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/UScRD0mP.jpg": {
+      "num_bytes": 624690,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/VXarmzoT.jpg": {
+      "num_bytes": 251293,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/W7xywvPl.jpg": {
+      "num_bytes": 580600,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/X8LAPgaR.jpg": {
+      "num_bytes": 307330,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/Y1bHXbTK.jpg": {
+      "num_bytes": 200394,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/a7v7QdKe.jpg": {
+      "num_bytes": 343362,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/ayIOeUD3.jpg": {
+      "num_bytes": 361541,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/b7KkCcHn.jpg": {
+      "num_bytes": 341183,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/bS5jjQZR.jpg": {
+      "num_bytes": 308541,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/cUlX63RB.jpg": {
+      "num_bytes": 414497,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/d1WdB9cW.jpg": {
+      "num_bytes": 260757,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/d4r9s7E7.jpg": {
+      "num_bytes": 500411,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/dj6TVFwY.jpg": {
+      "num_bytes": 287207,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/eicAeS9y.jpg": {
+      "num_bytes": 217800,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/foPDhiyr.jpg": {
+      "num_bytes": 322992,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/ft8rdnhT.jpg": {
+      "num_bytes": 302568,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/fuJWCeM0.jpg": {
+      "num_bytes": 393786,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/gQ6JCsqH.jpg": {
+      "num_bytes": 270152,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/h36rpyHv.jpg": {
+      "num_bytes": 340382,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/hIIM4LpM.jpg": {
+      "num_bytes": 242945,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/hNLWeZrr.jpg": {
+      "num_bytes": 365497,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/hZzLHGLM.jpg": {
+      "num_bytes": 147872,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/hqDuJa34.JPG": {
+      "num_bytes": 686073,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/iIRT0sqK.jpg": {
+      "num_bytes": 286755,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/krNgfIY6.jpg": {
+      "num_bytes": 272272,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/mFtJs29r.jpg": {
+      "num_bytes": 280731,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/mOuGQf13.jpg": {
+      "num_bytes": 87894,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/nyp04jPs.jpg": {
+      "num_bytes": 299183,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/nzpSXh0q.jpg": {
+      "num_bytes": 365869,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/oPrdWVf9.jpg": {
+      "num_bytes": 343999,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/pCJ1PIcx.jpg": {
+      "num_bytes": 398351,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/qCUfUj0G.jpg": {
+      "num_bytes": 737929,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/qXTK0CDb.jpg": {
+      "num_bytes": 305742,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/qjX4D0zt.jpg": {
+      "num_bytes": 310857,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/qtobDjum.jpg": {
+      "num_bytes": 165368,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/r0q5WhLb.jpg": {
+      "num_bytes": 347852,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/rvW9blxv.jpg": {
+      "num_bytes": 310138,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/scf4jnQG.jpg": {
+      "num_bytes": 321424,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/stCGKKVR.jpg": {
+      "num_bytes": 317685,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/swL79y19.jpg": {
+      "num_bytes": 291830,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/sylW4TfL.jpg": {
+      "num_bytes": 214877,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/tSxsutsV.jpg": {
+      "num_bytes": 302394,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/trSHznYp.jpg": {
+      "num_bytes": 521148,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/tz7mmy29.jpg": {
+      "num_bytes": 306685,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/u1V6sX7b.jpg": {
+      "num_bytes": 171709,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/uHWGorWE.jpg": {
+      "num_bytes": 253108,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/ufQAt6EH.jpg": {
+      "num_bytes": 371598,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/uhCmg16Y.jpg": {
+      "num_bytes": 311310,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/umToYCi1.jpg": {
+      "num_bytes": 252402,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/v2eBV2Eq.jpg": {
+      "num_bytes": 339964,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/x3ONkeiR.jpg": {
+      "num_bytes": 284339,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/xXpma6Dt.jpg": {
+      "num_bytes": 161707,
+      "checksum": null
+    },
+    "hf://datasets/tavishm/100-handwritten-medical-records@281d143ad1f575c6c27a6f6fc8cffdd9de15016d/yo7WkGxP.jpg": {
+      "num_bytes": 288126,
+      "checksum": null
+    }
+  },
+  "download_size": 37809206,
+  "features": {
+    "image": {
+      "_type": "Image"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 37825219,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 16013,
+      "num_examples": 100,
+      "dataset_name": "100-handwritten-medical-records"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "doctor": "Dr. Prescriber (MD)",
+  "patient": "Patient #600 (Prescription Sample)",
+  "medications": [
+    {
+      "name": "Nebah sual should be taken as directed",
+      "strength": "500 mg",
+      "schedule": "1-0-1",
+      "raw_line": "Nebah sual should be taken as directed."
+    }
+  ]
+}

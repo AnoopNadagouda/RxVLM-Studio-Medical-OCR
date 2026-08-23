@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prescription OCR Annotator</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#1e1e2e;--surface:#181825;--overlay:#313244;--text:#cdd6f4;--subtext:#a6adc8;--accent:#89b4fa;--accent2:#f38ba8;--green:#a6e3a1;--yellow:#f9e2af;--orange:#fab387;--border:#45475a;--radius:6px}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);height:100vh;overflow:hidden;display:flex}
+#sidebar{width:280px;min-width:280px;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;height:100vh}
+#sidebar .controls{padding:12px;border-bottom:1px solid var(--border)}
+#sidebar .controls select,#sidebar .controls input{width:100%;background:var(--overlay);color:var(--text);border:1px solid var(--border);border-radius:var(--radius);padding:6px 8px;font-size:13px;margin-bottom:6px;outline:none}
+#sidebar .controls select:focus,#sidebar .controls input:focus{border-color:var(--accent)}
+#folderStats{padding:6px 12px;font-size:11px;color:var(--subtext);border-bottom:1px solid var(--border)}
+#fileList{flex:1;overflow-y:auto;padding:4px}
+#fileList::-webkit-scrollbar{width:6px}
+#fileList::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.folder-hdr{padding:4px 8px;font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.5px;margin-top:4px;cursor:pointer;user-select:none}
+.folder-hdr .fc{font-weight:400;color:var(--subtext);margin-left:4px}
+.fi{display:flex;align-items:center;gap:6px;padding:4px 8px 4px 16px;border-radius:var(--radius);cursor:pointer;transition:background .15s;border-left:3px solid transparent}
+.fi:hover{background:var(--overlay)}
+.fi.active{background:var(--overlay);outline:2px solid var(--accent)}
+.fi.saved{border-left-color:var(--green)}
+.fi.modified{border-left-color:var(--yellow)}
+.fi.annotated{border-left-color:var(--green)}
+.fi .thumb{width:36px;height:36px;object-fit:contain;border-radius:3px;background:#11111b;flex-shrink:0}
+.fi .fn{flex:1;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:relative}
+.fi.saved .fn::after{content:' ✓';color:var(--green);font-size:10px}
+.fi.modified .fn::after{content:' •';color:var(--yellow);font-size:14px}
+.fi.annotated .fn::after{content:' ✓';color:var(--green);font-size:10px}
+.fi .sc{font-size:10px;color:var(--subtext);flex-shrink:0}
+#center{flex:1;display:flex;flex-direction:column;overflow:hidden;position:relative}
+#toolbar{height:40px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 12px;gap:8px;flex-shrink:0}
+#toolbar button{background:var(--overlay);color:var(--text);border:1px solid var(--border);border-radius:4px;padding:4px 10px;cursor:pointer;font-size:13px;transition:background .15s}
+#toolbar button:hover{background:var(--border)}
+#toolbar button.active{background:var(--accent);color:#11111b;border-color:var(--accent)}
+#toolbar .sep{width:1px;height:20px;background:var(--border)}
+#zoomBar{height:28px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;gap:6px;padding:0 8px;flex-shrink:0}
+#zoomBar button{background:var(--overlay);color:var(--text);border:1px solid var(--border);border-radius:3px;padding:1px 8px;cursor:pointer;font-size:14px;line-height:1.2;min-width:24px}
+#zoomBar button:hover{background:var(--border)}
+#zoomBar button:disabled{opacity:.4;cursor:default}
+#zoomLevel{font-size:12px;color:var(--subtext);min-width:42px;text-align:center;user-select:none}
+#statusText{font-size:12px;color:var(--subtext);margin-left:auto}
+#imgWrap{flex:1;overflow:auto;position:relative;background:#11111b;display:flex;align-items:flex-start;justify-content:center}
+#imgContainer{position:relative;display:inline-block;margin:20px}
+#mainImg{display:block;cursor:crosshair}
+#boxesOverlay{position:absolute;inset:0;pointer-events:none}
+#polySvg{position:absolute;inset:0;pointer-events:none;width:100%;height:100%}
+#polySvg polygon,#polySvg circle{pointer-events:auto}
+.box{position:absolute;border:2px solid var(--accent2);pointer-events:auto;cursor:move;min-width:4px;min-height:4px}
+.box.selected{outline:2px solid var(--accent);outline-offset:1px;z-index:10}
+.box .lbl{position:absolute;bottom:100%;left:0;font-size:10px;background:rgba(0,0,0,.8);color:#fff;padding:1px 4px;border-radius:2px;white-space:nowrap;pointer-events:none;max-width:200px;overflow:hidden;text-overflow:ellipsis}
+.box .lbl.below{bottom:auto;top:100%}
+.rh{position:absolute;width:8px;height:8px;background:var(--accent);border:1px solid #fff;pointer-events:auto;z-index:20;cursor:nwse-resize}
+.rh.tl{top:-4px;left:-4px;cursor:nwse-resize}
+.rh.tr{top:-4px;right:-4px;cursor:nesw-resize}
+.rh.bl{bottom:-4px;left:-4px;cursor:nesw-resize}
+.rh.br{bottom:-4px;right:-4px;cursor:nwse-resize}
+.rh.tm{top:-4px;left:50%;transform:translateX(-50%);cursor:ns-resize}
+.rh.bm{bottom:-4px;left:50%;transform:translateX(-50%);cursor:ns-resize}
+.rh.ml{top:50%;left:-4px;transform:translateY(-50%);cursor:ew-resize}
+.rh.mr{top:50%;right:-4px;transform:translateY(-50%);cursor:ew-resize}
+.rot-handle{position:absolute;top:-29px;left:50%;transform:translateX(-50%);width:10px;height:10px;background:var(--accent2);border:1px solid #fff;border-radius:50%;cursor:grab;pointer-events:auto;z-index:20}
+.rot-handle:active{cursor:grabbing}
+.rot-line{position:absolute;top:-25px;left:50%;width:1px;height:22px;background:var(--accent2);pointer-events:none;z-index:19;transform:translateX(-50%)}
+#drawBox{position:absolute;border:2px dashed var(--accent);pointer-events:none;display:none;z-index:30}
+#rightPanel{width:320px;min-width:320px;background:var(--surface);border-left:1px solid var(--border);display:flex;flex-direction:column;height:100vh;overflow:hidden}
+.rp-section{padding:8px 12px;border-bottom:1px solid var(--border)}
+.rp-section .rp-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--subtext);margin-bottom:6px}
+.rp-section label{display:flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;margin-bottom:2px}
+.rp-section textarea{width:100%;background:var(--overlay);color:var(--text);border:1px solid var(--border);border-radius:var(--radius);padding:6px;font-size:12px;resize:vertical;min-height:60px;outline:none;font-family:inherit}
+.rp-section textarea:focus{border-color:var(--accent)}
+.rp-section button{background:var(--overlay);color:var(--text);border:1px solid var(--border);border-radius:4px;padding:3px 8px;cursor:pointer;font-size:11px;margin-top:4px}
+.rp-section button:hover{background:var(--border)}
+#wordsList{flex:1;overflow-y:auto;padding:4px 8px}
+#wordsList::-webkit-scrollbar{width:6px}
+#wordsList::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.wi{display:flex;align-items:flex-start;gap:6px;padding:6px;border-radius:var(--radius);margin-bottom:4px;background:var(--overlay);border-left:3px solid transparent;transition:outline .15s}
+.wi.annotated{border-left-color:var(--green);background:rgba(166,227,161,.05)}
+.wi.selected{outline:2px solid var(--accent)}
+.wi .crop-wrap{position:relative;flex-shrink:0}
+.wi .crop{width:80px;height:80px;object-fit:contain;border-radius:3px;background:#11111b;display:block;cursor:pointer}
+.wi .shape-badge{position:absolute;top:-2px;right:-2px;font-size:8px;font-weight:700;width:14px;height:14px;line-height:14px;text-align:center;border-radius:50%;color:#11111b;z-index:1}
+.wi .fields{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.wi .fields input,.wi .fields select{width:100%;background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:3px;padding:3px 6px;font-size:12px;outline:none}
+.wi .fields input:focus,.wi .fields select:focus{border-color:var(--accent)}
+.wi .fields .custom-type{display:none}
+.wi .fields .custom-type.visible{display:block}
+.wi .del{background:none;border:none;color:var(--accent2);cursor:pointer;font-size:16px;padding:0 2px;flex-shrink:0;line-height:1}
+.wi .del:hover{color:#fff}
+.ac-list{position:absolute;background:var(--overlay);border:1px solid var(--border);border-radius:4px;max-height:120px;overflow-y:auto;z-index:100;font-size:12px;display:none}
+.ac-list .ac-item{padding:3px 8px;cursor:pointer}
+.ac-list .ac-item:hover,.ac-list .ac-item.active{background:var(--accent);color:#11111b}
+#loadingOverlay{position:absolute;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:999}
+#loadingOverlay.show{display:flex}
+#loadingOverlay .spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:9999;cursor:pointer}
+#lightbox.show{display:flex}
+#lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:4px}
+</style>
+</head>
+<body>
+<div id="sidebar">
+  <div class="controls">
+    <select id="folderFilter"><option value="">All Folders</option></select>
+    <input type="text" id="searchInput" placeholder="Search files...">
+  </div>
+  <div id="folderStats"></div>
+  <div id="fileList"></div>
+</div>
+<div id="center">
+  <div id="toolbar">
+    <button id="btnDrawRect" title="Draw rectangle (1)">▭ Rect</button>
+    <button id="btnDrawRRect" title="Draw rotated rectangle (2)">⤡ Rot. Rect</button>
+    <button id="btnDrawPoly" title="Draw polygon (3)">⬡ Polygon</button>
+    <div class="sep"></div>
+    <button id="btnSave" title="Save (Ctrl+S)">💾 Save</button>
+    <div class="sep"></div>
+    <button id="btnPrev" title="Previous (←)">◀</button>
+    <button id="btnNext" title="Next (→)">▶</button>
+    <div class="sep"></div>
+    <button id="btnCopyImg" title="Copy original image to clipboard (C)">📋 Copy Img</button>
+    <span id="statusText">Loading...</span>
+  </div>
+  <div id="zoomBar">
+    <button id="zoomOut" title="Zoom out">−</button>
+    <span id="zoomLevel">Fit</span>
+    <button id="zoomIn" title="Zoom in">+</button>
+    <button id="zoomFit" title="Fit to view">⊡</button>
+  </div>
+  <div id="imgWrap">
+    <div id="imgContainer">
+      <img id="mainImg" src="" alt="">
+      <div id="boxesOverlay"></div>
+      <svg id="polySvg" xmlns="http://www.w3.org/2000/svg"></svg>
+      <div id="drawBox"></div>
+    </div>
+    <div id="loadingOverlay"><div class="spinner"></div></div>
+  <div id="lightbox"><img src="" alt=""></div>
+  </div>
+</div>
+<div id="rightPanel">
+  <div class="rp-section">
+    <div class="rp-title">Image Labels</div>
+    <label><input type="checkbox" value="handwritten"> Handwritten</label>
+    <label><input type="checkbox" value="typed"> Typed</label>
+    <label><input type="checkbox" value="mixed"> Mixed</label>
+    <label><input type="checkbox" value="prescription"> Prescription</label>
+    <label><input type="checkbox" value="label"> Label</label>
+    <label><input type="checkbox" value="report"> Report</label>
+    <label><input type="checkbox" value="other"> Other</label>
+  </div>
+  <div class="rp-section">
+    <div class="rp-title">Image OCR</div>
+    <textarea id="imgOcr" placeholder="Full image OCR text..."></textarea>
+    <button id="btnAutofill">Autofill from words</button>
+  </div>
+  <div class="rp-section" style="padding-bottom:4px">
+    <div class="rp-title">Words (<span id="wordCount">0</span>)</div>
+  </div>
+  <div id="wordsList"></div>
+</div>
+<script>
+const TYPE_COLORS = {medicine:'#e94560',dosage:'#0f0',frequency:'#ff0',duration:'#0af',condition:'#f90',time:'#f0f',other:'#aaa'};
+const LABEL_TYPES = ['handwritten','typed','mixed','prescription','label','report','other'];
+let spottings = [];
+let currentIdx = -1;
+let currentWords = [];
+let imageLabels = [];
+let imageOcr = '';
+let modified = false;
+let cropFiles = [];
+let medNames = [];
+let knownCustomTypes = new Set();
+// Draw modes: null, 'rect', 'rrect', 'poly'
+let drawMode = null;
+let drawing = false;
+let drawStart = null;
+let drawCurrent = null;
+let selectedWordIdx = -1;
+let dragging = false;
+let dragType = null;
+let dragStartMouse = null;
+let dragOrigBox = null;
+let autoSaveTimer = null;
+let loadingCount = 0;
+// Polygon drawing state
+let polyDrawPoints = [];
+let polyDrawMousePos = null;
+// Polygon vertex dragging state
+let polyVertDrag = null; // {wordIdx, vertIdx}
+// Rotation handle dragging
+let rotDrag = false;
+
+// Zoom state
+const ZOOM_LEVELS = [1, 1.5, 2, 3, 4, 5];
+let zoomIdx = 0; // index into ZOOM_LEVELS; 0 = fit
+let fitScale = 1; // the scale factor at "fit" (100%)
+
+function getZoomFactor(){ return ZOOM_LEVELS[zoomIdx]; }
+
+function applyZoom(){
+  const img = $('mainImg');
+  if(!img.naturalWidth) return;
+  const factor = getZoomFactor();
+  if(zoomIdx === 0){
+    // Fit mode: use max-width/max-height constraints
+    img.style.width = '';
+    img.style.height = '';
+    img.style.maxWidth = '100%';
+    img.style.maxHeight = 'calc(100vh - 80px)';
+  } else {
+    img.style.maxWidth = 'none';
+    img.style.maxHeight = 'none';
+    img.style.width = (img.naturalWidth * fitScale * factor) + 'px';
+    img.style.height = '';
+  }
+  updateZoomUI();
+  renderBoxes();
+}
+
+function updateZoomUI(){
+  const factor = getZoomFactor();
+  const pct = Math.round(fitScale * factor * 100);
+  $('zoomLevel').textContent = zoomIdx === 0 ? 'Fit' : pct + '%';
+  $('zoomOut').disabled = zoomIdx <= 0;
+  $('zoomIn').disabled = zoomIdx >= ZOOM_LEVELS.length - 1;
+}
+
+function computeFitScale(){
+  const img = $('mainImg');
+  if(!img.naturalWidth) { fitScale = 1; return; }
+  const wrap = $('imgWrap');
+  const maxW = wrap.clientWidth - 40; // minus margin
+  const maxH = wrap.clientHeight - 40;
+  const sx = maxW / img.naturalWidth;
+  const sy = maxH / img.naturalHeight;
+  fitScale = Math.min(sx, sy, 1);
+}
+
+function zoomIn(){
+  if(zoomIdx < ZOOM_LEVELS.length - 1){ zoomIdx++; applyZoom(); }
+}
+
+function zoomOut(){
+  if(zoomIdx > 0){ zoomIdx--; applyZoom(); }
+}
+
+function zoomFit(){
+  zoomIdx = 0;
+  applyZoom();
+}
+
+function $(id){ return document.getElementById(id) }
+
+function setLoading(v){
+  loadingCount += v ? 1 : -1;
+  if(loadingCount < 0) loadingCount = 0;
+  $('loadingOverlay').classList.toggle('show', loadingCount > 0);
+}
+
+function setModified(v){
+  modified = v;
+  $('statusText').textContent = modified ? 'Modified' : (currentIdx >= 0 && spottings[currentIdx]?.saved ? 'Saved' : '');
+  if(modified){
+    clearTimeout(autoSaveTimer);
+    autoSaveTimer = setTimeout(autoSave, 5000);
+  }
+}
+
+async function fetchJson(url){
+  setLoading(true);
+  try{ const r = await fetch(url); return await r.json(); }
+  finally{ setLoading(false); }
+}
+
+async function postJson(url, data){
+  setLoading(true);
+  try{ const r = await fetch(url, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}); return await r.json(); }
+  finally{ setLoading(false); }
+}
+
+async function loadSpottings(){
+  const data = await fetchJson('/spottings.json');
+  spottings = data.files || [];
+  // Ensure shape fields on load
+  spottings.forEach(s => {
+    if(s.words) s.words.forEach(w => {
+      if(!w.shape) w.shape = 'rect';
+      if(w.angle === undefined) w.angle = 0;
+      if(!w.points) w.points = [];
+    });
+  });
+  populateFolders();
+  renderFileList();
+  $('statusText').textContent = spottings.length + ' files loaded';
+}
+
+async function loadMedNames(){
+  try{ medNames = await fetchJson('/api/med-names'); } catch(e){ medNames = []; }
+}
+
+function populateFolders(){
+  const folders = new Set();
+  spottings.forEach(s => { const f = s.file.split('/')[0]; if(f) folders.add(f); });
+  const sel = $('folderFilter');
+  sel.innerHTML = '<option value="">All Folders</option>';
+  [...folders].sort().forEach(f => {
+    const opt = document.createElement('option');
+    opt.value = f; opt.textContent = f;
+    sel.appendChild(opt);
+  });
+}
+
+function getFilteredSpottings(){
+  const folder = $('folderFilter').value;
+  const search = $('searchInput').value.toLowerCase().trim();
+  return spottings.filter(s => {
+    if(folder && !s.file.startsWith(folder + '/')) return false;
+    if(search && !s.file.toLowerCase().includes(search)) return false;
+    return true;
+  });
+}
+
+function renderFileList(){
+  const list = $('fileList');
+  list.innerHTML = '';
+  const filtered = getFilteredSpottings();
+  const groups = {};
+  filtered.forEach((s, i) => {
+    const folder = s.file.split('/')[0] || 'unknown';
+    if(!groups[folder]) groups[folder] = [];
+    groups[folder].push({s, realIdx: spottings.indexOf(s)});
+  });
+  const total = filtered.length;
+  const saved = filtered.filter(s => s.saved).length;
+  const ann = filtered.filter(s => isAnnotated(s)).length;
+  $('folderStats').textContent = `${total} files | ${saved} saved | ${ann} annotated`;
+  Object.keys(groups).sort().forEach(folder => {
+    const hdr = document.createElement('div');
+    hdr.className = 'folder-hdr';
+    hdr.textContent = folder;
+    hdr.innerHTML += `<span class="fc">(${groups[folder].length})</span>`;
+    list.appendChild(hdr);
+    groups[folder].forEach(({s, realIdx}) => {
+      const el = document.createElement('div');
+      el.className = 'fi';
+      if(realIdx === currentIdx) el.classList.add('active');
+      if(s.saved) el.classList.add('saved');
+      if(isAnnotated(s)) el.classList.add('annotated');
+      const fname = s.file.split('/').slice(1).join('/');
+      el.innerHTML = `<img class="thumb" src="${s.url}" alt="" loading="lazy"><span class="fn" title="${s.file}">${fname}</span><span class="sc">${s.words?.length || 0}</span>`;
+      el.onclick = () => selectFile(realIdx);
+      list.appendChild(el);
+    });
+  });
+}
+
+function isAnnotated(s){
+  if(!s.words || s.words.length === 0) return false;
+  return s.words.every(w => w.text?.trim() && (w.type && w.type !== 'other' || (w.type === 'other' && w.custom_type?.trim())));
+}
+
+function selectFile(idx){
+  if(modified && currentIdx >= 0) saveChanges();
+  currentIdx = idx;
+  const s = spottings[idx];
+  currentWords = JSON.parse(JSON.stringify(s.words || []));
+  // Ensure shape fields
+  currentWords.forEach(w => {
+    if(!w.shape) w.shape = 'rect';
+    if(w.angle === undefined) w.angle = 0;
+    if(!w.points) w.points = [];
+  });
+  imageLabels = s.image_labels ? [...s.image_labels] : [];
+  imageOcr = s.image_ocr || '';
+  cropFiles = s.crop_files ? [...s.crop_files] : [];
+  modified = false;
+  selectedWordIdx = -1;
+  polyDrawPoints = [];
+  polyDrawMousePos = null;
+  clearTimeout(autoSaveTimer);
+  $('mainImg').src = s.url;
+  zoomIdx = 0;
+  renderFileList();
+  renderLabels();
+  renderWords();
+  renderBoxes();
+  $('imgOcr').value = imageOcr;
+  $('statusText').textContent = s.saved ? 'Saved' : '';
+  if(cropFiles.length === 0 && currentWords.length > 0){
+    fetchCrops();
+  }
+}
+
+async function fetchCrops(){
+  if(currentIdx < 0) return;
+  try{
+    const cr = await postJson('/api/crop', {file: spottings[currentIdx].file, words: currentWords});
+    if(cr.ok && cr.crops){
+      cropFiles = cr.crops;
+      renderWords();
+    }
+  } catch(e){}
+}
+
+function renderLabels(){
+  const cbs = $('rightPanel').querySelectorAll('.rp-section:first-child input[type=checkbox]');
+  cbs.forEach(cb => {
+    cb.checked = imageLabels.some(l => l.tag === cb.value);
+  });
+}
+
+function renderWords(){
+  const list = $('wordsList');
+  list.innerHTML = '';
+  $('wordCount').textContent = currentWords.length;
+  spottings.forEach(s => { (s.words||[]).forEach(w => { if(w.type === 'other' && w.custom_type?.trim()) knownCustomTypes.add(w.custom_type.trim()); }); });
+  currentWords.forEach(w => { if(w.type === 'other' && w.custom_type?.trim()) knownCustomTypes.add(w.custom_type.trim()); });
+  currentWords.forEach((w, i) => {
+    const el = document.createElement('div');
+    el.className = 'wi';
+    if(i === selectedWordIdx) el.classList.add('selected');
+    const ann = w.text?.trim() && (w.type && w.type !== 'other' || (w.type === 'other' && w.custom_type?.trim()));
+    if(ann) el.classList.add('annotated');
+    const color = TYPE_COLORS[w.type] || TYPE_COLORS.other;
+    el.style.borderLeftColor = ann ? 'var(--green)' : color;
+    const cropSrc = (cropFiles[i] && cropFiles[i] !== '') ? '/' + cropFiles[i] : '';
+    let opts = Object.keys(TYPE_COLORS).map(t => `<option value="${t}"${w.type===t?' selected':''}>${t}</option>`).join('');
+    if(knownCustomTypes.size > 0){
+      opts += '<option disabled>───</option>';
+      knownCustomTypes.forEach(ct => {
+        const sel = (w.type === 'other' && w.custom_type === ct) ? ' selected' : '';
+        opts += `<option value="__ct__${ct}"${sel}>${ct}</option>`;
+      });
+    }
+    // Shape badge
+    let shapeBadge = '';
+    if(w.shape === 'rrect') shapeBadge = `<span class="shape-badge" style="background:${color}">R</span>`;
+    else if(w.shape === 'poly') shapeBadge = `<span class="shape-badge" style="background:${color}">P</span>`;
+
+    el.innerHTML = `
+      <div class="crop-wrap">
+        ${cropSrc ? `<img class="crop" src="${cropSrc}" alt="">` : '<div class="crop"></div>'}
+        ${shapeBadge}
+      </div>
+      <div class="fields">
+        <input type="text" class="word-text" value="${escHtml(w.text||'')}" data-i="${i}" placeholder="text" autocomplete="off">
+        <select class="word-type" data-i="${i}">${opts}</select>
+        <input type="text" class="custom-type${w.type==='other'?' visible':''}" value="${escHtml(w.custom_type||'')}" data-i="${i}" placeholder="custom type name">
+      </div>
+      <button class="del" data-i="${i}" title="Delete">×</button>`;
+    list.appendChild(el);
+  });
+  attachWordEvents();
+}
+
+function escHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function attachWordEvents(){
+  $('wordsList').querySelectorAll('.word-text').forEach(inp => {
+    inp.addEventListener('input', e => {
+      currentWords[+e.target.dataset.i].text = e.target.value;
+      setModified(true);
+    });
+    inp.addEventListener('focus', e => { selectedWordIdx = +e.target.dataset.i; renderBoxes(); });
+    setupAutocomplete(inp, +inp.dataset.i);
+  });
+  $('wordsList').querySelectorAll('.word-type').forEach(sel => {
+    sel.addEventListener('change', e => {
+      const i = +e.target.dataset.i;
+      const v = e.target.value;
+      if(v.startsWith('__ct__')){
+        currentWords[i].type = 'other';
+        currentWords[i].custom_type = v.slice(6);
+      } else {
+        currentWords[i].type = v;
+        if(v !== 'other') currentWords[i].custom_type = '';
+      }
+      setModified(true);
+      renderWords();
+      renderBoxes();
+    });
+  });
+  $('wordsList').querySelectorAll('.custom-type').forEach(inp => {
+    inp.addEventListener('input', e => {
+      currentWords[+e.target.dataset.i].custom_type = e.target.value;
+      setModified(true);
+    });
+    inp.addEventListener('blur', () => { renderWords(); });
+  });
+  $('wordsList').querySelectorAll('.del').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const i = +e.target.dataset.i;
+      currentWords.splice(i, 1);
+      if(selectedWordIdx >= currentWords.length) selectedWordIdx = currentWords.length - 1;
+      setModified(true);
+      renderWords();
+      renderBoxes();
+    });
+  });
+  $('wordsList').querySelectorAll('.wi').forEach(el => {
+    el.addEventListener('click', e => {
+      if(e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'BUTTON') return;
+      const i = [...$('wordsList').children].indexOf(el);
+      selectedWordIdx = i;
+      renderBoxes();
+      renderWords();
+    });
+  });
+}
+
+function setupAutocomplete(inp, idx){
+  const wrap = document.createElement('div');
+  wrap.style.position = 'relative';
+  wrap.style.display = 'inline';
+  inp.parentNode.insertBefore(wrap, inp);
+  wrap.appendChild(inp);
+  const list = document.createElement('div');
+  list.className = 'ac-list';
+  wrap.appendChild(list);
+  inp.addEventListener('input', () => {
+    const v = inp.value.toLowerCase();
+    if(v.length < 2){ list.style.display = 'none'; return; }
+    const matches = medNames.filter(n => n.toLowerCase().includes(v)).slice(0, 10);
+    if(!matches.length){ list.style.display = 'none'; return; }
+    list.innerHTML = matches.map(m => `<div class="ac-item">${escHtml(m)}</div>`).join('');
+    list.style.display = 'block';
+    list.style.width = inp.offsetWidth + 'px';
+    list.querySelectorAll('.ac-item').forEach((item, mi) => {
+      item.addEventListener('mousedown', e => {
+        e.preventDefault();
+        inp.value = matches[mi];
+        currentWords[idx].text = matches[mi];
+        setModified(true);
+        list.style.display = 'none';
+      });
+    });
+  });
+  inp.addEventListener('blur', () => { setTimeout(() => list.style.display = 'none', 150); });
+  inp.addEventListener('keydown', e => {
+    if(list.style.display === 'none') return;
+    const items = list.querySelectorAll('.ac-item');
+    let active = list.querySelector('.ac-item.active');
+    let ai = active ? [...items].indexOf(active) : -1;
+    if(e.key === 'ArrowDown'){ e.preventDefault(); ai = Math.min(ai + 1, items.length - 1); }
+    else if(e.key === 'ArrowUp'){ e.preventDefault(); ai = Math.max(ai - 1, 0); }
+    else if(e.key === 'Enter' && active){ e.preventDefault(); active.dispatchEvent(new Event('mousedown')); return; }
+    else if(e.key === 'Escape'){ list.style.display = 'none'; return; }
+    else return;
+    items.forEach(it => it.classList.remove('active'));
+    if(items[ai]) items[ai].classList.add('active');
+  });
+}
+
+function renderBoxes(){
+  const overlay = $('boxesOverlay');
+  overlay.innerHTML = '';
+  const svg = $('polySvg');
+  svg.innerHTML = '';
+  const img = $('mainImg');
+  if(!img.naturalWidth || !img.complete) return;
+  const sx = img.clientWidth / img.naturalWidth;
+  const sy = img.clientHeight / img.naturalHeight;
+
+  // Render each word
+  currentWords.forEach((w, i) => {
+    const color = TYPE_COLORS[w.type] || TYPE_COLORS.other;
+
+    if(w.shape === 'poly' && w.points && w.points.length >= 3){
+      // SVG polygon
+      const pts = w.points.map(p => `${p[0]*sx},${p[1]*sy}`).join(' ');
+      const poly = document.createElementNS('http://www.w3.org/2000/svg','polygon');
+      poly.setAttribute('points', pts);
+      poly.setAttribute('fill', color + '33');
+      poly.setAttribute('stroke', color);
+      poly.setAttribute('stroke-width', '2');
+      if(i === selectedWordIdx) poly.setAttribute('stroke-width', '3');
+      poly.style.cursor = 'pointer';
+      poly.dataset.i = i;
+      poly.addEventListener('mousedown', e => onPolyMouseDown(e, i));
+      svg.appendChild(poly);
+
+      // Label for polygon: position at topmost point
+      if(i === selectedWordIdx || w.text){
+        // Compute bounding box for label placement
+        const minY = Math.min(...w.points.map(p => p[1]));
+        const topPt = w.points.find(p => p[1] === minY);
+        const lbl = document.createElementNS('http://www.w3.org/2000/svg','text');
+        lbl.setAttribute('x', topPt[0] * sx);
+        lbl.setAttribute('y', topPt[1] * sy - 6);
+        lbl.setAttribute('fill', '#fff');
+        lbl.setAttribute('font-size', '10');
+        lbl.setAttribute('font-family', 'inherit');
+        lbl.setAttribute('text-anchor', 'middle');
+        const bg = document.createElementNS('http://www.w3.org/2000/svg','rect');
+        // Measure text after appending
+        lbl.textContent = w.text || '(empty)';
+        svg.appendChild(lbl);
+      }
+
+      // Vertex handles for selected polygon
+      if(i === selectedWordIdx){
+        w.points.forEach((p, vi) => {
+          const c = document.createElementNS('http://www.w3.org/2000/svg','circle');
+          c.setAttribute('cx', p[0] * sx);
+          c.setAttribute('cy', p[1] * sy);
+          c.setAttribute('r', '5');
+          c.setAttribute('fill', 'var(--accent)');
+          c.setAttribute('stroke', '#fff');
+          c.setAttribute('stroke-width', '1');
+          c.style.cursor = 'grab';
+          c.dataset.vertIdx = vi;
+          c.dataset.wordIdx = i;
+          c.addEventListener('mousedown', e => onPolyVertMouseDown(e, i, vi));
+          svg.appendChild(c);
+        });
+      }
+    } else {
+      // rect or rrect: div-based box
+      const box = document.createElement('div');
+      box.className = 'box' + (i === selectedWordIdx ? ' selected' : '');
+      box.style.left = (w.x * sx) + 'px';
+      box.style.top = (w.y * sy) + 'px';
+      box.style.width = (w.w * sx) + 'px';
+      box.style.height = (w.h * sy) + 'px';
+      box.style.borderColor = color;
+      if(w.shape === 'rrect' && w.angle){
+        box.style.transform = `rotate(${w.angle}deg)`;
+        box.style.transformOrigin = 'center center';
+      }
+      box.dataset.i = i;
+      const lbl = document.createElement('div');
+      lbl.className = 'lbl';
+      if(w.y * sy < 18) lbl.classList.add('below');
+      lbl.textContent = w.text || '(empty)';
+      lbl.style.background = color + 'cc';
+      box.appendChild(lbl);
+      if(i === selectedWordIdx){
+        ['tl','tr','bl','br','tm','bm','ml','mr'].forEach(h => {
+          const rh = document.createElement('div');
+          rh.className = 'rh ' + h;
+          rh.dataset.handle = h;
+          box.appendChild(rh);
+        });
+        // Rotation handle for rrect
+        if(w.shape === 'rrect'){
+          const rotLine = document.createElement('div');
+          rotLine.className = 'rot-line';
+          box.appendChild(rotLine);
+          const rotHandle = document.createElement('div');
+          rotHandle.className = 'rot-handle';
+          rotHandle.dataset.handle = 'rotate';
+          box.appendChild(rotHandle);
+        }
+      }
+      box.addEventListener('mousedown', e => onBoxMouseDown(e, i));
+      overlay.appendChild(box);
+    }
+  });
+
+  // Render in-progress polygon drawing
+  if(drawMode === 'poly' && polyDrawPoints.length > 0){
+    let pts = polyDrawPoints.map(p => `${p[0]*sx},${p[1]*sy}`).join(' ');
+    let drawPts = pts;
+    if(polyDrawMousePos){
+      drawPts += ` ${polyDrawMousePos[0]*sx},${polyDrawMousePos[1]*sy}`;
+    }
+    if(polyDrawPoints.length >= 2){
+      const poly = document.createElementNS('http://www.w3.org/2000/svg','polyline');
+      poly.setAttribute('points', drawPts);
+      poly.setAttribute('fill', 'none');
+      poly.setAttribute('stroke', 'var(--accent)');
+      poly.setAttribute('stroke-width', '2');
+      poly.setAttribute('stroke-dasharray', '5,3');
+      poly.style.pointerEvents = 'none';
+      svg.appendChild(poly);
+    }
+    // Draw vertices
+    polyDrawPoints.forEach(p => {
+      const c = document.createElementNS('http://www.w3.org/2000/svg','circle');
+      c.setAttribute('cx', p[0]*sx);
+      c.setAttribute('cy', p[1]*sy);
+      c.setAttribute('r', '4');
+      c.setAttribute('fill', 'var(--accent)');
+      c.setAttribute('stroke', '#fff');
+      c.setAttribute('stroke-width', '1');
+      c.style.pointerEvents = 'none';
+      svg.appendChild(c);
+    });
+    // Highlight first vertex if mouse is near
+    if(polyDrawMousePos && polyDrawPoints.length >= 3){
+      const dx = polyDrawMousePos[0] - polyDrawPoints[0][0];
+      const dy = polyDrawMousePos[1] - polyDrawPoints[0][1];
+      if(Math.sqrt(dx*dx+dy*dy) < 10 / Math.min(sx, sy)){
+        const c = document.createElementNS('http://www.w3.org/2000/svg','circle');
+        c.setAttribute('cx', polyDrawPoints[0][0]*sx);
+        c.setAttribute('cy', polyDrawPoints[0][1]*sy);
+        c.setAttribute('r', '8');
+        c.setAttribute('fill', 'var(--accent2)');
+        c.setAttribute('stroke', '#fff');
+        c.setAttribute('stroke-width', '2');
+        c.style.pointerEvents = 'none';
+        svg.appendChild(c);
+      }
+    }
+  }
+}
+
+function onBoxMouseDown(e, idx){
+  e.stopPropagation();
+  const handle = e.target.dataset?.handle;
+  selectedWordIdx = idx;
+  renderWords();
+  renderBoxes();
+  if(handle === 'rotate'){
+    dragging = true;
+    dragType = 'rotate';
+    dragStartMouse = getImgCoords(e);
+    dragOrigBox = {...currentWords[idx]};
+    rotDrag = true;
+  } else if(handle){
+    dragging = true;
+    dragType = 'resize-' + handle;
+    dragStartMouse = getImgCoords(e);
+    dragOrigBox = {...currentWords[idx]};
+  } else {
+    dragging = true;
+    dragType = 'move';
+    dragStartMouse = getImgCoords(e);
+    dragOrigBox = {...currentWords[idx]};
+  }
+}
+
+function onPolyMouseDown(e, idx){
+  e.stopPropagation();
+  selectedWordIdx = idx;
+  renderWords();
+  renderBoxes();
+}
+
+function onPolyVertMouseDown(e, wordIdx, vertIdx){
+  e.stopPropagation();
+  e.preventDefault();
+  selectedWordIdx = wordIdx;
+  polyVertDrag = {wordIdx, vertIdx};
+  dragStartMouse = getImgCoords(e);
+  renderWords();
+  renderBoxes();
+}
+
+function getImgCoords(e){
+  const img = $('mainImg');
+  const rect = img.getBoundingClientRect();
+  const sx = img.naturalWidth / rect.width;
+  const sy = img.naturalHeight / rect.height;
+  return { x: (e.clientX - rect.left) * sx, y: (e.clientY - rect.top) * sy };
+}
+
+$('mainImg').addEventListener('load', () => { computeFitScale(); applyZoom(); });
+window.addEventListener('resize', () => { computeFitScale(); renderBoxes(); });
+
+$('zoomIn').addEventListener('click', zoomIn);
+$('zoomOut').addEventListener('click', zoomOut);
+$('zoomFit').addEventListener('click', zoomFit);
+
+// Ctrl+scroll zoom
+$('imgWrap').addEventListener('wheel', e => {
+  if(!e.ctrlKey) return;
+  e.preventDefault();
+  if(e.deltaY < 0) zoomIn(); else zoomOut();
+}, {passive: false});
+
+// Click on image area for drawing
+$('imgWrap').addEventListener('mousedown', e => {
+  if(e.target !== $('mainImg') && e.target !== $('boxesOverlay') && e.target !== $('imgContainer') && e.target !== $('polySvg')) return;
+  // Only handle for rect/rrect draw modes
+  if(drawMode === 'rect' || drawMode === 'rrect'){
+    e.preventDefault();
+    drawing = true;
+    drawStart = getImgCoords(e);
+    drawCurrent = {...drawStart};
+    $('drawBox').style.display = 'block';
+    updateDrawBox();
+  } else if(!drawMode){
+    selectedWordIdx = -1;
+    polyDrawPoints = [];
+    polyDrawMousePos = null;
+    renderWords();
+    renderBoxes();
+  }
+});
+
+// Click for polygon drawing
+$('imgWrap').addEventListener('click', e => {
+  if(drawMode !== 'poly') return;
+  if(e.target !== $('mainImg') && e.target !== $('boxesOverlay') && e.target !== $('imgContainer') && e.target !== $('polySvg')) return;
+  e.preventDefault();
+  const pos = getImgCoords(e);
+
+  // Check if closing polygon (click near first vertex)
+  if(polyDrawPoints.length >= 3){
+    const dx = pos.x - polyDrawPoints[0][0];
+    const dy = pos.y - polyDrawPoints[0][1];
+    const img = $('mainImg');
+    const sx = img.clientWidth / img.naturalWidth;
+    const sy = img.clientHeight / img.naturalHeight;
+    if(Math.sqrt(dx*dx + dy*dy) < 10 / Math.min(sx, sy)){
+      finishPolyDraw();
+      return;
+    }
+  }
+
+  polyDrawPoints.push([Math.round(pos.x), Math.round(pos.y)]);
+  renderBoxes();
+});
+
+// Double-click to close polygon
+$('imgWrap').addEventListener('dblclick', e => {
+  if(drawMode !== 'poly') return;
+  if(polyDrawPoints.length >= 3){
+    finishPolyDraw();
+  }
+});
+
+function finishPolyDraw(){
+  if(polyDrawPoints.length < 3){
+    polyDrawPoints = [];
+    polyDrawMousePos = null;
+    renderBoxes();
+    return;
+  }
+  const pts = polyDrawPoints;
+  // Compute bounding box
+  const xs = pts.map(p => p[0]);
+  const ys = pts.map(p => p[1]);
+  const minX = Math.min(...xs), maxX = Math.max(...xs);
+  const minY = Math.min(...ys), maxY = Math.max(...ys);
+  currentWords.push({
+    text:'', type:'', custom_type:'',
+    x: Math.round(minX), y: Math.round(minY),
+    w: Math.round(maxX - minX), h: Math.round(maxY - minY),
+    shape:'poly', angle:0,
+    points: pts.map(p => [Math.round(p[0]), Math.round(p[1])])
+  });
+  selectedWordIdx = currentWords.length - 1;
+  polyDrawPoints = [];
+  polyDrawMousePos = null;
+  setModified(true);
+  renderWords();
+  renderBoxes();
+}
+
+// Track mouse for polygon drawing preview
+$('imgWrap').addEventListener('mousemove', e => {
+  if(drawMode === 'poly' && polyDrawPoints.length > 0){
+    polyDrawMousePos = [getImgCoords(e).x, getImgCoords(e).y];
+    renderBoxes();
+  }
+});
+
+document.addEventListener('mousemove', e => {
+  // Rect/rrect drawing
+  if(drawing && (drawMode === 'rect' || drawMode === 'rrect')){
+    drawCurrent = getImgCoords(e);
+    updateDrawBox();
+    return;
+  }
+
+  // Polygon vertex dragging
+  if(polyVertDrag){
+    const pos = getImgCoords(e);
+    const w = currentWords[polyVertDrag.wordIdx];
+    if(w && w.points && w.points[polyVertDrag.vertIdx]){
+      w.points[polyVertDrag.vertIdx] = [Math.round(pos.x), Math.round(pos.y)];
+      // Update bounding box
+      const xs = w.points.map(p => p[0]);
+      const ys = w.points.map(p => p[1]);
+      w.x = Math.round(Math.min(...xs));
+      w.y = Math.round(Math.min(...ys));
+      w.w = Math.round(Math.max(...xs) - w.x);
+      w.h = Math.round(Math.max(...ys) - w.y);
+      setModified(true);
+      renderBoxes();
+    }
+    return;
+  }
+
+  if(!dragging || selectedWordIdx < 0) return;
+  const pos = getImgCoords(e);
+  const w = currentWords[selectedWordIdx];
+  if(!w) return;
+
+  if(dragType === 'rotate'){
+    // Rotation handle: compute angle from box center to mouse
+    const cx = w.x + w.w / 2;
+    const cy = w.y + w.h / 2;
+    const angle = Math.atan2(pos.x - cx, -(pos.y - cy)) * 180 / Math.PI;
+    w.angle = Math.round(angle);
+    setModified(true);
+    renderBoxes();
+    return;
+  }
+
+  const dx = pos.x - dragStartMouse.x;
+  const dy = pos.y - dragStartMouse.y;
+
+  if(dragType === 'move'){
+    if(w.shape === 'poly' && w.points && w.points.length > 0){
+      // Move all polygon points
+      const odx = Math.round(dx);
+      const ody = Math.round(dy);
+      w.points = dragOrigBox.points.map(p => [p[0] + odx, p[1] + ody]);
+      const xs = w.points.map(p => p[0]);
+      const ys = w.points.map(p => p[1]);
+      w.x = Math.round(Math.min(...xs));
+      w.y = Math.round(Math.min(...ys));
+      w.w = Math.round(Math.max(...xs) - w.x);
+      w.h = Math.round(Math.max(...ys) - w.y);
+    } else {
+      w.x = Math.round(dragOrigBox.x + dx);
+      w.y = Math.round(dragOrigBox.y + dy);
+    }
+  } else if(dragType.startsWith('resize-')){
+    const h = dragType.slice(7);
+    if(w.shape === 'rrect' && w.angle){
+      // For rotated rect: transform delta into local coordinate space
+      const angleRad = -w.angle * Math.PI / 180;
+      const cos_a = Math.cos(angleRad);
+      const sin_a = Math.sin(angleRad);
+      const rdx = dx * cos_a - dy * sin_a;
+      const rdy = dx * sin_a + dy * cos_a;
+      let nx = dragOrigBox.x, ny = dragOrigBox.y, nw = dragOrigBox.w, nh = dragOrigBox.h;
+      if(h.includes('l')){ nx = dragOrigBox.x + rdx; nw = dragOrigBox.w - rdx; }
+      if(h.includes('r')){ nw = dragOrigBox.w + rdx; }
+      if(h.includes('t')){ ny = dragOrigBox.y + rdy; nh = dragOrigBox.h - rdy; }
+      if(h.includes('b')){ nh = dragOrigBox.h + rdy; }
+      if(nw < 5){ nw = 5; if(h.includes('l')) nx = dragOrigBox.x + dragOrigBox.w - 5; }
+      if(nh < 5){ nh = 5; if(h.includes('t')) ny = dragOrigBox.y + dragOrigBox.h - 5; }
+      w.x = Math.round(nx); w.y = Math.round(ny);
+      w.w = Math.round(nw); w.h = Math.round(nh);
+    } else {
+      let nx = dragOrigBox.x, ny = dragOrigBox.y, nw = dragOrigBox.w, nh = dragOrigBox.h;
+      if(h.includes('l')){ nx = dragOrigBox.x + dx; nw = dragOrigBox.w - dx; }
+      if(h.includes('r')){ nw = dragOrigBox.w + dx; }
+      if(h.includes('t')){ ny = dragOrigBox.y + dy; nh = dragOrigBox.h - dy; }
+      if(h.includes('b')){ nh = dragOrigBox.h + dy; }
+      if(nw < 5){ nw = 5; if(h.includes('l')) nx = dragOrigBox.x + dragOrigBox.w - 5; }
+      if(nh < 5){ nh = 5; if(h.includes('t')) ny = dragOrigBox.y + dragOrigBox.h - 5; }
+      w.x = Math.round(nx); w.y = Math.round(ny);
+      w.w = Math.round(nw); w.h = Math.round(nh);
+    }
+  }
+  renderBoxes();
+  setModified(true);
+});
+
+document.addEventListener('mouseup', e => {
+  // Polygon vertex drag end
+  if(polyVertDrag){
+    polyVertDrag = null;
+    return;
+  }
+
+  // Rect/rrect drawing end
+  if(drawing && (drawMode === 'rect' || drawMode === 'rrect')){
+    drawing = false;
+    $('drawBox').style.display = 'none';
+    if(drawStart && drawCurrent){
+      const x = Math.min(drawStart.x, drawCurrent.x);
+      const y = Math.min(drawStart.y, drawCurrent.y);
+      const w = Math.abs(drawCurrent.x - drawStart.x);
+      const h = Math.abs(drawCurrent.y - drawStart.y);
+      if(w >= 5 && h >= 5){
+        const shape = drawMode; // 'rect' or 'rrect'
+        currentWords.push({
+          text:'', type:'', custom_type:'',
+          x:Math.round(x), y:Math.round(y), w:Math.round(w), h:Math.round(h),
+          shape:shape, angle:0, points:[]
+        });
+        selectedWordIdx = currentWords.length - 1;
+        setModified(true);
+        renderWords();
+        renderBoxes();
+      }
+    }
+    drawStart = null;
+    drawCurrent = null;
+    return;
+  }
+
+  if(dragging){
+    dragging = false;
+    dragType = null;
+    rotDrag = false;
+    renderBoxes();
+  }
+});
+
+function updateDrawBox(){
+  if(!drawStart || !drawCurrent) return;
+  const img = $('mainImg');
+  const sx = img.clientWidth / img.naturalWidth;
+  const sy = img.clientHeight / img.naturalHeight;
+  const x = Math.min(drawStart.x, drawCurrent.x) * sx;
+  const y = Math.min(drawStart.y, drawCurrent.y) * sy;
+  const w = Math.abs(drawCurrent.x - drawStart.x) * sx;
+  const h = Math.abs(drawCurrent.y - drawStart.y) * sy;
+  const db = $('drawBox');
+  db.style.left = x + 'px'; db.style.top = y + 'px';
+  db.style.width = w + 'px'; db.style.height = h + 'px';
+}
+
+// Draw mode buttons
+function setDrawMode(mode){
+  // Cancel in-progress polygon if switching away
+  if(drawMode === 'poly' && mode !== 'poly'){
+    polyDrawPoints = [];
+    polyDrawMousePos = null;
+  }
+  if(drawMode === mode){
+    drawMode = null;
+  } else {
+    drawMode = mode;
+  }
+  $('btnDrawRect').classList.toggle('active', drawMode === 'rect');
+  $('btnDrawRRect').classList.toggle('active', drawMode === 'rrect');
+  $('btnDrawPoly').classList.toggle('active', drawMode === 'poly');
+  $('mainImg').style.cursor = drawMode ? 'crosshair' : (zoomIdx > 0 ? 'grab' : 'default');
+  renderBoxes();
+}
+
+$('btnDrawRect').addEventListener('click', () => setDrawMode('rect'));
+$('btnDrawRRect').addEventListener('click', () => setDrawMode('rrect'));
+$('btnDrawPoly').addEventListener('click', () => setDrawMode('poly'));
+
+async function saveChanges(){
+  if(currentIdx < 0) return;
+  $('statusText').textContent = 'Cropping...';
+  let crops = [];
+  try{
+    const cr = await postJson('/api/crop', {file: spottings[currentIdx].file, words: currentWords});
+    if(cr.ok) crops = cr.crops || [];
+  } catch(e){}
+  cropFiles = crops;
+  $('statusText').textContent = 'Saving...';
+  try{
+    const labels = [];
+    $('rightPanel').querySelectorAll('.rp-section:first-child input[type=checkbox]').forEach(cb => {
+      if(cb.checked) labels.push({tag: cb.value});
+    });
+    imageOcr = $('imgOcr').value;
+    // Prepare words with shape/angle/points for saving
+    const saveWords = currentWords.map(w => ({
+      ...w,
+      points: (w.shape === 'poly' && w.points && w.points.length > 0) ? JSON.stringify(w.points) : ''
+    }));
+    await postJson('/api/save', {
+      file: spottings[currentIdx].file,
+      image_labels: labels,
+      words: saveWords,
+      image_ocr: imageOcr,
+      crop_files: cropFiles
+    });
+    spottings[currentIdx].saved = true;
+    spottings[currentIdx].words = JSON.parse(JSON.stringify(currentWords));
+    spottings[currentIdx].image_labels = labels;
+    spottings[currentIdx].image_ocr = imageOcr;
+    spottings[currentIdx].crop_files = [...cropFiles];
+    modified = false;
+    clearTimeout(autoSaveTimer);
+    $('statusText').textContent = 'Saved';
+    renderFileList();
+  } catch(e){
+    $('statusText').textContent = 'Save failed: ' + e.message;
+  }
+}
+
+async function autoSave(){
+  if(modified && currentIdx >= 0) await saveChanges();
+}
+
+$('btnSave').addEventListener('click', saveChanges);
+
+$('btnCopyImg').addEventListener('click', copyOriginalImage);
+
+async function copyOriginalImage(){
+  if(currentIdx < 0) return;
+  try{
+    const img = $('mainImg');
+    if(!img.naturalWidth) throw new Error('Image not loaded');
+    const canvas = document.createElement('canvas');
+    canvas.width = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+    const blob = await new Promise(res => canvas.toBlob(res, 'image/png'));
+    await navigator.clipboard.write([new ClipboardItem({'image/png': blob})]);
+    $('statusText').textContent = 'Image copied!';
+    setTimeout(() => { if($('statusText').textContent === 'Image copied!') $('statusText').textContent = ''; }, 2000);
+  } catch(e){
+    $('statusText').textContent = 'Copy failed: ' + e.message;
+  }
+}
+
+$('btnPrev').addEventListener('click', () => navigate(-1));
+$('btnNext').addEventListener('click', () => navigate(1));
+
+function navigate(dir){
+  const filtered = getFilteredSpottings();
+  const cur = filtered.indexOf(spottings[currentIdx]);
+  const next = cur + dir;
+  if(next < 0 || next >= filtered.length) return;
+  const realIdx = spottings.indexOf(filtered[next]);
+  selectFile(realIdx);
+}
+
+$('folderFilter').addEventListener('change', renderFileList);
+$('searchInput').addEventListener('input', renderFileList);
+
+$('rightPanel').querySelectorAll('.rp-section:first-child input[type=checkbox]').forEach(cb => {
+  cb.addEventListener('change', () => {
+    imageLabels = [];
+    $('rightPanel').querySelectorAll('.rp-section:first-child input[type=checkbox]').forEach(c => {
+      if(c.checked) imageLabels.push({tag: c.value});
+    });
+    setModified(true);
+  });
+});
+
+$('imgOcr').addEventListener('input', () => {
+  imageOcr = $('imgOcr').value;
+  setModified(true);
+});
+
+$('btnAutofill').addEventListener('click', () => {
+  $('imgOcr').value = currentWords.map(w => w.text || '').filter(t => t.trim()).join(' ');
+  imageOcr = $('imgOcr').value;
+  setModified(true);
+});
+
+// Shift+click on polygon edge to add vertex
+$('polySvg').addEventListener('click', e => {
+  if(!e.shiftKey || selectedWordIdx < 0) return;
+  const w = currentWords[selectedWordIdx];
+  if(!w || w.shape !== 'poly' || !w.points || w.points.length < 2) return;
+  e.preventDefault();
+  e.stopPropagation();
+  const pos = getImgCoords(e);
+  const img = $('mainImg');
+  const sx = img.clientWidth / img.naturalWidth;
+  const sy = img.clientHeight / img.naturalHeight;
+  // Find closest edge
+  let bestDist = Infinity, bestIdx = -1;
+  for(let i = 0; i < w.points.length; i++){
+    const j = (i + 1) % w.points.length;
+    const ax = w.points[i][0], ay = w.points[i][1];
+    const bx = w.points[j][0], by = w.points[j][1];
+    const dx = bx - ax, dy = by - ay;
+    const len2 = dx*dx + dy*dy;
+    if(len2 === 0) continue;
+    let t = ((pos.x - ax)*dx + (pos.y - ay)*dy) / len2;
+    t = Math.max(0, Math.min(1, t));
+    const px = ax + t*dx, py = ay + t*dy;
+    const dist = Math.sqrt((pos.x-px)*(pos.x-px) + (pos.y-py)*(pos.y-py));
+    if(dist < bestDist){
+      bestDist = dist;
+      bestIdx = i + 1; // insert after point i
+    }
+  }
+  // Only add if close enough (within ~15px in image coords)
+  if(bestDist < 15 && bestIdx >= 0){
+    w.points.splice(bestIdx, 0, [Math.round(pos.x), Math.round(pos.y)]);
+    // Update bounding box
+    const xs = w.points.map(p => p[0]);
+    const ys = w.points.map(p => p[1]);
+    w.x = Math.round(Math.min(...xs));
+    w.y = Math.round(Math.min(...ys));
+    w.w = Math.round(Math.max(...xs) - w.x);
+    w.h = Math.round(Math.max(...ys) - w.y);
+    setModified(true);
+    renderBoxes();
+  }
+});
+
+document.addEventListener('keydown', e => {
+  if(e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
+  if(e.key === 'ArrowLeft') navigate(-1);
+  else if(e.key === 'ArrowRight') navigate(1);
+  else if(e.key === 'Delete' && selectedWordIdx >= 0){
+    currentWords.splice(selectedWordIdx, 1);
+    selectedWordIdx = Math.min(selectedWordIdx, currentWords.length - 1);
+    setModified(true);
+    renderWords();
+    renderBoxes();
+  }
+  else if(e.key === 'c' || e.key === 'C'){
+    copyOriginalImage();
+  }
+  else if(e.key === 'Escape'){
+    if(drawMode){
+      if(drawMode === 'poly' && polyDrawPoints.length > 0){
+        polyDrawPoints = [];
+        polyDrawMousePos = null;
+        renderBoxes();
+      } else {
+        setDrawMode(null);
+      }
+    } else {
+      selectedWordIdx = -1;
+      renderWords();
+      renderBoxes();
+    }
+  }
+  else if(e.key === 'd' || e.key === 'D'){
+    // Cycle: null -> rect -> rrect -> poly -> null
+    const modes = [null, 'rect', 'rrect', 'poly'];
+    const cur = modes.indexOf(drawMode);
+    setDrawMode(modes[(cur + 1) % modes.length]);
+  }
+  else if(e.key === '1'){
+    setDrawMode(drawMode === 'rect' ? null : 'rect');
+  }
+  else if(e.key === '2'){
+    setDrawMode(drawMode === 'rrect' ? null : 'rrect');
+  }
+  else if(e.key === '3'){
+    setDrawMode(drawMode === 'poly' ? null : 'poly');
+  }
+  else if(e.ctrlKey && e.key === 's'){
+    e.preventDefault();
+    saveChanges();
+  }
+});
+
+// Lightbox for crop thumbnails
+$('lightbox').addEventListener('click', () => $('lightbox').classList.remove('show'));
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape') $('lightbox').classList.remove('show');
+});
+
+function openLightbox(src){
+  const lb = $('lightbox');
+  lb.querySelector('img').src = src;
+  lb.classList.add('show');
+}
+
+// Delegate click on .crop images
+$('wordsList').addEventListener('click', e => {
+  if(e.target.classList.contains('crop') && e.target.tagName === 'IMG'){
+    e.stopPropagation();
+    openLightbox(e.target.src);
+  }
+});
+
+loadSpottings();
+loadMedNames();
+</script>
+</body>
+</html>

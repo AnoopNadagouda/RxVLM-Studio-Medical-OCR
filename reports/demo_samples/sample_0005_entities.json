@@ -1,0 +1,12 @@
+{
+  "doctor": "Dr. Prescriber (MD)",
+  "patient": "Patient #600 (Prescription Sample)",
+  "medications": [
+    {
+      "name": "Encesale 200 tablet should be taken half in the morning and half at night and continue. Nexcital 5 tablet should be taken once in the morning for two months. Rivetails 5 tablet should be taken half in the morning and once at night for two months. Bentix 5 tablet should be taken half in the morning and half at night for two months",
+      "strength": "500 mg",
+      "schedule": "1-0-1",
+      "raw_line": "Encesale 200 tablet should be taken half in the morning and half at night and continue. Nexcital 5 tablet should be taken once in the morning for two months. Rivetails 5 tablet should be taken half in the morning and once at night for two months. Bentix 5 tablet should be taken half in the morning and half at night for two months."
+    }
+  ]
+}

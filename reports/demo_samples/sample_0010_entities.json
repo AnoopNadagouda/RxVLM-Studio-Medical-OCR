@@ -1,0 +1,12 @@
+{
+  "doctor": "Dr. Prescriber (MD)",
+  "patient": "Patient #600 (Prescription Sample)",
+  "medications": [
+    {
+      "name": "Fixeef Plus Ison tablet should be taken once in the morning and once at night for seven days. Deslan tablet should be taken once at night for two months. Daxoven Lovey tablet should be taken once in the morning and once at night and continue. Reversar Com tablet should be taken once at night and continue. Flumetol Easycap 50 /250 capsule should be taken once in the morning and once at night. Cep Bxor Lery tablet should be taken once in the morning for two months. Vaxigrip Tetra injection 0. one dose should be taken yearly",
+      "strength": "5 ml",
+      "schedule": "1-0-1",
+      "raw_line": "Fixeef Plus Ison tablet should be taken once in the morning and once at night for seven days. Deslan tablet should be taken once at night for two months. Daxoven Lovey tablet should be taken once in the morning and once at night and continue. Reversar Com tablet should be taken once at night and continue. Flumetol Easycap 50 /250 capsule should be taken once in the morning and once at night. Cep Bxor Lery tablet should be taken once in the morning for two months. Vaxigrip Tetra injection 0.5 ml one dose should be taken yearly."
+    }
+  ]
+}

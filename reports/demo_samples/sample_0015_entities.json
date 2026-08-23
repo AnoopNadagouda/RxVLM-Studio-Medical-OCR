@@ -1,0 +1,12 @@
+{
+  "doctor": "Dr. Prescriber (MD)",
+  "patient": "Patient #600 (Prescription Sample)",
+  "medications": [
+    {
+      "name": "Excosate  tablet should be taken once in the morning and once at night.Nexcital  tablet should be taken once in the morning for two months. Rivotail tablet should be taken once in the morning and once at night for two months. Bentix  tablet should be taken once in the morning and once at night for two months",
+      "strength": "200mg",
+      "schedule": "1-0-1",
+      "raw_line": "Excosate 200mg tablet should be taken once in the morning and once at night.Nexcital 5mg tablet should be taken once in the morning for two months. Rivotail tablet should be taken once in the morning and once at night for two months. Bentix 5mg tablet should be taken once in the morning and once at night for two months."
+    }
+  ]
+}

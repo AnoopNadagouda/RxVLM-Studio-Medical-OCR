@@ -1,0 +1,12 @@
+{
+  "doctor": "Dr. Prescriber (MD)",
+  "patient": "Patient #600 (Prescription Sample)",
+  "medications": [
+    {
+      "name": "P+H tablets should be taken six tablets. Xgeva injection  should be taken as an alternative. Dexa U tablet should be taken twice daily from day two to day four. Ondam U tablet should be taken twice daily from day two to day four. Ultracet tablet should be taken twice daily and as needed",
+      "strength": "120 mg",
+      "schedule": "1-0-1",
+      "raw_line": "P+H tablets should be taken six tablets. Xgeva injection 120 mg should be taken as an alternative. Dexa U tablet should be taken twice daily from day two to day four. Ondam U tablet should be taken twice daily from day two to day four. Ultracet tablet should be taken twice daily and as needed."
+    }
+  ]
+}
