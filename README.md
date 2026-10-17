@@ -1,84 +1,104 @@
-# Data_TO_KG_Verified
+# RxVLM Studio: Medical OCR & Knowledge Graph Pipeline
 
-**Goal:** Train a model to generate Cypher queries from natural language questions. To avoid format overfitting, every schema across all 512,940 samples is normalized into one canonical representation — so the model learns query generation, not format memorization.
+RxVLM Studio is an advanced, full-stack medical document intelligence and clinical decision-support application. It bridges raw, unstructured handwritten or printed medical prescriptions with structured, queryable knowledge graphs, leveraging cutting-edge Vision-Language Models (VLMs) and PaddleOCR-VL architectures.
 
-Unified graph schema dataset — all 512,940 answerable samples across train/val/test normalized into a single format, plus 170,979 injected unanswerable samples for classifier training.
+---
 
-## Unified Format
+## 🏗️ System Architecture & Workflow
 
-```
-Nodes: Label(prop: TYPE, ...), ...; Relationships: Source->REL->Target, ...
-```
+The platform operates on an end-to-end processing pipeline divided into four main layers:
+1. **Ingestion & Data Normalization**: Accepts mixed-format prescription files (`.png`, `.jpeg`), applies privacy filters (PII masking and tight boundary cropping), and handles directory structuring.
+2. **OCR & Extraction Engine**: Utilizes custom-tuned OCR models (PaddleOCR-VL and EasyOptimizer pipelines) to extract raw text and map it accurately into a standardized clinical JSON schema.
+3. **Backend Intelligence (Flask Server)**: `web_server.py` acts as the core orchestrator, serving dataset partitions, managing session contexts, and processing clinical safety audits.
+4. **Interactive Frontend Studio**: A dark-mode, high-performance web dashboard featuring a dynamic sidebar, split-screen resizable workspaces, a live structured medication mapping table, and an integrated **Rx Assistant AI** context.
 
-Every schema across all sources (Neo4j Text2Cypher 2024/2025, QALD-9-Plus, Mind the Query, SpCQL, Wikidata/DBpedia) uses this format.
+---
 
-## Two-Stage Inference Pipeline
+## 📂 Project Directory Structure
 
-The system uses a two-stage architecture: a lightweight BERT classifier gates the T5 generator.
-
-1. **BERT classifier** (`google/bert_uncased_L-4_H-512_A-8`) — predicts whether a question is answerable given the schema. Trained on 25% unanswerable ratio.
-2. **T5Gemma-270M generator** — generates Cypher for answerable questions. Trained on ~1.3–2.5% unanswerable ratio to preserve Cypher quality.
-
-At inference time, BERT filters unanswerable questions before T5 sees them. T5 still sees a small number of unanswerable examples (BERT false negatives + random floor) so it can reject what BERT misses.
-
-## Training Pipeline
-
-### Pipeline ordering
-
-`inject_unanswerable.py` and `build_t5_unanswerable.py` are **not** competing tools. They target different models in the two-stage pipeline and must run in a specific order:
-
-```
-1. normalize_schemas.py     →  splits/{train,val,test}_normalized.parquet  (answerable only)
-2. inject_unanswerable.py   →  splits/{train,val,test}_normalized.parquet  (25% unanswerable, for BERT)
-3. split_answerable.py      →  splits/{train,val,test}_answerable.parquet  (answerable subset, for T5 val/test)
-4. train BERT classifier    →  checkpoints/bert_classifier/                (using *_normalized.parquet)
-5. build_t5_unanswerable.py →  splits/train_t5.parquet                     (answerable + ~1.3-2.5% unanswerable, for T5)
-6. train T5 generator       →  checkpoints/t5gemma/                        (using train_t5.parquet + val/test_answerable.parquet)
+```text
+RxVLM-Studio-Medical-OCR/
+├── images/                         # Processed and privacy-reviewed prescription images
+├── json/                           # 1-to-1 mapped structured JSON annotation records
+├── static/
+│   ├── css/                        # Custom styles, layout splitters, and table-expansion rules
+│   └── js/                         # Frontend application logic, dynamic DOM rendering, and event handlers
+├── templates/
+│   └── index.html                  # Main dashboard layout (Sidebar, Workspace, AI Assistant panel)
+├── PRIVACY_REVIEW.txt              # Compliance documentation, PII handling, and data auditing trail
+├── prescription_results_final.xlsx # Master 3-column Excel manifest aligning filenames, text descriptions, and JSONs
+└── web_server.py                   # Core Flask backend application handling API routes and inference endpoints
 ```
 
-Notes:
+---
 
-- `inject_unanswerable.py` is for **BERT** (25% ratio) — run BEFORE BERT training.
-- `build_t5_unanswerable.py` is for **T5** (low ratio) — run AFTER BERT training (needs the BERT checkpoint).
-- `split_answerable.py` must run BEFORE `build_t5_unanswerable.py` (T5 needs the answerable base).
-- Running `inject_unanswerable.py` does NOT affect T5 training data — T5 uses `train_t5.parquet`, not `*_normalized.parquet`.
+## 📊 Data Schema & 1-to-1 Parity
 
-### Step 1: Normalize schemas
-- **`normalize_schemas.py`** — Converts 10+ schema formats (markdown, JSON Neo4j, compact, Wikidata, graph_schema_text, Python repr, SQL JSON, etc.) into the unified format. 0 parse failures.
-- **`verify_schema.py`** — Validates every schema matches the unified format. 512,940/512,940 pass, 0 old-format pattern hits.
+Every prescription image maps strictly 1-to-1 to a corresponding JSON file. The data structure adheres to a rigid clinical schema separating raw transcription from structured medical data:
 
-### Step 2: Inject unanswerable rows (for BERT)
-- **`inject_unanswerable.py`** — Injects unanswerable rows into normalized parquets at 25% ratio. Pairs questions with incompatible schemas. Total: 170,979 unanswerable rows (154,426 train / 8,312 val / 8,241 test).
-- Output: `splits/{train,val,test}_normalized.parquet` (683,919 total rows)
+```json
+{
+  "RAW OCR": "Exact verbatim clinical transcription from prescription headers and body...",
+  "STRUCTURED OCR": {
+    "patient_metadata": {
+      "patient_name": "String or null",
+      "age": "String or null",
+      "gender": "String or null",
+      "date": "String or null",
+      "weight": "String or null"
+    },
+    "diagnosis": "Primary clinical assessment or diagnosis",
+    "history": "Relevant medical or incident history",
+    "medications": [
+      {
+        "drug": "Generic or brand name",
+        "dosage": "Strength / Dose",
+        "frequency": "Regimen (e.g., 1-0-1, BD)",
+        "form": "Tablet | Capsule | Syrup | Injection | Lotion",
+        "duration": "Duration (e.g., 10 days)",
+        "instructions": "Administration timing (e.g., After food)"
+      }
+    ],
+    "advice": []
+  }
+}
+```
 
-### Step 3: Train BERT classifier
-- **`classifier.py`** — Trains BERT classifier on 25% unanswerable parquets. Uses class-weighted loss and auto-tuned batch size based on VRAM.
-- Checkpoint: `./checkpoints/classifier_best/`
+---
 
-### Step 4: Build T5 training data (combined approach)
-- **`split_answerable.py`** — Extracts answerable-only rows from 25% parquets. Output: `splits/{train,val,test}_answerable.parquet` (512,940 total).
-- **`build_t5_unanswerable.py`** — Builds T5's small unanswerable set:
-  1. Runs trained BERT on unanswerable train rows → collects false negatives (BERT predicts answerable, truth is unanswerable)
-  2. Random samples 5,000 from remaining unanswerable (deduped against false negatives)
-  3. Combines: false_negatives × 2 (oversampled) + random_5,000
-  4. Appends to answerable base → `splits/train_t5.parquet`
-- Expected T5 unanswerable ratio: ~1.3–2.5% (preserves Cypher generation quality)
+## 🚀 Getting Started & Local Setup
 
-### Step 5: Train T5 generator
-- **`train.py`** — Two-phase curriculum training on `splits/train_t5.parquet`. Phase 1: simpler queries, Phase 2: complex. Validates on `splits/val_answerable.parquet` (pure Cypher quality).
-- Uses bf16 with GPU capability check, LoRA, auto-tuned `max_input_length=1024` / `max_target_length=320`.
+### Prerequisites
+- Python 3.9 or higher
+- Pip (Python Package Manager)
 
-## Dataset Statistics
+### Installation Steps
 
-| Split | Answerable | Unanswerable (25%) | Total |
-|-------|-----------|-------------------|-------|
-| Train | 463,278 | 154,426 | 617,704 |
-| Val | 24,938 | 8,312 | 33,250 |
-| Test | 24,724 | 8,241 | 32,965 |
-| **Total** | **512,940** | **170,979** | **683,919** |
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/AnoopNadagouda/RxVLM-Studio-Medical-OCR.git
+   cd RxVLM-Studio-Medical-OCR
+   ```
 
-T5 trains on answerable + ~6K–12K combined unanswerable (~469K–475K total).
+2. **Install Dependencies:**
+   ```bash
+   pip install flask pandas openpyxl pillow opencv-python
+   ```
 
-## Sample
+3. **Run the Backend Server:**
+   ```bash
+   python web_server.py
+   ```
 
-`sample/` contains proportional subsets: 90 train / 5 val / 5 test rows.
+4. **Access the Application:**
+   Open your browser and navigate to:
+   👉 **http://127.0.0.1:5000**
+
+---
+
+## 💡 Key Features Explained
+
+- **Dynamic Dataset Filtering**: Instantly toggle between partitions with zero layout thrashing.
+- **Zero-Hallucination Grounding**: Unstated or ambiguous medical parameters are strictly set to `null` to ensure absolute compliance with ground-truth clinical data.
+- **Interactive Resizable Layout**: Custom mouse-tracking handles allow smooth adjustment of the Left Sidebar, Central Workspace, and Right AI Assistant panels.
+- **Rx Assistant AI**: Context-aware clinical assistant capable of breaking down drug schedules, interaction warnings, and safety audits on-the-fly.
