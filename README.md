@@ -4,22 +4,65 @@ RxVLM Studio is an advanced, full-stack medical document intelligence and clinic
 
 ---
 
-## 🏗️ System Architecture & Workflow
+## 📐 End-to-End System Architecture (Baseline to Evaluations)
 
-The platform operates on an end-to-end processing pipeline divided into four main layers:
-1. **Ingestion & Data Normalization**: Accepts mixed-format prescription files (`.png`, `.jpeg`), applies privacy filters (PII masking and tight boundary cropping), and handles directory structuring.
-2. **OCR & Extraction Engine**: Utilizes custom-tuned OCR models (PaddleOCR-VL and EasyOptimizer pipelines) to extract raw text and map it accurately into a standardized clinical JSON schema.
-3. **Backend Intelligence (Flask Server)**: `web_server.py` acts as the core orchestrator, serving dataset partitions (Training, Testing, and Mapped sets), managing session contexts, and processing clinical safety audits.
-4. **Interactive Frontend Studio**: A dark-mode, high-performance web dashboard featuring a dynamic sidebar, split-screen resizable workspaces, a live structured medication mapping table, and an integrated **Rx Assistant AI** context.
+```text
+[ Raw Prescription Images (.png / .jpeg) ]
+                  │
+                  ▼
+┌────────────────────────────────────────────────────────┐
+│ 1. INGESTION & PRIVACY NORMALIZATION                   │
+│  - Tight bounding-box cropping on doctor handwriting   │
+│  - PII Redaction: Masking names, hospital banners,     │
+│    registration numbers, and signatures via OpenCV/PIL │
+└────────────────────────────────────────────────────────┘
+                  │
+                  ▼
+┌────────────────────────────────────────────────────────┐
+│ 2. BASELINE OCR & EXTRACTION ENGINE                    │
+│  - Custom PaddleOCR-VL & Fine-Tuned LoRA Adapters      │
+│  - Zero-Hallucination Grounding Rule: Unstated values  │
+│    (missing dosages/forms) are strictly set to null    │
+└────────────────────────────────────────────────────────┘
+                  │
+                  ▼
+┌────────────────────────────────────────────────────────┐
+│ 3. STRUCTURED KNOWLEDGE GRAPH & BACKEND (Flask)        │
+│  - web_server.py API Orchestrator                      │
+│  - 1-to-1 Parity Mapping (Images <-> Structured JSONs) │
+└────────────────────────────────────────────────────────┘
+                  │
+                  ▼
+┌────────────────────────────────────────────────────────┐
+│ 4. INTERACTIVE FRONTEND STUDIO (HTML/JS/CSS)           │
+│  - Partition Filter Chips (Mapped, Training, Testing)  │
+│  - Expanded Medication Table & Resizable Splitters     │
+│  - Rx Assistant AI Context-Aware Clinical Chat         │
+└────────────────────────────────────────────────────────┘
+                  │
+                  ▼
+┌────────────────────────────────────────────────────────┐
+│ 5. EVALUATION METRICS & BENCHMARK SUITE                │
+│  - Character Error Rate (CER) / Word Error Rate (WER)  │
+│  - Field Entity Precision, Recall, & F1 Scores         │
+│  - Exact Match Structural Quality & Jaccard Similarity │
+└────────────────────────────────────────────────────────> [ Final Research Reports & Excel Manifests ]
+```
 
 ---
 
-## 📊 Dataset Partitioning & Benchmarks
+## 📊 Dataset Partitioning & Benchmark Performance
 
-The application supports multiple integrated dataset splits and partitions for comprehensive training and evaluation:
-* **Training Set (600 Samples)**: Large-scale training partition for model adaptation and fine-tuning.
-* **Testing Set (100 Samples)**: Dedicated evaluation partition tracking performance metrics such as Character Error Rate (CER), Word Error Rate (WER), and Field Entity F1 scores.
-* **Canonical Mapped Dataset**: Privacy-reviewed, zero-hallucination prescription records mapped 1-to-1 with strict clinical schema compliance and high-accuracy paper benchmark scores ($98.50\%$ F1, $2.10\%$ CER).
+The application supports multiple integrated dataset splits and partitions for comprehensive training, evaluation, and production inference:
+
+- **Training Set (600 Samples)**: Large-scale training partition for model adaptation and LoRA fine-tuning.
+- **Testing Set (100 Samples)**: Dedicated evaluation partition tracking rigorous accuracy benchmarks.
+- **Canonical Mapped Dataset**: Privacy-reviewed, zero-hallucination prescription records mapped 1-to-1 with strict clinical schema compliance.
+
+### Evaluation & Validation Metrics:
+- **Character Error Rate (CER)**: Tracked per batch.
+- **Field Entity F1-Score**: Evaluated across extracted medications and dosages.
+- **Exact Match Structural Quality**: Monitored for complete JSON schema conformance.
 
 ---
 
@@ -101,13 +144,13 @@ Every prescription image maps strictly 1-to-1 to a corresponding JSON file. The 
 
 4. **Access the Application:**
    Open your browser and navigate to:
-   👉 **http://127.0.0.1:5000**
+   👉 `http://127.0.0.1:5000`
 
 ---
 
 ## 💡 Key Features Explained
 
 - **Dynamic Dataset Filtering**: Instantly toggle between partitions (All, Mapped, Training (600), and Testing (100)) with zero layout thrashing.
-- **Zero-Hallucination Grounding**: Unstated or ambiguous medical parameters are strictly set to `null` to ensure absolute compliance with ground-truth clinical data.
+- **Zero-Hallucination Grounding**: Unstated or ambiguous medical parameters are strictly set to null to ensure absolute compliance with ground-truth clinical data.
 - **Interactive Resizable Layout**: Custom mouse-tracking handles allow smooth adjustment of the Left Sidebar, Central Workspace, and Right AI Assistant panels.
 - **Rx Assistant AI**: Context-aware clinical assistant capable of breaking down drug schedules, interaction warnings, and safety audits on-the-fly.
