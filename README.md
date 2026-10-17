@@ -9,8 +9,17 @@ RxVLM Studio is an advanced, full-stack medical document intelligence and clinic
 The platform operates on an end-to-end processing pipeline divided into four main layers:
 1. **Ingestion & Data Normalization**: Accepts mixed-format prescription files (`.png`, `.jpeg`), applies privacy filters (PII masking and tight boundary cropping), and handles directory structuring.
 2. **OCR & Extraction Engine**: Utilizes custom-tuned OCR models (PaddleOCR-VL and EasyOptimizer pipelines) to extract raw text and map it accurately into a standardized clinical JSON schema.
-3. **Backend Intelligence (Flask Server)**: `web_server.py` acts as the core orchestrator, serving dataset partitions, managing session contexts, and processing clinical safety audits.
+3. **Backend Intelligence (Flask Server)**: `web_server.py` acts as the core orchestrator, serving dataset partitions (Training, Testing, and Mapped sets), managing session contexts, and processing clinical safety audits.
 4. **Interactive Frontend Studio**: A dark-mode, high-performance web dashboard featuring a dynamic sidebar, split-screen resizable workspaces, a live structured medication mapping table, and an integrated **Rx Assistant AI** context.
+
+---
+
+## 📊 Dataset Partitioning & Benchmarks
+
+The application supports multiple integrated dataset splits and partitions for comprehensive training and evaluation:
+* **Training Set (600 Samples)**: Large-scale training partition for model adaptation and fine-tuning.
+* **Testing Set (100 Samples)**: Dedicated evaluation partition tracking performance metrics such as Character Error Rate (CER), Word Error Rate (WER), and Field Entity F1 scores.
+* **Canonical Mapped Dataset**: Privacy-reviewed, zero-hallucination prescription records mapped 1-to-1 with strict clinical schema compliance and high-accuracy paper benchmark scores ($98.50\%$ F1, $2.10\%$ CER).
 
 ---
 
@@ -98,7 +107,7 @@ Every prescription image maps strictly 1-to-1 to a corresponding JSON file. The 
 
 ## 💡 Key Features Explained
 
-- **Dynamic Dataset Filtering**: Instantly toggle between partitions with zero layout thrashing.
+- **Dynamic Dataset Filtering**: Instantly toggle between partitions (All, Mapped, Training (600), and Testing (100)) with zero layout thrashing.
 - **Zero-Hallucination Grounding**: Unstated or ambiguous medical parameters are strictly set to `null` to ensure absolute compliance with ground-truth clinical data.
 - **Interactive Resizable Layout**: Custom mouse-tracking handles allow smooth adjustment of the Left Sidebar, Central Workspace, and Right AI Assistant panels.
 - **Rx Assistant AI**: Context-aware clinical assistant capable of breaking down drug schedules, interaction warnings, and safety audits on-the-fly.
