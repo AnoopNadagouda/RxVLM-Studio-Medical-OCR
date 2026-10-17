@@ -1,0 +1,124 @@
+{
+  "id": "RX-MAP-0010",
+  "filename": "0010.jpg",
+  "image_url": "/images/0010.jpg",
+  "patient_name": "Meera Nair",
+  "age": 46,
+  "gender": "Female",
+  "doctor": "Dr. B. L. Agarwal (Orthopedics)",
+  "date": "2026-10-10",
+  "description": "Fixeef Plus Ison tablet should be taken once in the morning and once at night for seven days. Deslan tablet should be taken once at night for two months. Daxoven Lovey tablet should be taken once in the morning and once at night and continue. Reversar Com tablet should be taken once at night and continue. Flumetol Easycap 50 /250 capsule should be taken once in the morning and once at night. Cep Bxor Lery tablet should be taken once in the morning for two months. Vaxigrip Tetra injection 0.5 ml one dose should be taken yearly.",
+  "medications": [
+    {
+      "name": "Fixcef Plus 150 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "7 days",
+      "route": "Oral",
+      "category": "Antibiotic / Anti-fungal",
+      "category_color": "#3b82f6"
+    },
+    {
+      "name": "Deslor",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "2 months",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Paxover 20 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "running",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Reversar 10 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "running",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Flumetol Easycap 50/250",
+      "form": "Inhalation Capsule",
+      "dose": "1 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "via Easyhaler",
+      "route": "Inhalation",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Exor 20 mg",
+      "form": "Capsule",
+      "dose": "1 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "2 months",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Vaxigrip Tetra 0.5 ml",
+      "form": "Injection",
+      "dose": "0.5 ml",
+      "frequency": "IM stat",
+      "times": [],
+      "duration": "once yearly",
+      "route": "Injection (IM/IV)",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Prevenar 13",
+      "form": "Injection",
+      "dose": "1 dose",
+      "frequency": "IM stat",
+      "times": [],
+      "duration": "once in lifetime",
+      "route": "Injection (IM/IV)",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    }
+  ],
+  "tablet_count": 8,
+  "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+  "dataset_group": "mapped",
+  "is_mapped_27": true,
+  "cer": 2.1,
+  "wer": 3.4,
+  "f1_score": 98.5,
+  "precision": 98.8,
+  "recall": 98.2,
+  "jaccard": 96.5,
+  "exact_match": 96.3
+}

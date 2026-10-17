@@ -1,0 +1,100 @@
+{
+  "id": "RX-MAP-0020",
+  "filename": "0020.jpg",
+  "image_url": "/images/0020.jpg",
+  "patient_name": "Sneha Kulkarni",
+  "age": 36,
+  "gender": "Female",
+  "doctor": "Dr. B. L. Agarwal (Orthopedics)",
+  "date": "2026-10-09",
+  "description": "Nebah sual should be taken as directed.",
+  "medications": [
+    {
+      "name": "Paracetamol (Calp/T-98)",
+      "form": "Syrup",
+      "dose": "5 ml",
+      "frequency": "four times daily (for fever)",
+      "times": [],
+      "duration": "as needed",
+      "route": "Oral",
+      "category": "Analgesic / Anti-inflammatory",
+      "category_color": "#ef4444"
+    },
+    {
+      "name": "Emflam PD",
+      "form": "Syrup",
+      "dose": "5 ml",
+      "frequency": "three times daily",
+      "times": [
+        "morning",
+        "afternoon",
+        "night"
+      ],
+      "duration": "15 days",
+      "route": "Oral",
+      "category": "Analgesic / Anti-inflammatory",
+      "category_color": "#ef4444"
+    },
+    {
+      "name": "Allercet-M",
+      "form": "Syrup",
+      "dose": "5 ml",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "12 days",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Rekuff 100",
+      "form": "Syrup",
+      "dose": "5 ml",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "7 days",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Duolin (2 ml) + Budecort (0.5 mg)",
+      "form": "Nebulization",
+      "dose": "2.5 ml combined",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "5 days",
+      "route": "Oral",
+      "category": "Corticosteroid / Anti-emetic",
+      "category_color": "#8b5cf6"
+    },
+    {
+      "name": "Dexona 2 ml",
+      "form": "Injection",
+      "dose": "2 ml",
+      "frequency": "IM stat",
+      "times": [],
+      "duration": "As advised by doctor",
+      "route": "Injection (IM/IV)",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    }
+  ],
+  "tablet_count": 6,
+  "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+  "dataset_group": "mapped",
+  "is_mapped_27": true,
+  "cer": 2.1,
+  "wer": 3.4,
+  "f1_score": 98.5,
+  "precision": 98.8,
+  "recall": 98.2,
+  "jaccard": 96.5,
+  "exact_match": 96.3
+}

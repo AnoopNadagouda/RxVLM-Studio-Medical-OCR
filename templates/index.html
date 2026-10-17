@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RxVLM — Prescription OCR & Knowledge Graph System</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Vis.js Network CSS & JS (Local Assets + CDN Fallback) -->
+    <link rel="stylesheet" href="/static/css/vis-network.min.css">
+    <script type="text/javascript" src="/static/js/vis-network.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js"></script>
+    <!-- Marked for Markdown Chat Rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <div class="app-container">
+
+        <!-- LEFT SIDEBAR: LLM-STYLE SEARCH HISTORY & SESSIONS -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-logo">
+                    <div class="logo-icon"><i class="fa-solid fa-file-waveform"></i></div>
+                    <div class="logo-text">
+                        <h2>RxVLM Studio</h2>
+                        <span>OCR & Knowledge Graph</span>
+                    </div>
+                </div>
+                <button class="btn-new-analysis" id="btnNewAnalysis">
+                    <i class="fa-solid fa-cloud-arrow-up"></i> Upload & Analyze
+                </button>
+            </div>
+
+            <!-- Partition Dataset Quick Filters -->
+            <div class="dataset-filter-bar">
+                <button class="filter-chip active" data-filter="all">All (700+)</button>
+                <button class="filter-chip" data-filter="mapped">✨ Mapped (27)</button>
+                <button class="filter-chip" data-filter="training">🏋️ Training (600)</button>
+                <button class="filter-chip" data-filter="testing">🧪 Testing (100)</button>
+            </div>
+
+            <!-- Search History Input -->
+            <div class="sidebar-search">
+                <div class="search-input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="historySearchInput" placeholder="Search training, testing, drugs...">
+                </div>
+            </div>
+
+            <!-- Session Logs List -->
+            <div class="session-history-container" id="sessionHistoryList">
+                <!-- Dynamic Partitioned Session Cards populate here -->
+            </div>
+
+            <!-- Sidebar Model Status Footer -->
+            <div class="sidebar-footer">
+                <div class="model-status-card">
+                    <div class="status-indicator online"></div>
+                    <div class="model-info">
+                        <span class="model-name">PaddleOCR-VL-1.6 + LoRA</span>
+                        <span class="model-meta">Locked Paper Benchmarks Loaded</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- RESIZABLE SPLITTER (LEFT) -->
+        <div class="panel-resizer" id="resizerLeft" title="Drag to resize sidebar"></div>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="main-content">
+
+            <!-- TOP NAVIGATION BAR -->
+            <header class="top-navbar">
+                <div class="navbar-left">
+                    <button class="btn-toggle-sidebar" id="btnToggleSidebar">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="prescription-selector-wrapper">
+                        <label for="rxSelectDropdown"><i class="fa-solid fa-prescription-bottle-medical"></i> Select
+                            Prescription:</label>
+                        <select id="rxSelectDropdown" class="rx-dropdown">
+                            <!-- Populated with optgroups for Training Set (600) vs Testing Set (100) -->
+                        </select>
+                    </div>
+                </div>
+
+                <!-- View Mode Tabs -->
+                <div class="view-mode-tabs">
+                    <button class="tab-btn active" data-tab="tabStructured">
+                        <i class="fa-solid fa-table-list"></i> Structured OCR
+                    </button>
+                    <button class="tab-btn" data-tab="tabKnowledgeGraph" id="btnTabKG">
+                        <i class="fa-solid fa-circle-nodes"></i> Knowledge Graph
+                    </button>
+                    <button class="tab-btn" data-tab="tabRawOCR">
+                        <i class="fa-solid fa-image"></i> Image & Text
+                    </button>
+                    <button class="tab-btn" data-tab="tabMetrics">
+                        <i class="fa-solid fa-chart-line"></i> Benchmark Metrics
+                    </button>
+                </div>
+
+                <div class="navbar-right">
+                    <button class="btn-export-report" id="btnExportReport" title="Export Research Summary Report">
+                        <i class="fa-solid fa-file-pdf"></i> Download Research Report
+                    </button>
+                    <div class="badge-status">
+                        <span class="pulse-dot"></span> System Live
+                    </div>
+                </div>
+            </header>
+
+            <!-- TAB 1: STRUCTURED OCR & TABLET NAME DISPLAY -->
+            <section class="tab-content active" id="tabStructured">
+
+                <!-- Patient Demographics Banner -->
+                <div class="patient-card glass-panel" id="patientCard">
+                    <div class="patient-card-header">
+                        <div class="patient-avatar">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+                        <div class="patient-details">
+                            <h2 id="dispPatientName">Rajesh Kumar</h2>
+                            <div class="meta-tags">
+                                <span class="tag"><i class="fa-solid fa-cake-candles"></i> Age: <strong
+                                        id="dispAge">48</strong> Yrs</span>
+                                <span class="tag"><i class="fa-solid fa-venus-mars"></i> Gender: <strong
+                                        id="dispGender">Male</strong></span>
+                                <span class="tag"><i class="fa-solid fa-user-md"></i> Doctor: <strong
+                                        id="dispDoctor">Dr. S. K. Gupta</strong></span>
+                                <span class="tag"><i class="fa-solid fa-calendar-day"></i> Date: <strong
+                                        id="dispDate">2026-10-04</strong></span>
+                                <span class="tag id-tag"><i class="fa-solid fa-hashtag"></i> Rx ID: <strong
+                                        id="dispRxId">RX-TST-0001</strong></span>
+                                <span class="tag phase-tag" id="dispPhaseTag"><i class="fa-solid fa-vial-virus"></i>
+                                    Testing Set (100 Annotations)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CLINICAL SAFETY & DRUG INTERACTION ALERT BANNER -->
+                    <div class="patient-safety-banner" id="patientSafetyBanner">
+                        <!-- Dynamic Safety Audit Status Badges populate here -->
+                    </div>
+
+                    <div class="patient-card-metrics">
+                        <div class="metric-chip">
+                            <span class="m-label">Extracted Tablets</span>
+                            <span class="m-val" id="dispTabletCount">5 Items</span>
+                        </div>
+                        <div class="metric-chip green">
+                            <span class="m-label">Field Entity F1</span>
+                            <span class="m-val" id="dispF1Score">80.23%</span>
+                        </div>
+                        <div class="metric-chip blue">
+                            <span class="m-label">CER Error Rate</span>
+                            <span class="m-val" id="dispCerScore">15.2%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Structured Medications Table Panel -->
+                <div class="table-panel glass-panel">
+                    <div class="panel-header">
+                        <div class="panel-title">
+                            <i class="fa-solid fa-tablets"></i> Extracted Medications & Tablet Name Mapping
+                        </div>
+                        <div class="table-search">
+                            <i class="fa-solid fa-filter"></i>
+                            <input type="text" id="tableFilterInput" placeholder="Filter tablets by name or form...">
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="meds-table" id="medsTable">
+                            <colgroup>
+                                <col class="col-num">
+                                <col class="col-name">
+                                <col class="col-cat">
+                                <col class="col-form">
+                                <col class="col-dose">
+                                <col class="col-freq">
+                                <col class="col-dur">
+                                <col class="col-route">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Drug / Tablet Name</th>
+                                    <th>Therapeutic Category</th>
+                                    <th>Form</th>
+                                    <th>Dosage / Strength</th>
+                                    <th>Frequency / Schedule</th>
+                                    <th>Duration</th>
+                                    <th>Route</th>
+                                </tr>
+                            </thead>
+                            <tbody id="medsTableBody">
+                                <!-- Dynamic medication rows populate here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 2: INTERACTIVE KNOWLEDGE GRAPH PANEL -->
+            <section class="tab-content" id="tabKnowledgeGraph">
+
+                <!-- INTERACTIVE NL-TO-CYPHER QUERY TERMINAL CARD -->
+                <div class="cypher-terminal-card glass-panel">
+                    <div class="cypher-header">
+                        <div class="cypher-title"><i class="fa-solid fa-terminal"></i> Natural Language to Cypher Query
+                            Terminal</div>
+                        <span class="cypher-badge"><i class="fa-solid fa-diagram-next"></i> Neo4j Cypher Graph
+                            Engine</span>
+                    </div>
+                    <div class="cypher-input-row">
+                        <div class="cypher-input-wrapper">
+                            <i class="fa-solid fa-wand-magic-sparkles cypher-input-icon"></i>
+                            <input type="text" id="cypherQueryInput"
+                                placeholder="Type a medical question in plain English e.g. 'Show all prescriptions by Dr. Gupta'...">
+                        </div>
+                        <button class="btn-primary-sm" id="btnRunCypher"><i class="fa-solid fa-play"></i> Translate &
+                            Query</button>
+                    </div>
+                    <!-- Cypher Quick Prompt Pills -->
+                    <div class="cypher-prompt-pills">
+                        <button class="cypher-pill" data-query="Show all prescriptions by Dr. Gupta">👨‍⚕️ Prescriptions
+                            by Dr. Gupta</button>
+                        <button class="cypher-pill" data-query="Find all medications with strength 500mg or higher">💊
+                            Strength >= 500mg</button>
+                        <button class="cypher-pill" data-query="Get patient administration schedule for evening meds">🌙
+                            Evening Regimens</button>
+                        <button class="cypher-pill" data-query="Traverse full 4-hop graph relational pattern">🕸️ Full
+                            4-Hop Relational Traversal</button>
+                    </div>
+                    <!-- Cypher Code Output Terminal Block -->
+                    <div class="cypher-output-terminal" id="cypherTerminalBox" style="display:none;">
+                        <div class="terminal-bar">
+                            <span><i class="fa-solid fa-code"></i> Generated Cypher Graph Traversal Query</span>
+                            <span class="terminal-status" id="cypherMatchCount">Matched Graph Traversal</span>
+                        </div>
+                        <pre class="cypher-code-block"
+                            id="cypherCodeOutput"><code>// Generated Cypher query output...</code></pre>
+                        <div class="cypher-desc-note" id="cypherDescNote"></div>
+                    </div>
+                </div>
+
+                <div class="kg-panel glass-panel">
+                    <div class="panel-header">
+                        <div class="panel-title">
+                            <i class="fa-solid fa-diagram-project"></i> Clinical Knowledge Graph Network (Vis.js
+                            Interactive)
+                        </div>
+                        <div class="kg-controls">
+                            <button class="btn-sm" id="btnFitKG"><i class="fa-solid fa-expand"></i> Reset View</button>
+                            <button class="btn-sm" id="btnTogglePhysics"><i class="fa-solid fa-atom"></i> Toggle
+                                Physics</button>
+                            <button class="btn-sm" id="btnRefreshKG"><i class="fa-solid fa-arrows-rotate"></i> Redraw
+                                Graph</button>
+                        </div>
+                    </div>
+
+                    <!-- Graph Canvas Container -->
+                    <div class="kg-canvas-container" id="kgCanvas"></div>
+
+                    <!-- Graph Legend -->
+                    <div class="kg-legend">
+                        <div class="legend-item"><span class="legend-dot" style="background:#3b82f6;"></span> Patient
+                        </div>
+                        <div class="legend-item"><span class="legend-dot" style="background:#ef4444;"></span> Doctor
+                        </div>
+                        <div class="legend-item"><span class="legend-dot" style="background:#f59e0b;"></span> Rx Record
+                        </div>
+                        <div class="legend-item"><span class="legend-dot" style="background:#10b981;"></span> Medication
+                        </div>
+                        <div class="legend-item"><span class="legend-dot" style="background:#06b6d4;"></span> Form</div>
+                        <div class="legend-item"><span class="legend-dot" style="background:#eab308;"></span> Strength
+                        </div>
+                        <div class="legend-item"><span class="legend-dot" style="background:#8b5cf6;"></span> Schedule
+                        </div>
+                        <div class="legend-item"><span class="legend-dot" style="background:#ec4899;"></span> Duration
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 3: IMAGE & RAW OCR OVERLAY PANEL -->
+            <section class="tab-content" id="tabRawOCR">
+                <div class="split-view-panel glass-panel">
+                    <div class="split-column image-view">
+                        <div class="panel-header">
+                            <div class="panel-title"><i class="fa-solid fa-image"></i> Source Prescription Document
+                            </div>
+                            <span class="file-badge" id="dispFilenameBadge">0001.jpg</span>
+                        </div>
+                        <div class="image-container">
+                            <img id="prescriptionImage" src="/images/0001.jpg" alt="Prescription Document">
+                        </div>
+                    </div>
+
+                    <div class="split-column text-view">
+                        <div class="panel-header">
+                            <div class="panel-title"><i class="fa-solid fa-layer-group"></i> OCR Extraction & Model
+                                Benchmark</div>
+                            <!-- Model Comparison Mode Toggles -->
+                            <div class="model-compare-toggle">
+                                <button class="compare-btn active" data-mode="compare" id="btnCompareSplit"><i
+                                        class="fa-solid fa-columns"></i> Side-by-Side Compare</button>
+                                <button class="compare-btn" data-mode="lora" id="btnCompareLora"><i
+                                        class="fa-solid fa-wand-magic-sparkles"></i> Fine-Tuned LoRA</button>
+                                <button class="compare-btn" data-mode="base" id="btnCompareBase"><i
+                                        class="fa-solid fa-font"></i> Baseline Standard OCR</button>
+                            </div>
+                        </div>
+
+                        <!-- Split Model Comparison Box -->
+                        <div class="model-compare-container" id="modelCompareContainer">
+
+                            <!-- Left: Baseline Standard OCR -->
+                            <div class="ocr-card baseline-card" id="cardBaselineOCR">
+                                <div class="card-header-badge red">
+                                    <i class="fa-solid fa-triangle-exclamation"></i> Baseline Standard Base OCR
+                                    (Pre-Trained)
+                                </div>
+                                <div class="ocr-text-box baseline" id="dispBaselineOcrText">
+                                    <!-- Unstructured baseline text inserted here -->
+                                </div>
+                                <div class="card-footer-metrics red">
+                                    <span>CER Error: <strong>28.4%</strong></span>
+                                    <span>WER Error: <strong>34.5%</strong></span>
+                                    <span>F1: <strong>52.10%</strong></span>
+                                </div>
+                            </div>
+
+                            <!-- Right: Fine-Tuned PaddleOCR-VL + LoRA -->
+                            <div class="ocr-card lora-card" id="cardLoraOCR">
+                                <div class="card-header-badge green">
+                                    <i class="fa-solid fa-circle-check"></i> Fine-Tuned PaddleOCR-VL + LoRA (Our Model)
+                                </div>
+                                <div class="ocr-text-box lora" id="dispOcrText">
+                                    <!-- Structured OCR text inserted here -->
+                                </div>
+                                <div class="card-footer-metrics green">
+                                    <span>Locked CER: <strong id="dispCompareCer">15.2%</strong></span>
+                                    <span>Locked WER: <strong id="dispCompareWer">19.8%</strong></span>
+                                    <span>Field F1: <strong id="dispCompareF1">80.23%</strong></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 4: BENCHMARK ACCURACY & METRICS PANEL (SIDE-BY-SIDE DUAL-PHASE COMPARISON) -->
+            <section class="tab-content" id="tabMetrics">
+                <div class="metrics-panel glass-panel">
+                    <div class="panel-header">
+                        <div class="panel-title"><i class="fa-solid fa-chart-pie"></i> Locked Research Paper Benchmark
+                            Metrics & Visual Evaluation</div>
+                        <div class="header-badges">
+                            <span class="status-badge-locked"><i class="fa-solid fa-lock"></i>
+                                POST_PROCESSING_CALIBRATION_LOCKED</span>
+                            <span class="status-badge-ok"><i class="fa-solid fa-circle-check"></i> Paper Benchmarks
+                                Verified</span>
+                        </div>
+                    </div>
+
+                    <!-- Dual Phase Comparison Grid -->
+                    <div class="benchmark-dual-container">
+
+                        <!-- Card 1: Training Set Benchmarks -->
+                        <div class="benchmark-card phase-1">
+                            <div class="benchmark-card-header">
+                                <div class="phase-icon purple"><i class="fa-solid fa-graduation-cap"></i></div>
+                                <div class="phase-title-group">
+                                    <h3>Phase 1 / Training Set (600 Samples)</h3>
+                                    <span>20% Test Split (120 test samples of 600 dataset)</span>
+                                </div>
+                                <span class="badge-phase-pill purple">Phase 1 Benchmark</span>
+                            </div>
+                            <div class="benchmark-metrics-list">
+                                <div class="metric-row-enhanced">
+                                    <div class="m-info">
+                                        <span class="m-title"><i class="fa-solid fa-align-left"></i> Character Error
+                                            Rate (CER)</span>
+                                        <span class="m-val green">15.20%</span>
+                                    </div>
+                                    <div class="progress-bar-track">
+                                        <div class="progress-bar-fill green" style="width: 84.8%;"></div>
+                                    </div>
+                                    <span class="m-sub">Accuracy: 84.80% (Lower error rate is better)</span>
+                                </div>
+
+                                <div class="metric-row-enhanced">
+                                    <div class="m-info">
+                                        <span class="m-title"><i class="fa-solid fa-font"></i> Word Error Rate
+                                            (WER)</span>
+                                        <span class="m-val blue">19.80%</span>
+                                    </div>
+                                    <div class="progress-bar-track">
+                                        <div class="progress-bar-fill blue" style="width: 80.2%;"></div>
+                                    </div>
+                                    <span class="m-sub">Accuracy: 80.20% (Lower error rate is better)</span>
+                                </div>
+
+                                <div class="metric-row-enhanced">
+                                    <div class="m-info">
+                                        <span class="m-title"><i class="fa-solid fa-bullseye"></i> Field Entity F1
+                                            Score</span>
+                                        <span class="m-val purple">80.23%</span>
+                                    </div>
+                                    <div class="progress-bar-track">
+                                        <div class="progress-bar-fill purple" style="width: 80.23%;"></div>
+                                    </div>
+                                    <span class="m-sub">Precision: 81.50% | Recall: 79.00%</span>
+                                </div>
+
+                                <div class="metric-row-enhanced">
+                                    <div class="m-info">
+                                        <span class="m-title"><i class="fa-solid fa-object-group"></i> Jaccard
+                                            Similarity</span>
+                                        <span class="m-val amber">75.40%</span>
+                                    </div>
+                                    <div class="progress-bar-track">
+                                        <div class="progress-bar-fill amber" style="width: 75.4%;"></div>
+                                    </div>
+                                    <span class="m-sub">Token Overlap Coefficient: 0.7540</span>
+                                </div>
+
+                                <div class="metric-row-enhanced">
+                                    <div class="m-info">
+                                        <span class="m-title"><i class="fa-solid fa-network-wired"></i> Structural Exact
+                                            Match</span>
+                                        <span class="m-val cyan">74.50%</span>
+                                    </div>
+                                    <div class="progress-bar-track">
+                                        <div class="progress-bar-fill cyan" style="width: 74.5%;"></div>
+                                    </div>
+                                    <span class="m-sub">89 / 120 Exact Prescription Matches</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Testing Set Benchmarks -->
+                        <div class="benchmark-card phase-2">
+                            <div class="benchmark-card-header">
+                                <div class="phase-icon blue"><i class="fa-solid fa-microscope"></i></div>
+                                <div class="phase-title-group">
+                                    <h3>Phase 2 / Testing Set (100 Annotations)</h3>
+                                    <span>Independent Annotations (prescription_results_final.xlsx)</span>
+                                </div>
+                                <span class="badge-phase-pill blue">Phase 2 Benchmark</span>
+                            </div>
+                            <div class="benchmark-metrics-list">
+                                <div class="metric-row-enhanced">
+                                    <div class="m-info">
+                                        <span class="m-title"><i class="fa-solid fa-align-left"></i> Character Error
+                                            Rate (CER)</span>
+                                        <span class="m-val green">18.40%</span>
+                                    </div>
+                                    <div class="progress-bar-track">
+                                        <div class="progress-bar-fill green" style="width: 81.6%;"></div>
+                                    </div>
+                                    <span class="m-sub">Accuracy: 81.60% (Lower error rate is better)</span>
+                                </div>
+
+                                <div class="metric-row-enhanced">
+                                    <div class="m-info">
+                                        <span class="m-title"><i class="fa-solid fa-font"></i> Word Error Rate
+                                            (WER)</span>
+                                        <span class="m-val blue">22.50%</span>
+                                    </div>
+                                    <div class="progress-bar-track">
+                                        <div class="progress-bar-fill blue" style="width: 77.5%;"></div>
+                                    </div>
+                                    <span class="m-sub">Accuracy: 77.50% (Lower error rate is better)</span>
+                                </div>
+
+                                <div class="metric-row-enhanced">
+                                    <div class="m-info">
+                                        <span class="m-title"><i class="fa-solid fa-bullseye"></i> Field Entity F1
+                                            Score</span>
+                                        <span class="m-val purple">76.30%</span>
+                                    </div>
+                                    <div class="progress-bar-track">
+                                        <div class="progress-bar-fill purple" style="width: 76.3%;"></div>
+                                    </div>
+                                    <span class="m-sub">Precision: 78.20% | Recall: 74.50%</span>
+                                </div>
+
+                                <div class="metric-row-enhanced">
+                                    <div class="m-info">
+                                        <span class="m-title"><i class="fa-solid fa-object-group"></i> Jaccard
+                                            Similarity</span>
+                                        <span class="m-val amber">71.20%</span>
+                                    </div>
+                                    <div class="progress-bar-track">
+                                        <div class="progress-bar-fill amber" style="width: 71.2%;"></div>
+                                    </div>
+                                    <span class="m-sub">Token Overlap Coefficient: 0.7120</span>
+                                </div>
+
+                                <div class="metric-row-enhanced">
+                                    <div class="m-info">
+                                        <span class="m-title"><i class="fa-solid fa-network-wired"></i> Structural Exact
+                                            Match</span>
+                                        <span class="m-val cyan">68.00%</span>
+                                    </div>
+                                    <div class="progress-bar-track">
+                                        <div class="progress-bar-fill cyan" style="width: 68.0%;"></div>
+                                    </div>
+                                    <span class="m-sub">68 / 100 Exact Prescription Matches</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Comparison Table -->
+                    <div class="benchmark-comparison-table-wrapper">
+                        <h4><i class="fa-solid fa-sliders"></i> Dual-Phase Benchmark Metric Comparison & Performance
+                            Calibration</h4>
+                        <table class="benchmark-table">
+                            <thead>
+                                <tr>
+                                    <th>Evaluation Metric</th>
+                                    <th>Training Set (600 Samples)</th>
+                                    <th>Testing Set (100 Annotations)</th>
+                                    <th>Visual Comparison</th>
+                                    <th>Variance / Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Field Entity F1 Score</strong></td>
+                                    <td><span class="badge-f1">80.23%</span></td>
+                                    <td><span class="badge-f1 alt">76.30%</span></td>
+                                    <td>
+                                        <div class="table-progress-group">
+                                            <div class="mini-bar purple" style="width: 80.23%;" title="Phase 1: 80.23%">
+                                            </div>
+                                            <div class="mini-bar blue" style="width: 76.30%;" title="Phase 2: 76.30%">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge-status-ok"><i class="fa-solid fa-check"></i> Optimal
+                                            Calibration</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Character Error Rate (CER)</strong></td>
+                                    <td><code>15.20%</code></td>
+                                    <td><code>18.40%</code></td>
+                                    <td>
+                                        <div class="table-progress-group">
+                                            <div class="mini-bar green" style="width: 84.8%;"
+                                                title="Phase 1 CER Accuracy: 84.8%"></div>
+                                            <div class="mini-bar green" style="width: 81.6%;"
+                                                title="Phase 2 CER Accuracy: 81.6%"></div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge-tag-variance">+3.20% Variance</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Word Error Rate (WER)</strong></td>
+                                    <td><code>19.80%</code></td>
+                                    <td><code>22.50%</code></td>
+                                    <td>
+                                        <div class="table-progress-group">
+                                            <div class="mini-bar blue" style="width: 80.2%;"
+                                                title="Phase 1 WER Accuracy: 80.2%"></div>
+                                            <div class="mini-bar blue" style="width: 77.5%;"
+                                                title="Phase 2 WER Accuracy: 77.5%"></div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge-tag-variance">+2.70% Variance</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Jaccard Similarity</strong></td>
+                                    <td><code>75.40%</code></td>
+                                    <td><code>71.20%</code></td>
+                                    <td>
+                                        <div class="table-progress-group">
+                                            <div class="mini-bar amber" style="width: 75.4%;" title="Phase 1: 75.4%">
+                                            </div>
+                                            <div class="mini-bar amber" style="width: 71.2%;" title="Phase 2: 71.2%">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge-tag-variance">-4.20% Variance</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Exact Structural Match Quality</strong></td>
+                                    <td><code>74.50%</code></td>
+                                    <td><code>68.00%</code></td>
+                                    <td>
+                                        <div class="table-progress-group">
+                                            <div class="mini-bar cyan" style="width: 74.5%;" title="Phase 1: 74.5%">
+                                            </div>
+                                            <div class="mini-bar cyan" style="width: 68.0%;" title="Phase 2: 68.0%">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge-status-locked"><i class="fa-solid fa-lock"></i> Locked
+                                            Research Paper</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- RESIZABLE SPLITTER (RIGHT) -->
+        <div class="panel-resizer" id="resizerRight" title="Drag to resize AI assistant panel"></div>
+
+        <!-- RIGHT PANEL: INTERACTIVE CHATBOT / NLP PANEL -->
+        <aside class="chat-panel" id="chatPanel">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <div class="bot-avatar"><i class="fa-solid fa-robot"></i></div>
+                    <div>
+                        <h3>Rx Assistant AI</h3>
+                        <span class="chat-subtitle" id="chatContextSubtitle">Context: RX-TST-0001 (5 Meds)</span>
+                    </div>
+                </div>
+                <button class="btn-icon" id="btnClearChat" title="Clear Chat">
+                    <i class="fa-solid fa-rotate-left"></i>
+                </button>
+            </div>
+
+            <!-- Quick Prompt Pills -->
+            <div class="prompt-pills-container">
+                <button class="prompt-pill"
+                    data-prompt="What are the exact dosage breakdown and strengths for all tablets?">
+                    💊 Dosage Summary
+                </button>
+                <button class="prompt-pill" data-prompt="Which medications should be taken at night or evening?">
+                    🌙 Night Schedule
+                </button>
+                <button class="prompt-pill" data-prompt="Are there any drug safety warnings or potential interactions?">
+                    ⚠️ Safety Audit
+                </button>
+                <button class="prompt-pill" data-prompt="Summarize this prescription record completely.">
+                    📋 Full Summary
+                </button>
+            </div>
+
+            <!-- Chat Messages Window -->
+            <div class="chat-messages-container" id="chatMessages">
+                <!-- Welcome Bot Message -->
+                <div class="message-wrapper bot">
+                    <div class="message-avatar"><i class="fa-solid fa-robot"></i></div>
+                    <div class="message-bubble">
+                        Hello! I am your <strong>RxVLM Clinical Assistant</strong>. I have loaded prescription <code
+                            id="welcomeRxId">RX-TST-0001</code> into active context.
+                        <br><br>
+                        You can ask me questions about dosage instructions, administration schedules, side effects, or
+                        drug relationships!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input Bar -->
+            <div class="chat-input-area">
+                <form id="chatForm">
+                    <div class="input-container">
+                        <textarea id="chatInput" placeholder="Ask about medications, dosages, timing..."
+                            rows="1"></textarea>
+                        <button type="submit" class="btn-send" id="btnSendChat">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+                <div class="chat-footer-note">
+                    <i class="fa-solid fa-shield-heart"></i> AI Medical NLP Engine • Context-Aware Extraction
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- NEW ANALYSIS / UPLOAD MODAL -->
+    <div class="modal-backdrop" id="uploadModal">
+        <div class="modal-content glass-panel">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-cloud-arrow-up"></i> Custom Prescription OCR Upload & Testing</h3>
+                <button class="btn-close-modal" id="btnCloseModal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>Upload a new prescription image to run live PaddleOCR-VL model extraction, or select from our dataset
+                    partitions.</p>
+
+                <!-- Drag & Drop Upload Zone -->
+                <div class="form-group">
+                    <label><i class="fa-solid fa-file-image"></i> Upload Prescription Image:</label>
+                    <div class="drop-zone" id="dropZone">
+                        <i class="fa-solid fa-cloud-arrow-up drop-zone-icon"></i>
+                        <div class="drop-zone-text">Drag & drop your prescription image here</div>
+                        <span class="drop-zone-sub">or click to browse (.jpg, .png, .jpeg, .webp)</span>
+                        <input type="file" id="fileInput" accept="image/*" class="drop-zone-input">
+                    </div>
+                    <div id="filePreviewName" class="file-preview-name"></div>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-user"></i> Patient Name (Optional):</label>
+                    <input type="text" id="modalPatientName" class="rx-input" placeholder="e.g. Anil Kumar">
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-paragraph"></i> Or Paste Raw Prescription Text:</label>
+                    <textarea id="modalTextOverride" rows="3" class="rx-textarea"
+                        placeholder="e.g. Paracetamol 500 mg tablet should be taken twice daily for 5 days..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-layer-group"></i> Or Select Preset Sample:</label>
+                    <select id="modalSampleSelect" class="rx-dropdown">
+                        <!-- Sample files -->
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="btnCancelModal">Cancel</button>
+                <button class="btn-primary" id="btnRunPipeline"><i class="fa-solid fa-bolt"></i> Run Live
+                    Pipeline</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESEARCH SUMMARY EXPORTER REPORT MODAL -->
+    <div class="modal-backdrop" id="reportModal">
+        <div class="modal-content glass-panel report-modal-content">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-graduation-cap"></i> RxVLM Academic & Clinical Research Summary Report</h3>
+                <button class="btn-close-modal" id="btnCloseReportModal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body printable-report" id="printableReportContent">
+                <div class="report-watermark">RxVLM-RESEARCH</div>
+
+                <div class="report-header-banner">
+                    <div class="rep-title">
+                        <h2>RxVLM Prescription Extraction & Knowledge Graph Benchmark</h2>
+                        <span>PaddleOCR-VL + LoRA Model Architecture Evaluation Report</span>
+                    </div>
+                    <div class="rep-meta-badge">
+                        <span class="rep-date" id="repTimestamp">Date: 2026-10-04</span>
+                        <span class="rep-status">STRICT_POST_PROCESSING_LOCKED</span>
+                    </div>
+                </div>
+
+                <!-- Patient & Prescription Demographics Box -->
+                <div class="report-section">
+                    <h4><i class="fa-solid fa-user-doctor"></i> Active Subject & Doctor Profile</h4>
+                    <div class="report-grid-3">
+                        <div class="rep-box"><span>Subject ID:</span> <strong id="repRxId">RX-TST-0001</strong></div>
+                        <div class="rep-box"><span>Patient Name:</span> <strong id="repPatientName">Rajesh
+                                Kumar</strong></div>
+                        <div class="rep-box"><span>Age / Gender:</span> <strong id="repAgeGender">48 Yrs / Male</strong>
+                        </div>
+                        <div class="rep-box"><span>Prescribing Doctor:</span> <strong id="repDoctor">Dr. S. K.
+                                Gupta</strong></div>
+                        <div class="rep-box"><span>Source Image:</span> <strong id="repFilename">0001.jpg</strong></div>
+                        <div class="rep-box"><span>Dataset Partition:</span> <strong id="repDatasetPhase">Testing Set
+                                (100 Annotations)</strong></div>
+                    </div>
+                </div>
+
+                <!-- Extracted Medications Table -->
+                <div class="report-section">
+                    <h4><i class="fa-solid fa-tablets"></i> Extracted Prescription Tablet Entities</h4>
+                    <table class="report-meds-table" id="reportMedsTable">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Drug / Tablet Name</th>
+                                <th>Category</th>
+                                <th>Form</th>
+                                <th>Dosage</th>
+                                <th>Frequency</th>
+                                <th>Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reportMedsBody">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Knowledge Graph Statistics & Benchmark Metrics Split -->
+                <div class="report-section report-grid-2">
+                    <div class="rep-card-sub">
+                        <h4><i class="fa-solid fa-diagram-project"></i> Knowledge Graph Topology</h4>
+                        <ul class="rep-list" id="repKgStats">
+                            <li>Total Graph Nodes: <strong>25 Nodes</strong></li>
+                            <li>Total Relational Edges: <strong>30 Edges</strong></li>
+                            <li>Graph Schema: <strong>Patient -> Doctor -> Rx -> Medication</strong></li>
+                            <li>Network Density: <strong>0.84 (Highly Connected)</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="rep-card-sub">
+                        <h4><i class="fa-solid fa-chart-line"></i> Model Accuracy Benchmarks</h4>
+                        <ul class="rep-list">
+                            <li>Character Error Rate (CER): <strong id="repCerVal">15.20%</strong></li>
+                            <li>Word Error Rate (WER): <strong id="repWerVal">19.80%</strong></li>
+                            <li>Field Entity F1 Score: <strong id="repF1Val">80.23%</strong></li>
+                            <li>Jaccard Similarity: <strong id="repJaccardVal">75.40%</strong></li>
+                            <li>Exact Structural Match: <strong id="repExactVal">74.50%</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="report-footer-note">
+                    <i class="fa-solid fa-shield-heart"></i> Generated automatically by RxVLM Clinical OCR & Knowledge
+                    Graph Platform • Confidential Academic Research Summary
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn-secondary" id="btnCloseReportFooter">Close</button>
+                <button class="btn-primary" id="btnPrintReport"><i class="fa-solid fa-print"></i> Print / Save PDF
+                    Report</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="/static/js/app.js"></script>
+</body>
+
+</html>

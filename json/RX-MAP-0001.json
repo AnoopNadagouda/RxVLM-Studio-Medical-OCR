@@ -1,0 +1,107 @@
+{
+  "id": "RX-MAP-0001",
+  "filename": "0001.jpg",
+  "image_url": "/images/0001.jpg",
+  "patient_name": "Rajesh Kumar",
+  "age": 28,
+  "gender": "Male",
+  "doctor": "Dr. S. K. Gupta (Oncology)",
+  "date": "2026-10-01",
+  "description": "P+H tablets should be taken six tablets. Xgeva injection 120 mg should be taken as an alternative. Dexa U tablet should be taken twice daily from day two to day four. Ondam U tablet should be taken twice daily from day two to day four. Ultracet tablet should be taken twice daily and as needed.",
+  "medications": [
+    {
+      "name": "Xgeva 120 mg",
+      "form": "Injection",
+      "dose": "1 Unit",
+      "frequency": "alternate cycle",
+      "times": [],
+      "duration": "As advised by doctor",
+      "route": "Injection (IM/IV)",
+      "category": "Specialty Dental & Supportive",
+      "category_color": "#06b6d4"
+    },
+    {
+      "name": "HMW",
+      "form": "Mouthwash",
+      "dose": "Standard Dose",
+      "frequency": "three times daily",
+      "times": [
+        "morning",
+        "afternoon",
+        "night"
+      ],
+      "duration": "As advised by doctor",
+      "route": "Topical / Rinse",
+      "category": "Specialty Dental & Supportive",
+      "category_color": "#06b6d4"
+    },
+    {
+      "name": "Clohex-ADS",
+      "form": "Mouthwash",
+      "dose": "Standard Dose",
+      "frequency": "three times daily",
+      "times": [
+        "morning",
+        "afternoon",
+        "night"
+      ],
+      "duration": "As advised by doctor",
+      "route": "Topical / Rinse",
+      "category": "Specialty Dental & Supportive",
+      "category_color": "#06b6d4"
+    },
+    {
+      "name": "Dexa 4 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "D2-D4",
+      "route": "Oral",
+      "category": "Corticosteroid / Anti-emetic",
+      "category_color": "#8b5cf6"
+    },
+    {
+      "name": "Ondem 4 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "D2-D4",
+      "route": "Oral",
+      "category": "Gastro / CNS Specialty",
+      "category_color": "#10b981"
+    },
+    {
+      "name": "Ultracet",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "5 days",
+      "route": "Oral",
+      "category": "Analgesic / Anti-inflammatory",
+      "category_color": "#ef4444"
+    }
+  ],
+  "tablet_count": 6,
+  "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+  "dataset_group": "mapped",
+  "is_mapped_27": true,
+  "cer": 2.1,
+  "wer": 3.4,
+  "f1_score": 98.5,
+  "precision": 98.8,
+  "recall": 98.2,
+  "jaccard": 96.5,
+  "exact_match": 96.3
+}

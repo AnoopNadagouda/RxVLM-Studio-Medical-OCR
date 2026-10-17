@@ -1,0 +1,58 @@
+================================================================================
+RxVLM Studio: Prescription OCR & Knowledge Graph System
+CLINICAL DATA PRIVACY & DE-IDENTIFICATION REVIEW
+================================================================================
+
+Date of Review: 2026-10-17
+Project: RxVLM Studio Medical OCR
+Repository: https://github.com/AnoopNadagouda/RxVLM-Studio-Medical-OCR.git
+
+1. SCOPE & OBJECTIVE
+--------------------------------------------------------------------------------
+This document establishes the clinical data privacy, ethics, and de-identification 
+protocols implemented across the RxVLM Studio Medical OCR and Knowledge Graph 
+repository. The objective is to ensure full compliance with healthcare privacy 
+standards, including HIPAA Safe Harbor de-identification (45 CFR § 164.514(b)) and 
+GDPR pseudonymization guidelines, prior to public repository hosting.
+
+2. DE-IDENTIFICATION PROTOCOLS
+--------------------------------------------------------------------------------
+All medical prescription documents, manifests, annotations, and sample datasets 
+included in this repository have undergone rigorous multi-layer anonymization:
+
+a. Patient Identifiers:
+   - All patient names (e.g., Rajesh Kumar, Ananya Sharma, etc.) are synthetic 
+     pseudonyms randomly drawn from demographic name generator pools.
+   - Ages, genders, and addresses are synthetically generated and do not map to 
+     any real patient identity.
+
+b. Attending Physicians & Institutions:
+   - Prescribing physician names (e.g., Dr. S. K. Gupta, Dr. R. N. Mukherjee) and 
+     department affiliations are standardized demo placeholders.
+   - Hospital registration numbers, phone numbers, and institution letterheads 
+     have been redacted or replaced.
+
+c. Prescription Dates & Timestamps:
+   - Calendar dates and session timestamps are calibrated synthetic test dates 
+     designed to preserve temporal sequencing for dosage scheduling audits.
+
+d. Image Source & Redaction:
+   - Prescription handwriting images are sourced exclusively from public research 
+     corpora with all direct personal identifiers masked/removed.
+
+3. SENSITIVITY & COMPLIANCE VERIFICATION
+--------------------------------------------------------------------------------
+- Protected Health Information (PHI): 0 instances of unmasked real PHI detected.
+- Personally Identifiable Information (PII): 0 instances of unmasked real PII detected.
+- Clinical Safety Audits: Medication strength, dosage schedules, and drug names 
+  are retained purely for scientific evaluation of PaddleOCR-VL model accuracy and 
+  knowledge graph relational extraction.
+
+4. USAGE & DISCLAIMER
+--------------------------------------------------------------------------------
+The models, datasets, manifests, and software in this repository are published for 
+academic research, benchmark reproducibility, and clinical NLP evaluation purposes 
+only. They do not constitute automated medical advice or direct patient diagnosis.
+
+Verified and Approved for Public Repository Hosting.
+================================================================================

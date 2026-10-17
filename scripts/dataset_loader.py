@@ -6,6 +6,8 @@ import torch
 from torch.utils.data import Dataset
 import albumentations as A
 
+DEFAULT_PROMPT_TEXT = "<image>\nExtract all prescription text, drug names, and medical details from this image accurately."
+
 def preprocess_image_aspect_ratio(img: Image.Image, max_dim: int = 768, fill_color=(255, 255, 255)) -> Image.Image:
     """
     Dynamic Aspect-Ratio Resizing:
@@ -85,9 +87,8 @@ class MedicineWordDataset(Dataset):
             img_np = np.array(img_padded)
             augmented = self.transform(image=img_np)['image']
             img_padded = Image.fromarray(augmented)
-            
         # Parse prompt & target text
-        prompt = "<image>\nExtract all prescription text, drug names, and medical details from this image accurately."
+        prompt = DEFAULT_PROMPT_TEXT
         target_text = rec.get('text', '')
         if not target_text:
             for msg in rec.get('conversations', []):
@@ -95,6 +96,9 @@ class MedicineWordDataset(Dataset):
                     prompt = msg.get('value', prompt)
                 elif msg.get('from') == 'gpt':
                     target_text = msg.get('value', '')
+
+        if target_text:
+            target_text = target_text.strip()
 
         return {
             "image": img_padded,

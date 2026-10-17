@@ -1,0 +1,94 @@
+{
+  "summary": {
+    "checkpoint": "./checkpoints/stage3_fullpage_best",
+    "total_evaluated": 5,
+    "evaluation_time_sec": 40.53,
+    "mean_cer": 1.7156,
+    "mean_wer": 1.8,
+    "exact_match_accuracy_pct": 0.0,
+    "line_count_structural_accuracy_pct": 100.0,
+    "dosage_syntax_accuracy_pct": 100.0
+  },
+  "sample_details": [
+    {
+      "id": 1,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\kaggle_bd_rx\\Train_Set\\P2368.jpg",
+      "reference": "Nexe",
+      "prediction": "-on the content.",
+      "cer": 3.5,
+      "wer": 3.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 3.5
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 2,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\train\\single_000995.png",
+      "reference": "Disopan",
+      "prediction": "\ufffd the content:",
+      "cer": 1.7143,
+      "wer": 3.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 1.7142857142857142
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 3,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\train\\single_005157.png",
+      "reference": "Namefan 750",
+      "prediction": "\\[\\quad] 3333333330]",
+      "cer": 1.3636,
+      "wer": 1.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 1.3636363636363635
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 4,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\rxhandbd\\doctors-handwritten-prescription-bd-dataset\\Doctor\u2019s Handwritten Prescription BD dataset\\Training\\training_words\\2404.png",
+      "reference": "Odmon",
+      "prediction": "\\[\\]",
+      "cer": 1.0,
+      "wer": 1.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 1.0
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 5,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\train\\single_000085.png",
+      "reference": "Alatrol",
+      "prediction": "\\[\\special]",
+      "cer": 1.0,
+      "wer": 1.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 1.0
+      },
+      "dosage_accuracy": 1.0
+    }
+  ]
+}

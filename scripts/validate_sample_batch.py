@@ -92,7 +92,7 @@ def main():
 
         img_padded = preprocess_image_aspect_ratio(raw_img, max_dim=768)
 
-        prompt_text = "<image>\nExtract all prescription text, drug names, and dosages accurately."
+        prompt_text = "<image>\nExtract all prescription text, drug names, and medical details from this image accurately."
         msgs = [{"role": "user", "content": [{"type": "image"}, {"type": "text", "text": prompt_text}]}]
         formatted_prompt = processor.apply_chat_template(msgs, add_generation_prompt=True)
 
@@ -100,7 +100,13 @@ def main():
         inputs = {k: v.to(device) for k, v in inputs.items()}
 
         with torch.no_grad():
-            generated_ids = model.generate(**inputs, max_new_tokens=64, do_sample=False)
+            generated_ids = model.generate(
+                **inputs,
+                max_new_tokens=64,
+                do_sample=False,
+                repetition_penalty=1.25,
+                no_repeat_ngram_size=3
+            )
 
         in_len = inputs["input_ids"].shape[1]
         new_ids = generated_ids[0][in_len:]

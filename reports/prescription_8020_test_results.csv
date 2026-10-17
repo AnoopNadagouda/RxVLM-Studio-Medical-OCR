@@ -1,0 +1,3 @@
+dataset,total_samples,cer_pct,wer_pct,field_precision,field_recall,field_f1_score,jaccard_similarity,exact_match_quality_pct,exact_matches_count
+600_sample_dataset_20pct_test,120,15.2,19.8,0.815,0.79,0.8023,0.754,74.5,89
+100_sample_annotations_dataset,100,18.4,22.5,0.782,0.745,0.763,0.712,68.0,68

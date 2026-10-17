@@ -181,6 +181,8 @@ class Handler(SimpleHTTPRequestHandler):
                     generated_ids = model.generate(
                         **inputs,
                         max_new_tokens=4096,
+                        repetition_penalty=1.25,
+                        no_repeat_ngram_size=3
                     )
                 generated_ids = generated_ids[:, inputs.input_ids.shape[-1]:]
                 output_text = processor.batch_decode(generated_ids, skip_special_tokens=False)[0]

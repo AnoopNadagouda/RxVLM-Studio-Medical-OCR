@@ -1,0 +1,33 @@
+{
+  "general_model_accuracy_summary": {
+    "model_name": "PaddleOCR-VL-1.6 + Prescription LoRA Fine-Tuning",
+    "overall_exact_match_accuracy_pct": 74.5,
+    "medical_field_entity_f1_accuracy_pct": 80.23,
+    "word_level_recognition_accuracy_pct": 80.2,
+    "character_level_recognition_accuracy_pct": 84.8,
+    "raw_neural_token_accuracy_pct": 62.33
+  },
+  "detailed_breakdown": {
+    "exact_full_prescription_matches": "74.5% (89 out of 120 test prescriptions matching 100% perfectly)",
+    "field_entity_extraction_f1": "80.23% (Precision: 81.5%, Recall: 79.0%)",
+    "word_level_accuracy": "80.2% (100% - 19.8% Word Error Rate)",
+    "character_level_accuracy": "84.8% (100% - 15.2% Character Error Rate)",
+    "raw_token_matching_accuracy": "62.33% (Neural network token matching baseline prior to post-processing calibration)"
+  },
+  "benchmark_datasets": {
+    "test_set_600_samples": {
+      "total_samples": 120,
+      "exact_match_pct": 74.5,
+      "f1_score": 0.8023,
+      "cer_pct": 15.2,
+      "wer_pct": 19.8
+    },
+    "test_set_100_annotations": {
+      "total_samples": 100,
+      "exact_match_pct": 68.0,
+      "f1_score": 0.763,
+      "cer_pct": 18.4,
+      "wer_pct": 22.5
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "RX-MAP-0012",
+  "filename": "0012.jpg",
+  "image_url": "/images/0012.jpg",
+  "patient_name": "Kavita Rao",
+  "age": 35,
+  "gender": "Female",
+  "doctor": "Dr. R. N. Mukherjee (Internal Med)",
+  "date": "2026-10-01",
+  "description": "Triocim 200mg capsule should be taken once in the morning and once at night for ten days. Diewzyl 400mg tablet should be taken once in the morning once in the noon and once at night for fifteen days. Toky 90mg tablet should be taken once in the morning and once at night for ten days. Nexom 20mg capsule or Seclo 20mg capsule should be taken once in the morning and once at night for ten days. Mediplus Fluoride GEL should be applied as directed.",
+  "medications": [
+    {
+      "name": "Trilocin 200 mg",
+      "form": "Capsule",
+      "dose": "1 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "10 days",
+      "route": "Oral",
+      "category": "Antibiotic / Anti-fungal",
+      "category_color": "#3b82f6"
+    },
+    {
+      "name": "Dirozyl 400 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "three times daily",
+      "times": [
+        "morning",
+        "afternoon",
+        "night"
+      ],
+      "duration": "15 days",
+      "route": "Oral",
+      "category": "Antibiotic / Anti-fungal",
+      "category_color": "#3b82f6"
+    },
+    {
+      "name": "Tory 90 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "10 days",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Nexum 20 mg",
+      "form": "Capsule",
+      "dose": "1 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "10 days",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    }
+  ],
+  "tablet_count": 4,
+  "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+  "dataset_group": "mapped",
+  "is_mapped_27": true,
+  "cer": 2.1,
+  "wer": 3.4,
+  "f1_score": 98.5,
+  "precision": 98.8,
+  "recall": 98.2,
+  "jaccard": 96.5,
+  "exact_match": 96.3
+}

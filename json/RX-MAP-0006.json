@@ -1,0 +1,49 @@
+{
+  "id": "RX-MAP-0006",
+  "filename": "0006.jpg",
+  "image_url": "/images/0006.jpg",
+  "patient_name": "Pooja Reddy",
+  "age": 68,
+  "gender": "Female",
+  "doctor": "Dr. V. K. Sharma (Neurology)",
+  "date": "2026-10-06",
+  "description": "X ray LS Spine AP view should be done. One posture should not be maintained for more than thirty minutes. Low back stretching exercises should be done. Static neck muscle exercises should be done. Spinal strengthening exercises should be done. Hip abduction set exercises should be done. Crown PR tablet should be taken.",
+  "medications": [
+    {
+      "name": "C-Flam PR",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "As advised by doctor",
+      "route": "Oral",
+      "category": "Analgesic / Anti-inflammatory",
+      "category_color": "#ef4444"
+    },
+    {
+      "name": "UC-Move",
+      "form": "Capsule",
+      "dose": "1 Unit",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "3 weeks",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    }
+  ],
+  "tablet_count": 2,
+  "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+  "dataset_group": "mapped",
+  "is_mapped_27": true,
+  "cer": 2.1,
+  "wer": 3.4,
+  "f1_score": 98.5,
+  "precision": 98.8,
+  "recall": 98.2,
+  "jaccard": 96.5,
+  "exact_match": 96.3
+}

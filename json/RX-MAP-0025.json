@@ -1,0 +1,114 @@
+{
+  "id": "RX-MAP-0025",
+  "filename": "0025.jpg",
+  "image_url": "/images/0025.jpg",
+  "patient_name": "Rohan Saxena",
+  "age": 31,
+  "gender": "Male",
+  "doctor": "Dr. D. K. Joshi (Gastroenterology)",
+  "date": "2026-10-03",
+  "description": "Doro Condic tablet half in the morning and half at night should be taken continuously. Sulphox Bel 80 syrup two teaspoons should be taken five times daily and continued. Ala tablet one should be taken at night for seven days. Mycomnr Ral should be taken three times daily for seven days. Revol 5 tablet one should be taken at night for seven days. Pirinx 20 tablet should be taken once in the morning and once at night for one month. Rianorial 5 tablet should be taken at night for two months.",
+  "medications": [
+    {
+      "name": "Doxocondin 400 mg",
+      "form": "Tablet",
+      "dose": "0.5 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "5 days",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Salprex Inhaler",
+      "form": "Inhaler",
+      "dose": "2 puffs",
+      "frequency": "twice daily with spacer",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "As advised by doctor",
+      "route": "Inhalation",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Alatrol 10 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "7 days",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Myconal Oral Gel",
+      "form": "Oral Gel",
+      "dose": "as directed",
+      "frequency": "three times daily",
+      "times": [
+        "morning",
+        "afternoon",
+        "night"
+      ],
+      "duration": "7 days",
+      "route": "Topical / Rinse",
+      "category": "Supplement / Vitamin",
+      "category_color": "#f59e0b"
+    },
+    {
+      "name": "Flugal 50 mg",
+      "form": "Capsule",
+      "dose": "1 Unit",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "7 days",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Finix 20 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "1 month",
+      "route": "Oral",
+      "category": "Gastro / CNS Specialty",
+      "category_color": "#10b981"
+    },
+    {
+      "name": "Rivotril 0.5 mg",
+      "form": "Tablet",
+      "dose": "0.5 Unit",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "1 month",
+      "route": "Oral",
+      "category": "Gastro / CNS Specialty",
+      "category_color": "#10b981"
+    }
+  ],
+  "tablet_count": 7,
+  "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+  "dataset_group": "mapped",
+  "is_mapped_27": true,
+  "cer": 2.1,
+  "wer": 3.4,
+  "f1_score": 98.5,
+  "precision": 98.8,
+  "recall": 98.2,
+  "jaccard": 96.5,
+  "exact_match": 96.3
+}

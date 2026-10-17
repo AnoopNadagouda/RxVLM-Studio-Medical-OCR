@@ -1,0 +1,74 @@
+{
+  "id": "RX-MAP-0005",
+  "filename": "0005.jpg",
+  "image_url": "/images/0005.jpg",
+  "patient_name": "Amit Banerjee",
+  "age": 51,
+  "gender": "Male",
+  "doctor": "Dr. D. K. Joshi (Gastroenterology)",
+  "date": "2026-10-05",
+  "description": "Encesale 200 tablet should be taken half in the morning and half at night and continue. Nexcital 5 tablet should be taken once in the morning for two months. Rivetails 5 tablet should be taken half in the morning and once at night for two months. Bentix 5 tablet should be taken half in the morning and half at night for two months.",
+  "medications": [
+    {
+      "name": "Encorate 200 mg",
+      "form": "Tablet",
+      "dose": "0.5 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "running",
+      "route": "Oral",
+      "category": "Gastro / CNS Specialty",
+      "category_color": "#10b981"
+    },
+    {
+      "name": "Nexcital 5 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "2 months",
+      "route": "Oral",
+      "category": "Gastro / CNS Specialty",
+      "category_color": "#10b981"
+    },
+    {
+      "name": "Rivotril 0.5 mg",
+      "form": "Tablet",
+      "dose": "0.5 Unit",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "2 months",
+      "route": "Oral",
+      "category": "Gastro / CNS Specialty",
+      "category_color": "#10b981"
+    },
+    {
+      "name": "Bentix 0.5 mg",
+      "form": "Tablet",
+      "dose": "0.5 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "2 months",
+      "route": "Oral",
+      "category": "Gastro / CNS Specialty",
+      "category_color": "#10b981"
+    }
+  ],
+  "tablet_count": 4,
+  "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+  "dataset_group": "mapped",
+  "is_mapped_27": true,
+  "cer": 2.1,
+  "wer": 3.4,
+  "f1_score": 98.5,
+  "precision": 98.8,
+  "recall": 98.2,
+  "jaccard": 96.5,
+  "exact_match": 96.3
+}

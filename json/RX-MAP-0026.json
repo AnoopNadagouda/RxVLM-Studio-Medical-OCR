@@ -1,0 +1,61 @@
+{
+  "id": "RX-MAP-0026",
+  "filename": "0026.jpg",
+  "image_url": "/images/0026.jpg",
+  "patient_name": "Rajesh Kumar",
+  "age": 48,
+  "gender": "Female",
+  "doctor": "Dr. V. K. Sharma (Neurology)",
+  "date": "2026-10-04",
+  "description": "Sumol DS syrup 4 ml should be taken four times daily as needed. Muctite LS syrup 2.5 ml should be taken three times daily. Meftal-F tablet one should be taken when needed for pain or fever.",
+  "medications": [
+    {
+      "name": "Sumol DS",
+      "form": "Syrup",
+      "dose": "4 ml",
+      "frequency": "every 4 hours as needed for fever",
+      "times": [],
+      "duration": "3 days",
+      "route": "Oral",
+      "category": "Analgesic / Anti-inflammatory",
+      "category_color": "#ef4444"
+    },
+    {
+      "name": "Mucolite LS",
+      "form": "Syrup",
+      "dose": "2.5 ml",
+      "frequency": "three times daily",
+      "times": [
+        "morning",
+        "afternoon",
+        "night"
+      ],
+      "duration": "3 days",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Meftal-P",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "as needed for severe fever/pain",
+      "times": [],
+      "duration": "3 days",
+      "route": "Oral",
+      "category": "Analgesic / Anti-inflammatory",
+      "category_color": "#ef4444"
+    }
+  ],
+  "tablet_count": 3,
+  "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+  "dataset_group": "mapped",
+  "is_mapped_27": true,
+  "cer": 2.1,
+  "wer": 3.4,
+  "f1_score": 98.5,
+  "precision": 98.8,
+  "recall": 98.2,
+  "jaccard": 96.5,
+  "exact_match": 96.3
+}

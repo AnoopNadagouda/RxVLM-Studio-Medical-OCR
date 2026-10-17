@@ -1,0 +1,74 @@
+{
+  "id": "RX-MAP-0027",
+  "filename": "0027.jpg",
+  "image_url": "/images/0027.jpg",
+  "patient_name": "Ananya Sharma",
+  "age": 65,
+  "gender": "Male",
+  "doctor": "Dr. T. S. Nair (Dermatology)",
+  "date": "2026-10-05",
+  "description": "Frnadin 120 mg tablet should be taken once in the morning and once at night for two months. Monocazt 10 mg tablet should be taken at night for two months. Bolista 20 mg tablet should be taken at night for two months. Famotack 20 mg tablet should be taken once in the morning and once at night for two months.",
+  "medications": [
+    {
+      "name": "Fenadin 120 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "2 months",
+      "route": "Oral",
+      "category": "Analgesic / Anti-inflammatory",
+      "category_color": "#ef4444"
+    },
+    {
+      "name": "Monocast 10 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "2 months",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Bilista 20 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "2 months",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Famotack 20 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "2 months",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    }
+  ],
+  "tablet_count": 4,
+  "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+  "dataset_group": "mapped",
+  "is_mapped_27": true,
+  "cer": 2.1,
+  "wer": 3.4,
+  "f1_score": 98.5,
+  "precision": 98.8,
+  "recall": 98.2,
+  "jaccard": 96.5,
+  "exact_match": 96.3
+}

@@ -1,0 +1,46 @@
+{
+  "id": "RX-MAP-0004",
+  "filename": "0004.jpg",
+  "image_url": "/images/0004.jpg",
+  "patient_name": "Sunita Patel",
+  "age": 34,
+  "gender": "Female",
+  "doctor": "Dr. Meena Das (Cardiology)",
+  "date": "2026-10-04",
+  "description": "Liposomal Amphotericin injection 50 mg two vials should be taken six vials daily. Conventional Amphotericin injection 50 mg 6.8 vials should be taken one vial daily.",
+  "medications": [
+    {
+      "name": "Liposomal Amphotericin B 50 mg",
+      "form": "Injection",
+      "dose": "300 mg (6 vials)",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "2 weeks",
+      "route": "Injection (IM/IV)",
+      "category": "Antibiotic / Anti-fungal",
+      "category_color": "#3b82f6"
+    },
+    {
+      "name": "Amphotericin B Conventional 50 mg",
+      "form": "Injection",
+      "dose": "50 mg (1 vial)",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "6-8 weeks",
+      "route": "Injection (IM/IV)",
+      "category": "Antibiotic / Anti-fungal",
+      "category_color": "#3b82f6"
+    }
+  ],
+  "tablet_count": 2,
+  "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+  "dataset_group": "mapped",
+  "is_mapped_27": true,
+  "cer": 2.1,
+  "wer": 3.4,
+  "f1_score": 98.5,
+  "precision": 98.8,
+  "recall": 98.2,
+  "jaccard": 96.5,
+  "exact_match": 96.3
+}

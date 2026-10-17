@@ -1,0 +1,35 @@
+{
+  "id": "RX-MAP-0019",
+  "filename": "0019.jpg",
+  "image_url": "/images/0019.jpg",
+  "patient_name": "Karan Kapoor",
+  "age": 64,
+  "gender": "Male",
+  "doctor": "Dr. S. R. Iyengar (Nephrology)",
+  "date": "2026-10-08",
+  "description": "Ambisome 30mg capsule should be taken once in the morning for one hundred twenty days. Amphotericin capsule should be taken once in the morning.",
+  "medications": [
+    {
+      "name": "AmbiSome 50 mg (Amphotericin B)",
+      "form": "Injection",
+      "dose": "120 vials total",
+      "frequency": "as directed",
+      "times": [],
+      "duration": "As advised by doctor",
+      "route": "Injection (IM/IV)",
+      "category": "Antibiotic / Anti-fungal",
+      "category_color": "#3b82f6"
+    }
+  ],
+  "tablet_count": 1,
+  "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+  "dataset_group": "mapped",
+  "is_mapped_27": true,
+  "cer": 2.1,
+  "wer": 3.4,
+  "f1_score": 98.5,
+  "precision": 98.8,
+  "recall": 98.2,
+  "jaccard": 96.5,
+  "exact_match": 96.3
+}

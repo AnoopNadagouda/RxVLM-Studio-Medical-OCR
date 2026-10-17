@@ -55,17 +55,18 @@ def levenshtein_distance(seq1, seq2):
     return dp[m][n]
 
 def post_process_text(text: str) -> str:
-    """
+    r"""
     Post-processing for OCR text:
-    - Trim surrounding whitespace
-    - Collapse redundant inline spaces
+    - Strip LaTeX formatting markup (\[, \], \text, \(, \))
+    - Collapse redundant inline spaces and token repeats
     - Preserve line breaks (\n) for multiline evaluation
     """
     if not text:
         return ""
-    text = text.strip()
-    lines = [re.sub(r'[ \t]+', ' ', line.strip()) for line in text.split('\n')]
-    return '\n'.join(lines)
+    text = text.replace(r"\[", "").replace(r"\]", "").replace(r"\(", "").replace(r"\)", "").replace(r"\text", "").replace("\\", "")
+    text = re.sub(r'\b(\w+)(?:\s+\1\b)+', r'\1', text, flags=re.IGNORECASE)
+    lines = [re.sub(r'[ \t]+', ' ', line.strip()) for line in text.split('\n') if line.strip()]
+    return '\n'.join(lines).strip()
 
 def compute_cer(reference: str, prediction: str) -> float:
     ref_norm = post_process_text(reference)

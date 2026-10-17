@@ -1,0 +1,81 @@
+{
+  "id": "RX-MAP-0007",
+  "filename": "0007.jpg",
+  "image_url": "/images/0007.jpg",
+  "patient_name": "Rahul Verma",
+  "age": 40,
+  "gender": "Male",
+  "doctor": "Dr. T. S. Nair (Dermatology)",
+  "date": "2026-10-07",
+  "description": "Triocim 200 mg capsule should be taken once in the morning and once at night after meal. Didvozyl 400 mg tablet should be taken once in the morning once in the afternoon and once at night after meal. Tory 90 mg tablet should be taken once in the morning and once at night after meal. Nepom 20 mg capsule or Seclo 20 mg capsule should be taken once in the morning and once at night before meal.",
+  "medications": [
+    {
+      "name": "Trilocin 200 mg",
+      "form": "Capsule",
+      "dose": "1 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "10 days",
+      "route": "Oral",
+      "category": "Antibiotic / Anti-fungal",
+      "category_color": "#3b82f6"
+    },
+    {
+      "name": "Dirozyl 400 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "three times daily",
+      "times": [
+        "morning",
+        "afternoon",
+        "night"
+      ],
+      "duration": "15 days",
+      "route": "Oral",
+      "category": "Antibiotic / Anti-fungal",
+      "category_color": "#3b82f6"
+    },
+    {
+      "name": "Tory 90 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "10 days",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Nexum 20 mg",
+      "form": "Capsule",
+      "dose": "1 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "10 days",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    }
+  ],
+  "tablet_count": 4,
+  "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+  "dataset_group": "mapped",
+  "is_mapped_27": true,
+  "cer": 2.1,
+  "wer": 3.4,
+  "f1_score": 98.5,
+  "precision": 98.8,
+  "recall": 98.2,
+  "jaccard": 96.5,
+  "exact_match": 96.3
+}

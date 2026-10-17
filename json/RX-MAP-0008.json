@@ -1,0 +1,61 @@
+{
+  "id": "RX-MAP-0008",
+  "filename": "0008.jpg",
+  "image_url": "/images/0008.jpg",
+  "patient_name": "Priyanka Sen",
+  "age": 57,
+  "gender": "Female",
+  "doctor": "Dr. P. C. Mahapatra (Endocrinology)",
+  "date": "2026-10-08",
+  "description": "Azomac syrup 30 ml one teaspoon should be taken once daily. XPQ syrup two teaspoons should be taken three times daily if there is fever. Fexofast syrup one teaspoon should be taken twice daily.",
+  "medications": [
+    {
+      "name": "Azomax 30 ml",
+      "form": "Syrup",
+      "dose": "1 tsp",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "10 days",
+      "route": "Oral",
+      "category": "Antibiotic / Anti-fungal",
+      "category_color": "#3b82f6"
+    },
+    {
+      "name": "Xpa",
+      "form": "Syrup",
+      "dose": "2 tsp",
+      "frequency": "three times daily",
+      "times": [
+        "morning",
+        "afternoon",
+        "night"
+      ],
+      "duration": "for fever",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Fexofast",
+      "form": "Syrup",
+      "dose": "1 tsp",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "10 days",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    }
+  ],
+  "tablet_count": 3,
+  "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+  "dataset_group": "mapped",
+  "is_mapped_27": true,
+  "cer": 2.1,
+  "wer": 3.4,
+  "f1_score": 98.5,
+  "precision": 98.8,
+  "recall": 98.2,
+  "jaccard": 96.5,
+  "exact_match": 96.3
+}

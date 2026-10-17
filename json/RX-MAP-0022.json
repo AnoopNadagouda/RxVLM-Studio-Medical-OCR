@@ -1,0 +1,72 @@
+{
+  "id": "RX-MAP-0022",
+  "filename": "0022.jpg",
+  "image_url": "/images/0022.jpg",
+  "patient_name": "Divya Pillai",
+  "age": 70,
+  "gender": "Female",
+  "doctor": "Dr. R. N. Mukherjee (Internal Med)",
+  "date": "2026-10-11",
+  "description": "Azee tablet should be taken once in the morning for seven days. Tusq syrup should be taken as directed. Lan 40mg tablet should be taken once in the morning for seven days. Dolo 650mg tablet should be taken once in the morning.",
+  "medications": [
+    {
+      "name": "Azee 500 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "7 days",
+      "route": "Oral",
+      "category": "Antibiotic / Anti-fungal",
+      "category_color": "#3b82f6"
+    },
+    {
+      "name": "Tusq",
+      "form": "Syrup",
+      "dose": "1 tsp",
+      "frequency": "three times daily",
+      "times": [
+        "morning",
+        "afternoon",
+        "night"
+      ],
+      "duration": "As advised by doctor",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Pan 40 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "once daily before breakfast",
+      "times": [],
+      "duration": "7 days",
+      "route": "Oral",
+      "category": "Gastro / CNS Specialty",
+      "category_color": "#10b981"
+    },
+    {
+      "name": "Dolo 650 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "as needed for fever/pain",
+      "times": [],
+      "duration": "As advised by doctor",
+      "route": "Oral",
+      "category": "Analgesic / Anti-inflammatory",
+      "category_color": "#ef4444"
+    }
+  ],
+  "tablet_count": 4,
+  "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+  "dataset_group": "mapped",
+  "is_mapped_27": true,
+  "cer": 2.1,
+  "wer": 3.4,
+  "f1_score": 98.5,
+  "precision": 98.8,
+  "recall": 98.2,
+  "jaccard": 96.5,
+  "exact_match": 96.3
+}

@@ -1,0 +1,57 @@
+{
+  "id": "RX-MAP-0023",
+  "filename": "0023.jpg",
+  "image_url": "/images/0023.jpg",
+  "patient_name": "Tarun Malhotra",
+  "age": 42,
+  "gender": "Male",
+  "doctor": "Dr. A. K. Roy (Pulmonology)",
+  "date": "2026-10-01",
+  "description": "Azeitmocin 50mg tablet should be taken once in the morning for five days. Histon 4mg tablet should be taken once in the morning for thirty days. Elmon 10mg tablet should be taken once in the morning for twenty days.",
+  "medications": [
+    {
+      "name": "Azithrocin 500 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "8 days",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Histon 4 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "10 days",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Xelmon 10 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "20 days",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    }
+  ],
+  "tablet_count": 3,
+  "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+  "dataset_group": "mapped",
+  "is_mapped_27": true,
+  "cer": 2.1,
+  "wer": 3.4,
+  "f1_score": 98.5,
+  "precision": 98.8,
+  "recall": 98.2,
+  "jaccard": 96.5,
+  "exact_match": 96.3
+}

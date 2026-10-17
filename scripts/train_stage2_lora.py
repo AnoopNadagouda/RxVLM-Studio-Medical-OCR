@@ -63,13 +63,12 @@ def custom_collate_fn(batch, processor):
     inputs = processor(text=full_texts, images=images, padding=True, return_tensors="pt")
     
     labels = inputs["input_ids"].clone()
-    tokenizer = getattr(processor, "tokenizer", None)
     for i, p_text in enumerate(formatted_prompts):
-        if tokenizer is not None:
-            p_len = len(tokenizer.encode(p_text))
-        else:
-            p_len = 10
+        p_ids = processor.tokenizer(p_text, return_tensors="pt", add_special_tokens=False)["input_ids"]
+        p_len = p_ids.shape[1]
+        assert p_len > 0, f"Tokenization guardrail failed: empty prompt tokens for {p_text}"
         labels[i, :p_len] = -100
+        assert torch.all(labels[i, :p_len] == -100), "Label masking guardrail failed: prompt tokens must be masked with -100"
         
     if "attention_mask" in inputs:
         labels[inputs["attention_mask"] == 0] = -100

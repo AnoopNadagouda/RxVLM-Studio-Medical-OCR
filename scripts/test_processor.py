@@ -11,11 +11,9 @@ MODEL_PATH = "models/PaddleOCR-VL-1.6"
 print("Loading processor...")
 processor = AutoProcessor.from_pretrained(MODEL_PATH, trust_remote_code=True)
 print("Processor loaded!")
-
 manifest_path = "ocr_manifests/vlm_stage1_train.jsonl"
 with open(manifest_path, 'r', encoding='utf-8') as f:
     sample = json.loads(f.readline())
-
 print("Sample item:", sample)
 img_path = sample['image']
 convs = sample['conversations']
@@ -26,10 +24,8 @@ for msg in convs:
         human_text = msg['value']
     elif msg['from'] == 'gpt':
         target_text = msg['value']
-
 print("Human prompt:", repr(human_text))
 print("Target text:", repr(target_text))
-
 img = Image.open(img_path).convert("RGB")
 print("Image size:", img.size)
 

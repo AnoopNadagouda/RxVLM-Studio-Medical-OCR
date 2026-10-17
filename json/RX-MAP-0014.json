@@ -1,0 +1,82 @@
+{
+  "id": "RX-MAP-0014",
+  "filename": "0014.jpg",
+  "image_url": "/images/0014.jpg",
+  "patient_name": "Nisha Agarwal",
+  "age": 69,
+  "gender": "Female",
+  "doctor": "Dr. Meena Das (Cardiology)",
+  "date": "2026-10-03",
+  "description": "AC-Favis should be taken as directed. Cholecystitis should be treated as directed. Cholelithiasis should be treated as directed. Muco/Pyocele of Gallbladder should be treated as directed. Dicho tablet should be taken once in the morning for as directed. Rantac tablet should be taken once in the morning for as directed (BBF).",
+  "medications": [
+    {
+      "name": "Diclofenac",
+      "form": "Injection",
+      "dose": "1 ampoule",
+      "frequency": "IM stat",
+      "times": [],
+      "duration": "As advised by doctor",
+      "route": "Injection (IM/IV)",
+      "category": "Analgesic / Anti-inflammatory",
+      "category_color": "#ef4444"
+    },
+    {
+      "name": "Rantac",
+      "form": "Injection",
+      "dose": "1 ampoule",
+      "frequency": "IV stat",
+      "times": [],
+      "duration": "As advised by doctor",
+      "route": "Injection (IM/IV)",
+      "category": "Gastro / CNS Specialty",
+      "category_color": "#10b981"
+    },
+    {
+      "name": "ORS",
+      "form": "Oral Solution",
+      "dose": "1 sachet in 1 L water",
+      "frequency": "as directed",
+      "times": [],
+      "duration": "As advised by doctor",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Diclo",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "As advised by doctor",
+      "route": "Oral",
+      "category": "Analgesic / Anti-inflammatory",
+      "category_color": "#ef4444"
+    },
+    {
+      "name": "Rantac",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "once daily before breakfast",
+      "times": [],
+      "duration": "As advised by doctor",
+      "route": "Oral",
+      "category": "Gastro / CNS Specialty",
+      "category_color": "#10b981"
+    }
+  ],
+  "tablet_count": 5,
+  "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+  "dataset_group": "mapped",
+  "is_mapped_27": true,
+  "cer": 2.1,
+  "wer": 3.4,
+  "f1_score": 98.5,
+  "precision": 98.8,
+  "recall": 98.2,
+  "jaccard": 96.5,
+  "exact_match": 96.3
+}

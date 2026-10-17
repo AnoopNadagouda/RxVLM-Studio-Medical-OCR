@@ -1,0 +1,335 @@
+{
+  "summary": {
+    "checkpoint": "./checkpoints/stage2_multiline_best",
+    "total_evaluated": 20,
+    "evaluation_time_sec": 562.15,
+    "validation_loss": null,
+    "mean_cer": 11.5992,
+    "mean_wer": 13.5,
+    "exact_match_accuracy_pct": 0.0,
+    "line_count_structural_accuracy_pct": 100.0,
+    "dosage_syntax_accuracy_pct": 100.0
+  },
+  "sample_details": [
+    {
+      "id": 1,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\train\\single_005179.png",
+      "reference": "TAB. PENOULY",
+      "prediction": "-only.",
+      "cer": 1.0,
+      "wer": 1.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 1.0
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 2,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\train\\single_008272.png",
+      "reference": "emistat",
+      "prediction": "\\[\\n\\endashig.",
+      "cer": 1.7143,
+      "wer": 1.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 1.7142857142857142
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 3,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\train\\rxline_000575.png",
+      "reference": "syp vildamef",
+      "prediction": "\\[text, and the value, and the value, and the value, and the value, and the value, and the value, and the value, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and",
+      "cer": 15.8333,
+      "wer": 19.5,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 15.833333333333334
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 4,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\train\\single_006322.png",
+      "reference": "Sergel",
+      "prediction": "\\[text, and the text, and the text, and the content, and the content, and the content, and the content, and the content, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and",
+      "cer": 33.6667,
+      "wer": 39.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 33.666666666666664
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 5,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\val\\single_003745.png",
+      "reference": "Opton",
+      "prediction": "\\[\\(\\text_1]",
+      "cer": 2.2,
+      "wer": 1.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 2.2
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 6,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\train\\single_004032.png",
+      "reference": "Bacmax",
+      "prediction": "\\[]",
+      "cer": 1.0,
+      "wer": 1.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 1.0
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 7,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\train\\single_000891.png",
+      "reference": "Diflu",
+      "prediction": "\\[text, and the text, and the content, and the content, and the content, and the content, and the content, and the, and the text and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and",
+      "cer": 41.4,
+      "wer": 40.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 41.4
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 8,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\train\\single_008369.png",
+      "reference": "xinc b",
+      "prediction": "\\[https://https://www.https://www.",
+      "cer": 5.6667,
+      "wer": 1.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 5.666666666666667
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 9,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\train\\single_004892.png",
+      "reference": "Tab. Calboral",
+      "prediction": "\\[\\(\\] the content, and the content, and the content, and the content, and the.",
+      "cer": 5.6923,
+      "wer": 7.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 5.6923076923076925
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 10,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\train\\rxline_000330.png",
+      "reference": "tab cefazid",
+      "prediction": "\ufffding:",
+      "cer": 1.0,
+      "wer": 1.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 1.0
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 11,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\train\\single_002199.png",
+      "reference": "Napa Extend",
+      "prediction": "-level, and the content, and the content, and the content, and the, and the content, and the content, and the content, and the content, and the content, and the, and the.",
+      "cer": 14.8182,
+      "wer": 15.5,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 14.818181818181818
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 12,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\train\\single_001880.png",
+      "reference": "Maxpro",
+      "prediction": "\\[text]",
+      "cer": 1.1667,
+      "wer": 1.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 1.1666666666666667
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 13,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\train\\single_001409.png",
+      "reference": "Flexibac",
+      "prediction": "\\[]",
+      "cer": 1.0,
+      "wer": 1.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 1.0
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 14,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\val\\single_009453.png",
+      "reference": "Kindial-D",
+      "prediction": "\\[text, and the content and the text-and the text-level and the content and the content and the content and the content and the content.",
+      "cer": 14.6667,
+      "wer": 24.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 14.666666666666666
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 15,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\train\\single_009755.png",
+      "reference": "Fenadin",
+      "prediction": "\\[text, and the content, and the content, and the content, and the content, and the content, and the content, and the content, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and",
+      "cer": 29.2857,
+      "wer": 39.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 29.285714285714285
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 16,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\train\\single_005301.png",
+      "reference": "Cheort-Dx",
+      "prediction": "\\[text, and the text, and the text, and the text, and the content, and the.",
+      "cer": 7.8889,
+      "wer": 15.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 7.888888888888889
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 17,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\train\\single_004307.png",
+      "reference": "Ketotab",
+      "prediction": "\ufffding:",
+      "cer": 1.0,
+      "wer": 1.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 1.0
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 18,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\train\\single_007337.png",
+      "reference": "Iracet",
+      "prediction": "\\[ \\quad the right]",
+      "cer": 2.6667,
+      "wer": 4.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 2.6666666666666665
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 19,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\train\\single_009463.png",
+      "reference": "Itogut",
+      "prediction": "\\[text, and the value, and the value, and the value, and the content, and the content, and the content, and the content, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and",
+      "cer": 33.5,
+      "wer": 39.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 33.5
+      },
+      "dosage_accuracy": 1.0
+    },
+    {
+      "id": 20,
+      "image": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\composite_medocr\\train\\rxline_000165.png",
+      "reference": "cap Ceftron",
+      "prediction": "\ufffding, and the number, and the number, and the value, and the value, and the value, and the value, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and",
+      "cer": 16.8182,
+      "wer": 19.0,
+      "exact_match": false,
+      "line_structure": {
+        "line_count_match": true,
+        "ref_line_count": 1,
+        "pred_line_count": 1,
+        "line_level_cer": 16.818181818181817
+      },
+      "dosage_accuracy": 1.0
+    }
+  ]
+}

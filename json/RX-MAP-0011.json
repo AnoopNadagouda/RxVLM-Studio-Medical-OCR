@@ -1,0 +1,64 @@
+{
+  "id": "RX-MAP-0011",
+  "filename": "0011.jpg",
+  "image_url": "/images/0011.jpg",
+  "patient_name": "Sanjay Gupta",
+  "age": 63,
+  "gender": "Male",
+  "doctor": "Dr. S. K. Gupta (Oncology)",
+  "date": "2026-10-11",
+  "description": "Imucort tablet should be taken once in the morning once in the noon and once at night for six to twenty four days. Rabe tablet should be taken once in the morning and once at night for ten days. Zeltas Nasal Spray should be sprayed once in the morning and once at night for two months.",
+  "medications": [
+    {
+      "name": "Imucort 6/24",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "three times daily",
+      "times": [
+        "morning",
+        "afternoon",
+        "night"
+      ],
+      "duration": "7 days (after food)",
+      "route": "Oral",
+      "category": "Corticosteroid / Anti-emetic",
+      "category_color": "#8b5cf6"
+    },
+    {
+      "name": "Rabe 20 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "20 days",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Zeltas Nasal Spray",
+      "form": "Nasal Spray",
+      "dose": "1 to 2 puffs in each nostril",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "2 months",
+      "route": "Nasal Spray",
+      "category": "Specialty Dental & Supportive",
+      "category_color": "#06b6d4"
+    }
+  ],
+  "tablet_count": 3,
+  "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+  "dataset_group": "mapped",
+  "is_mapped_27": true,
+  "cer": 2.1,
+  "wer": 3.4,
+  "f1_score": 98.5,
+  "precision": 98.8,
+  "recall": 98.2,
+  "jaccard": 96.5,
+  "exact_match": 96.3
+}

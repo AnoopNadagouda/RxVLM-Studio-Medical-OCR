@@ -1,0 +1,68 @@
+{
+  "id": "RX-MAP-0018",
+  "filename": "0018.jpg",
+  "image_url": "/images/0018.jpg",
+  "patient_name": "Swati Mukherjee",
+  "age": 47,
+  "gender": "Female",
+  "doctor": "Dr. P. C. Mahapatra (Endocrinology)",
+  "date": "2026-10-07",
+  "description": "Stambo snay tablet should be taken once in the morning for thirty days. Arvant smp tablet should be taken once in the morning for thirty days. Thyprox 75mg tablet should be taken once in the morning for thirty days. Aplex fact tablet should be taken once in the morning for thirty days.",
+  "medications": [
+    {
+      "name": "Stamlo 5 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "30 days",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Arvast 5 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "30 days",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Thyronorm 75 mcg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "once daily (empty stomach)",
+      "times": [],
+      "duration": "30 days",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "B-Plex Forte",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "30 days",
+      "route": "Oral",
+      "category": "Supplement / Vitamin",
+      "category_color": "#f59e0b"
+    }
+  ],
+  "tablet_count": 4,
+  "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+  "dataset_group": "mapped",
+  "is_mapped_27": true,
+  "cer": 2.1,
+  "wer": 3.4,
+  "f1_score": 98.5,
+  "precision": 98.8,
+  "recall": 98.2,
+  "jaccard": 96.5,
+  "exact_match": 96.3
+}

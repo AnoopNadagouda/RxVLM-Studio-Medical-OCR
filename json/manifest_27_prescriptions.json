@@ -1,0 +1,2215 @@
+[
+  {
+    "id": "RX-MAP-0001",
+    "filename": "0001.jpg",
+    "image_url": "/images/0001.jpg",
+    "patient_name": "Rajesh Kumar",
+    "age": 28,
+    "gender": "Male",
+    "doctor": "Dr. S. K. Gupta (Oncology)",
+    "date": "2026-10-01",
+    "description": "P+H tablets should be taken six tablets. Xgeva injection 120 mg should be taken as an alternative. Dexa U tablet should be taken twice daily from day two to day four. Ondam U tablet should be taken twice daily from day two to day four. Ultracet tablet should be taken twice daily and as needed.",
+    "medications": [
+      {
+        "name": "Xgeva 120 mg",
+        "form": "Injection",
+        "dose": "1 Unit",
+        "frequency": "alternate cycle",
+        "times": [],
+        "duration": "As advised by doctor",
+        "route": "Injection (IM/IV)",
+        "category": "Specialty Dental & Supportive",
+        "category_color": "#06b6d4"
+      },
+      {
+        "name": "HMW",
+        "form": "Mouthwash",
+        "dose": "Standard Dose",
+        "frequency": "three times daily",
+        "times": [
+          "morning",
+          "afternoon",
+          "night"
+        ],
+        "duration": "As advised by doctor",
+        "route": "Topical / Rinse",
+        "category": "Specialty Dental & Supportive",
+        "category_color": "#06b6d4"
+      },
+      {
+        "name": "Clohex-ADS",
+        "form": "Mouthwash",
+        "dose": "Standard Dose",
+        "frequency": "three times daily",
+        "times": [
+          "morning",
+          "afternoon",
+          "night"
+        ],
+        "duration": "As advised by doctor",
+        "route": "Topical / Rinse",
+        "category": "Specialty Dental & Supportive",
+        "category_color": "#06b6d4"
+      },
+      {
+        "name": "Dexa 4 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "D2-D4",
+        "route": "Oral",
+        "category": "Corticosteroid / Anti-emetic",
+        "category_color": "#8b5cf6"
+      },
+      {
+        "name": "Ondem 4 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "D2-D4",
+        "route": "Oral",
+        "category": "Gastro / CNS Specialty",
+        "category_color": "#10b981"
+      },
+      {
+        "name": "Ultracet",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "5 days",
+        "route": "Oral",
+        "category": "Analgesic / Anti-inflammatory",
+        "category_color": "#ef4444"
+      }
+    ],
+    "tablet_count": 6,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0002",
+    "filename": "0002.jpg",
+    "image_url": "/images/0002.jpg",
+    "patient_name": "Ananya Sharma",
+    "age": 45,
+    "gender": "Female",
+    "doctor": "Dr. R. N. Mukherjee (Internal Med)",
+    "date": "2026-10-02",
+    "description": "Anuva 50 tablet should be taken once in the morning and once at night. Panicel (40) tablet should be taken once in the morning and once at night. Dufluso (10) tablet should be taken once in the morning once in the noon and once at night. Solas (100) tablet should be taken once in the morning and once at night. Conal Cal D tablet should be taken once in the noon.",
+    "medications": [
+      {
+        "name": "Bisdol 2.5 mg",
+        "form": "Tablet",
+        "dose": "0.5 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "1 month",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Renxit",
+        "form": "Tablet",
+        "dose": "0.5 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "2 months",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Anuva 50 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "14 days",
+        "route": "Oral",
+        "category": "Gastro / CNS Specialty",
+        "category_color": "#10b981"
+      },
+      {
+        "name": "Pantocid 40 mg",
+        "form": "Capsule",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "10 days",
+        "route": "Oral",
+        "category": "Gastro / CNS Specialty",
+        "category_color": "#10b981"
+      },
+      {
+        "name": "Deflux 10 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "20 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Solas 100 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "1 month",
+        "route": "Oral",
+        "category": "Gastro / CNS Specialty",
+        "category_color": "#10b981"
+      },
+      {
+        "name": "Coralcal-DX",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "3 months",
+        "route": "Oral",
+        "category": "Supplement / Vitamin",
+        "category_color": "#f59e0b"
+      }
+    ],
+    "tablet_count": 7,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0003",
+    "filename": "0003.jpg",
+    "image_url": "/images/0003.jpg",
+    "patient_name": "Vikram Singh",
+    "age": 62,
+    "gender": "Male",
+    "doctor": "Dr. A. K. Roy (Pulmonology)",
+    "date": "2026-10-03",
+    "description": "Onium tablet should be taken two times in the morning- two times in the afternoon and two times at night if there is pain in the lower stomach. Metryour tablet should be taken once in the morning -once in the noon and once at night for three days. Finix 202 tablet should be taken once in the morning and once at night for fifteen days. Block T vy capsule should be taken once in the morning once in the noon and once at night for five days.",
+    "medications": [
+      {
+        "name": "Onium",
+        "form": "Tablet",
+        "dose": "2 Units",
+        "frequency": "three times daily as needed for pain",
+        "times": [
+          "morning",
+          "afternoon",
+          "night"
+        ],
+        "duration": "As advised by doctor",
+        "route": "Oral",
+        "category": "Analgesic / Anti-inflammatory",
+        "category_color": "#ef4444"
+      },
+      {
+        "name": "Metryl 400 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "three times daily",
+        "times": [
+          "morning",
+          "afternoon",
+          "night"
+        ],
+        "duration": "3 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Finix 20 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "14 days",
+        "route": "Oral",
+        "category": "Gastro / CNS Specialty",
+        "category_color": "#10b981"
+      },
+      {
+        "name": "Block T 500 mg",
+        "form": "Capsule",
+        "dose": "1 Unit",
+        "frequency": "three times daily",
+        "times": [
+          "morning",
+          "afternoon",
+          "night"
+        ],
+        "duration": "4 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      }
+    ],
+    "tablet_count": 4,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0004",
+    "filename": "0004.jpg",
+    "image_url": "/images/0004.jpg",
+    "patient_name": "Sunita Patel",
+    "age": 34,
+    "gender": "Female",
+    "doctor": "Dr. Meena Das (Cardiology)",
+    "date": "2026-10-04",
+    "description": "Liposomal Amphotericin injection 50 mg two vials should be taken six vials daily. Conventional Amphotericin injection 50 mg 6.8 vials should be taken one vial daily.",
+    "medications": [
+      {
+        "name": "Liposomal Amphotericin B 50 mg",
+        "form": "Injection",
+        "dose": "300 mg (6 vials)",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "2 weeks",
+        "route": "Injection (IM/IV)",
+        "category": "Antibiotic / Anti-fungal",
+        "category_color": "#3b82f6"
+      },
+      {
+        "name": "Amphotericin B Conventional 50 mg",
+        "form": "Injection",
+        "dose": "50 mg (1 vial)",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "6-8 weeks",
+        "route": "Injection (IM/IV)",
+        "category": "Antibiotic / Anti-fungal",
+        "category_color": "#3b82f6"
+      }
+    ],
+    "tablet_count": 2,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0005",
+    "filename": "0005.jpg",
+    "image_url": "/images/0005.jpg",
+    "patient_name": "Amit Banerjee",
+    "age": 51,
+    "gender": "Male",
+    "doctor": "Dr. D. K. Joshi (Gastroenterology)",
+    "date": "2026-10-05",
+    "description": "Encesale 200 tablet should be taken half in the morning and half at night and continue. Nexcital 5 tablet should be taken once in the morning for two months. Rivetails 5 tablet should be taken half in the morning and once at night for two months. Bentix 5 tablet should be taken half in the morning and half at night for two months.",
+    "medications": [
+      {
+        "name": "Encorate 200 mg",
+        "form": "Tablet",
+        "dose": "0.5 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "running",
+        "route": "Oral",
+        "category": "Gastro / CNS Specialty",
+        "category_color": "#10b981"
+      },
+      {
+        "name": "Nexcital 5 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "2 months",
+        "route": "Oral",
+        "category": "Gastro / CNS Specialty",
+        "category_color": "#10b981"
+      },
+      {
+        "name": "Rivotril 0.5 mg",
+        "form": "Tablet",
+        "dose": "0.5 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "2 months",
+        "route": "Oral",
+        "category": "Gastro / CNS Specialty",
+        "category_color": "#10b981"
+      },
+      {
+        "name": "Bentix 0.5 mg",
+        "form": "Tablet",
+        "dose": "0.5 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "2 months",
+        "route": "Oral",
+        "category": "Gastro / CNS Specialty",
+        "category_color": "#10b981"
+      }
+    ],
+    "tablet_count": 4,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0006",
+    "filename": "0006.jpg",
+    "image_url": "/images/0006.jpg",
+    "patient_name": "Pooja Reddy",
+    "age": 68,
+    "gender": "Female",
+    "doctor": "Dr. V. K. Sharma (Neurology)",
+    "date": "2026-10-06",
+    "description": "X ray LS Spine AP view should be done. One posture should not be maintained for more than thirty minutes. Low back stretching exercises should be done. Static neck muscle exercises should be done. Spinal strengthening exercises should be done. Hip abduction set exercises should be done. Crown PR tablet should be taken.",
+    "medications": [
+      {
+        "name": "C-Flam PR",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "As advised by doctor",
+        "route": "Oral",
+        "category": "Analgesic / Anti-inflammatory",
+        "category_color": "#ef4444"
+      },
+      {
+        "name": "UC-Move",
+        "form": "Capsule",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "3 weeks",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      }
+    ],
+    "tablet_count": 2,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0007",
+    "filename": "0007.jpg",
+    "image_url": "/images/0007.jpg",
+    "patient_name": "Rahul Verma",
+    "age": 40,
+    "gender": "Male",
+    "doctor": "Dr. T. S. Nair (Dermatology)",
+    "date": "2026-10-07",
+    "description": "Triocim 200 mg capsule should be taken once in the morning and once at night after meal. Didvozyl 400 mg tablet should be taken once in the morning once in the afternoon and once at night after meal. Tory 90 mg tablet should be taken once in the morning and once at night after meal. Nepom 20 mg capsule or Seclo 20 mg capsule should be taken once in the morning and once at night before meal.",
+    "medications": [
+      {
+        "name": "Trilocin 200 mg",
+        "form": "Capsule",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "10 days",
+        "route": "Oral",
+        "category": "Antibiotic / Anti-fungal",
+        "category_color": "#3b82f6"
+      },
+      {
+        "name": "Dirozyl 400 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "three times daily",
+        "times": [
+          "morning",
+          "afternoon",
+          "night"
+        ],
+        "duration": "15 days",
+        "route": "Oral",
+        "category": "Antibiotic / Anti-fungal",
+        "category_color": "#3b82f6"
+      },
+      {
+        "name": "Tory 90 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "10 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Nexum 20 mg",
+        "form": "Capsule",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "10 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      }
+    ],
+    "tablet_count": 4,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0008",
+    "filename": "0008.jpg",
+    "image_url": "/images/0008.jpg",
+    "patient_name": "Priyanka Sen",
+    "age": 57,
+    "gender": "Female",
+    "doctor": "Dr. P. C. Mahapatra (Endocrinology)",
+    "date": "2026-10-08",
+    "description": "Azomac syrup 30 ml one teaspoon should be taken once daily. XPQ syrup two teaspoons should be taken three times daily if there is fever. Fexofast syrup one teaspoon should be taken twice daily.",
+    "medications": [
+      {
+        "name": "Azomax 30 ml",
+        "form": "Syrup",
+        "dose": "1 tsp",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "10 days",
+        "route": "Oral",
+        "category": "Antibiotic / Anti-fungal",
+        "category_color": "#3b82f6"
+      },
+      {
+        "name": "Xpa",
+        "form": "Syrup",
+        "dose": "2 tsp",
+        "frequency": "three times daily",
+        "times": [
+          "morning",
+          "afternoon",
+          "night"
+        ],
+        "duration": "for fever",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Fexofast",
+        "form": "Syrup",
+        "dose": "1 tsp",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "10 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      }
+    ],
+    "tablet_count": 3,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0009",
+    "filename": "0009.jpg",
+    "image_url": "/images/0009.jpg",
+    "patient_name": "Deepak Joshi",
+    "age": 29,
+    "gender": "Male",
+    "doctor": "Dr. S. R. Iyengar (Nephrology)",
+    "date": "2026-10-09",
+    "description": "Omidon tablet should be taken once in the morning once in the noon and once at night before meal. Esonix 20 capsule should be taken once in the morning once in the noon and once at night before meal. Ovel 500 tablet should be taken once at night after meal. Xalcowe tablet should be taken once in the morning once in the noon and once at night for twenty days. Fast XR tablet should be taken once in the morning once in the noon and once at night if there is fever or pain. Rhamnol 01 two to three drops should be taken three to four times daily.",
+    "medications": [
+      {
+        "name": "Omidon",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "three times daily",
+        "times": [
+          "morning",
+          "afternoon",
+          "night"
+        ],
+        "duration": "before meals",
+        "route": "Oral",
+        "category": "Gastro / CNS Specialty",
+        "category_color": "#10b981"
+      },
+      {
+        "name": "Esonix 20 mg",
+        "form": "Capsule",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "before meals",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Ovel 500 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "7 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Xalcon",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "three times daily",
+        "times": [
+          "morning",
+          "afternoon",
+          "night"
+        ],
+        "duration": "20 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Fast-XR",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "three times daily",
+        "times": [
+          "morning",
+          "afternoon",
+          "night"
+        ],
+        "duration": "after meals",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Rheumatil Oil",
+        "form": "Oil",
+        "dose": "2-3 drops",
+        "frequency": "3 to 4 times daily",
+        "times": [
+          "morning",
+          "afternoon",
+          "evening",
+          "night"
+        ],
+        "duration": "external application",
+        "route": "Topical / Rinse",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      }
+    ],
+    "tablet_count": 6,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0010",
+    "filename": "0010.jpg",
+    "image_url": "/images/0010.jpg",
+    "patient_name": "Meera Nair",
+    "age": 46,
+    "gender": "Female",
+    "doctor": "Dr. B. L. Agarwal (Orthopedics)",
+    "date": "2026-10-10",
+    "description": "Fixeef Plus Ison tablet should be taken once in the morning and once at night for seven days. Deslan tablet should be taken once at night for two months. Daxoven Lovey tablet should be taken once in the morning and once at night and continue. Reversar Com tablet should be taken once at night and continue. Flumetol Easycap 50 /250 capsule should be taken once in the morning and once at night. Cep Bxor Lery tablet should be taken once in the morning for two months. Vaxigrip Tetra injection 0.5 ml one dose should be taken yearly.",
+    "medications": [
+      {
+        "name": "Fixcef Plus 150 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "7 days",
+        "route": "Oral",
+        "category": "Antibiotic / Anti-fungal",
+        "category_color": "#3b82f6"
+      },
+      {
+        "name": "Deslor",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "2 months",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Paxover 20 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "running",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Reversar 10 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "running",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Flumetol Easycap 50/250",
+        "form": "Inhalation Capsule",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "via Easyhaler",
+        "route": "Inhalation",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Exor 20 mg",
+        "form": "Capsule",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "2 months",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Vaxigrip Tetra 0.5 ml",
+        "form": "Injection",
+        "dose": "0.5 ml",
+        "frequency": "IM stat",
+        "times": [],
+        "duration": "once yearly",
+        "route": "Injection (IM/IV)",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Prevenar 13",
+        "form": "Injection",
+        "dose": "1 dose",
+        "frequency": "IM stat",
+        "times": [],
+        "duration": "once in lifetime",
+        "route": "Injection (IM/IV)",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      }
+    ],
+    "tablet_count": 8,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0011",
+    "filename": "0011.jpg",
+    "image_url": "/images/0011.jpg",
+    "patient_name": "Sanjay Gupta",
+    "age": 63,
+    "gender": "Male",
+    "doctor": "Dr. S. K. Gupta (Oncology)",
+    "date": "2026-10-11",
+    "description": "Imucort tablet should be taken once in the morning once in the noon and once at night for six to twenty four days. Rabe tablet should be taken once in the morning and once at night for ten days. Zeltas Nasal Spray should be sprayed once in the morning and once at night for two months.",
+    "medications": [
+      {
+        "name": "Imucort 6/24",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "three times daily",
+        "times": [
+          "morning",
+          "afternoon",
+          "night"
+        ],
+        "duration": "7 days (after food)",
+        "route": "Oral",
+        "category": "Corticosteroid / Anti-emetic",
+        "category_color": "#8b5cf6"
+      },
+      {
+        "name": "Rabe 20 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "20 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Zeltas Nasal Spray",
+        "form": "Nasal Spray",
+        "dose": "1 to 2 puffs in each nostril",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "2 months",
+        "route": "Nasal Spray",
+        "category": "Specialty Dental & Supportive",
+        "category_color": "#06b6d4"
+      }
+    ],
+    "tablet_count": 3,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0012",
+    "filename": "0012.jpg",
+    "image_url": "/images/0012.jpg",
+    "patient_name": "Kavita Rao",
+    "age": 35,
+    "gender": "Female",
+    "doctor": "Dr. R. N. Mukherjee (Internal Med)",
+    "date": "2026-10-01",
+    "description": "Triocim 200mg capsule should be taken once in the morning and once at night for ten days. Diewzyl 400mg tablet should be taken once in the morning once in the noon and once at night for fifteen days. Toky 90mg tablet should be taken once in the morning and once at night for ten days. Nexom 20mg capsule or Seclo 20mg capsule should be taken once in the morning and once at night for ten days. Mediplus Fluoride GEL should be applied as directed.",
+    "medications": [
+      {
+        "name": "Trilocin 200 mg",
+        "form": "Capsule",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "10 days",
+        "route": "Oral",
+        "category": "Antibiotic / Anti-fungal",
+        "category_color": "#3b82f6"
+      },
+      {
+        "name": "Dirozyl 400 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "three times daily",
+        "times": [
+          "morning",
+          "afternoon",
+          "night"
+        ],
+        "duration": "15 days",
+        "route": "Oral",
+        "category": "Antibiotic / Anti-fungal",
+        "category_color": "#3b82f6"
+      },
+      {
+        "name": "Tory 90 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "10 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Nexum 20 mg",
+        "form": "Capsule",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "10 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      }
+    ],
+    "tablet_count": 4,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0013",
+    "filename": "0013.jpg",
+    "image_url": "/images/0013.jpg",
+    "patient_name": "Arjun Mehta",
+    "age": 52,
+    "gender": "Male",
+    "doctor": "Dr. A. K. Roy (Pulmonology)",
+    "date": "2026-10-02",
+    "description": "Anuva 50mg tablet should be taken once in the morning and once at night for fourteen days. Bidol 2.5mg tablet should be taken once in the morning for as directed. Antice Pas should be taken as directed. Unic Aud should be taken as directed. Creatin should be taken as directed. Paricel 40mg tablet should be taken once in the morning and once at night for as directed. Dufluss 10mg tablet should be taken once in the morning once in the noon and once at night for twenty days. Solas 100mg tablet should be taken once in the morning and once at night for three days. Coralcal Do tablet should be taken once in the morning for three months.",
+    "medications": [
+      {
+        "name": "Bisdol 2.5 mg",
+        "form": "Tablet",
+        "dose": "0.5 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "1 month",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Renxit",
+        "form": "Tablet",
+        "dose": "0.5 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "2 months",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Anuva 50 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "14 days",
+        "route": "Oral",
+        "category": "Gastro / CNS Specialty",
+        "category_color": "#10b981"
+      },
+      {
+        "name": "Panical 40 mg",
+        "form": "Capsule",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "10 days",
+        "route": "Oral",
+        "category": "Gastro / CNS Specialty",
+        "category_color": "#10b981"
+      },
+      {
+        "name": "Deflux 10 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "20 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Solas 100 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "1 month",
+        "route": "Oral",
+        "category": "Gastro / CNS Specialty",
+        "category_color": "#10b981"
+      },
+      {
+        "name": "Coralcal-DX",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "3 months",
+        "route": "Oral",
+        "category": "Supplement / Vitamin",
+        "category_color": "#f59e0b"
+      }
+    ],
+    "tablet_count": 7,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0014",
+    "filename": "0014.jpg",
+    "image_url": "/images/0014.jpg",
+    "patient_name": "Nisha Agarwal",
+    "age": 69,
+    "gender": "Female",
+    "doctor": "Dr. Meena Das (Cardiology)",
+    "date": "2026-10-03",
+    "description": "AC-Favis should be taken as directed. Cholecystitis should be treated as directed. Cholelithiasis should be treated as directed. Muco/Pyocele of Gallbladder should be treated as directed. Dicho tablet should be taken once in the morning for as directed. Rantac tablet should be taken once in the morning for as directed (BBF).",
+    "medications": [
+      {
+        "name": "Diclofenac",
+        "form": "Injection",
+        "dose": "1 ampoule",
+        "frequency": "IM stat",
+        "times": [],
+        "duration": "As advised by doctor",
+        "route": "Injection (IM/IV)",
+        "category": "Analgesic / Anti-inflammatory",
+        "category_color": "#ef4444"
+      },
+      {
+        "name": "Rantac",
+        "form": "Injection",
+        "dose": "1 ampoule",
+        "frequency": "IV stat",
+        "times": [],
+        "duration": "As advised by doctor",
+        "route": "Injection (IM/IV)",
+        "category": "Gastro / CNS Specialty",
+        "category_color": "#10b981"
+      },
+      {
+        "name": "ORS",
+        "form": "Oral Solution",
+        "dose": "1 sachet in 1 L water",
+        "frequency": "as directed",
+        "times": [],
+        "duration": "As advised by doctor",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Diclo",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "As advised by doctor",
+        "route": "Oral",
+        "category": "Analgesic / Anti-inflammatory",
+        "category_color": "#ef4444"
+      },
+      {
+        "name": "Rantac",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily before breakfast",
+        "times": [],
+        "duration": "As advised by doctor",
+        "route": "Oral",
+        "category": "Gastro / CNS Specialty",
+        "category_color": "#10b981"
+      }
+    ],
+    "tablet_count": 5,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0015",
+    "filename": "0015.jpg",
+    "image_url": "/images/0015.jpg",
+    "patient_name": "Manish Choudhury",
+    "age": 41,
+    "gender": "Male",
+    "doctor": "Dr. D. K. Joshi (Gastroenterology)",
+    "date": "2026-10-04",
+    "description": "Excosate 200mg tablet should be taken once in the morning and once at night.Nexcital 5mg tablet should be taken once in the morning for two months. Rivotail tablet should be taken once in the morning and once at night for two months. Bentix 5mg tablet should be taken once in the morning and once at night for two months.",
+    "medications": [
+      {
+        "name": "Encorate 200 mg",
+        "form": "Tablet",
+        "dose": "0.5 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "running",
+        "route": "Oral",
+        "category": "Gastro / CNS Specialty",
+        "category_color": "#10b981"
+      },
+      {
+        "name": "Nexcital 5 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "2 months",
+        "route": "Oral",
+        "category": "Gastro / CNS Specialty",
+        "category_color": "#10b981"
+      },
+      {
+        "name": "Rivotril 0.5 mg",
+        "form": "Tablet",
+        "dose": "0.5 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "2 months",
+        "route": "Oral",
+        "category": "Gastro / CNS Specialty",
+        "category_color": "#10b981"
+      },
+      {
+        "name": "Bentix 0.5 mg",
+        "form": "Tablet",
+        "dose": "0.5 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "2 months",
+        "route": "Oral",
+        "category": "Gastro / CNS Specialty",
+        "category_color": "#10b981"
+      }
+    ],
+    "tablet_count": 4,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0016",
+    "filename": "0016.jpg",
+    "image_url": "/images/0016.jpg",
+    "patient_name": "Ritu Chatterji",
+    "age": 58,
+    "gender": "Female",
+    "doctor": "Dr. V. K. Sharma (Neurology)",
+    "date": "2026-10-05",
+    "description": "Fixeef Plus 50mg tablet should be taken once in the morning and once at night for seven days. Deslan tablet should be taken once in the morning for two months. Daxoven Lovey tablet should be taken as directed. Reversar Com tablet should be taken as directed. Flumetol Easycap 50/250 should nbe taken as directed. Bxor capsule should be taken once in the morning for two months.",
+    "medications": [
+      {
+        "name": "Fixcef Plus 150 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "7 days",
+        "route": "Oral",
+        "category": "Antibiotic / Anti-fungal",
+        "category_color": "#3b82f6"
+      },
+      {
+        "name": "Deslor",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "2 months",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Paxover 20 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "running",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Reversar 10 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "running",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Flumetol Easycap 50/250",
+        "form": "Inhalation Capsule",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "via Easyhaler",
+        "route": "Inhalation",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Exor 20 mg",
+        "form": "Capsule",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "2 months",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Vaxigrip Tetra 0.5 ml",
+        "form": "Injection",
+        "dose": "0.5 ml",
+        "frequency": "IM stat",
+        "times": [],
+        "duration": "once yearly",
+        "route": "Injection (IM/IV)",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Prevenar 13",
+        "form": "Injection",
+        "dose": "1 dose",
+        "frequency": "IM stat",
+        "times": [],
+        "duration": "once in lifetime",
+        "route": "Injection (IM/IV)",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      }
+    ],
+    "tablet_count": 8,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0017",
+    "filename": "0017.jpg",
+    "image_url": "/images/0017.jpg",
+    "patient_name": "Alok Deshmukh",
+    "age": 30,
+    "gender": "Male",
+    "doctor": "Dr. T. S. Nair (Dermatology)",
+    "date": "2026-10-06",
+    "description": "Azomac 30ml syrup should be taken 1 spoon in the morning. XPq syrup should be taken 2 spoons in the morning once in the noon and once at night for as directed. Fexofast syrup should be taken 1 spoon in the morning and once at night.",
+    "medications": [
+      {
+        "name": "Azomax 30 ml",
+        "form": "Syrup",
+        "dose": "1 tsp",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "10 days",
+        "route": "Oral",
+        "category": "Antibiotic / Anti-fungal",
+        "category_color": "#3b82f6"
+      },
+      {
+        "name": "Xpa",
+        "form": "Syrup",
+        "dose": "2 tsp",
+        "frequency": "three times daily",
+        "times": [
+          "morning",
+          "afternoon",
+          "night"
+        ],
+        "duration": "for fever",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Fexofast",
+        "form": "Syrup",
+        "dose": "1 tsp",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "10 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      }
+    ],
+    "tablet_count": 3,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0018",
+    "filename": "0018.jpg",
+    "image_url": "/images/0018.jpg",
+    "patient_name": "Swati Mukherjee",
+    "age": 47,
+    "gender": "Female",
+    "doctor": "Dr. P. C. Mahapatra (Endocrinology)",
+    "date": "2026-10-07",
+    "description": "Stambo snay tablet should be taken once in the morning for thirty days. Arvant smp tablet should be taken once in the morning for thirty days. Thyprox 75mg tablet should be taken once in the morning for thirty days. Aplex fact tablet should be taken once in the morning for thirty days.",
+    "medications": [
+      {
+        "name": "Stamlo 5 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "30 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Arvast 5 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "30 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Thyronorm 75 mcg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily (empty stomach)",
+        "times": [],
+        "duration": "30 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "B-Plex Forte",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "30 days",
+        "route": "Oral",
+        "category": "Supplement / Vitamin",
+        "category_color": "#f59e0b"
+      }
+    ],
+    "tablet_count": 4,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0019",
+    "filename": "0019.jpg",
+    "image_url": "/images/0019.jpg",
+    "patient_name": "Karan Kapoor",
+    "age": 64,
+    "gender": "Male",
+    "doctor": "Dr. S. R. Iyengar (Nephrology)",
+    "date": "2026-10-08",
+    "description": "Ambisome 30mg capsule should be taken once in the morning for one hundred twenty days. Amphotericin capsule should be taken once in the morning.",
+    "medications": [
+      {
+        "name": "AmbiSome 50 mg (Amphotericin B)",
+        "form": "Injection",
+        "dose": "120 vials total",
+        "frequency": "as directed",
+        "times": [],
+        "duration": "As advised by doctor",
+        "route": "Injection (IM/IV)",
+        "category": "Antibiotic / Anti-fungal",
+        "category_color": "#3b82f6"
+      }
+    ],
+    "tablet_count": 1,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0020",
+    "filename": "0020.jpg",
+    "image_url": "/images/0020.jpg",
+    "patient_name": "Sneha Kulkarni",
+    "age": 36,
+    "gender": "Female",
+    "doctor": "Dr. B. L. Agarwal (Orthopedics)",
+    "date": "2026-10-09",
+    "description": "Nebah sual should be taken as directed.",
+    "medications": [
+      {
+        "name": "Paracetamol (Calp/T-98)",
+        "form": "Syrup",
+        "dose": "5 ml",
+        "frequency": "four times daily (for fever)",
+        "times": [],
+        "duration": "as needed",
+        "route": "Oral",
+        "category": "Analgesic / Anti-inflammatory",
+        "category_color": "#ef4444"
+      },
+      {
+        "name": "Emflam PD",
+        "form": "Syrup",
+        "dose": "5 ml",
+        "frequency": "three times daily",
+        "times": [
+          "morning",
+          "afternoon",
+          "night"
+        ],
+        "duration": "15 days",
+        "route": "Oral",
+        "category": "Analgesic / Anti-inflammatory",
+        "category_color": "#ef4444"
+      },
+      {
+        "name": "Allercet-M",
+        "form": "Syrup",
+        "dose": "5 ml",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "12 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Rekuff 100",
+        "form": "Syrup",
+        "dose": "5 ml",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "7 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Duolin (2 ml) + Budecort (0.5 mg)",
+        "form": "Nebulization",
+        "dose": "2.5 ml combined",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "5 days",
+        "route": "Oral",
+        "category": "Corticosteroid / Anti-emetic",
+        "category_color": "#8b5cf6"
+      },
+      {
+        "name": "Dexona 2 ml",
+        "form": "Injection",
+        "dose": "2 ml",
+        "frequency": "IM stat",
+        "times": [],
+        "duration": "As advised by doctor",
+        "route": "Injection (IM/IV)",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      }
+    ],
+    "tablet_count": 6,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0021",
+    "filename": "0021.jpg",
+    "image_url": "/images/0021.jpg",
+    "patient_name": "Gaurav Bhattacharya",
+    "age": 53,
+    "gender": "Male",
+    "doctor": "Dr. S. K. Gupta (Oncology)",
+    "date": "2026-10-10",
+    "description": "Ultra for plus 50mg tablet should be taken once in the morning for two months. Relentus tablet should be taken once in the morning for two months. Prognt 200mg capsule should be taken once in the morning and once at night for two months. Ultoneal-D tablet should be taken once in the morning for two months. Castilex tablet should be taken once in the morning and once at night for two months. Diclofenac 50mg tablet should be taken once in the morning and once at night for ten days. Altracal-D tablet should be taken once in the morning for ten days. Omeprozy capsule should be taken once in the morning and once at night for ten days.",
+    "medications": [
+      {
+        "name": "Ultrafen-Plus 50 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily after meals",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "As advised by doctor",
+        "route": "Oral",
+        "category": "Analgesic / Anti-inflammatory",
+        "category_color": "#ef4444"
+      },
+      {
+        "name": "Relentus",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "As advised by doctor",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Progut 20 mg",
+        "form": "Capsule",
+        "dose": "1 Unit",
+        "frequency": "twice daily before meals",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "2 months",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Ultracal-D",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "As advised by doctor",
+        "route": "Oral",
+        "category": "Supplement / Vitamin",
+        "category_color": "#f59e0b"
+      },
+      {
+        "name": "Cartilix",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "As advised by doctor",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Diclofenac 50 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily after meals",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "As advised by doctor",
+        "route": "Oral",
+        "category": "Analgesic / Anti-inflammatory",
+        "category_color": "#ef4444"
+      },
+      {
+        "name": "Omeprazole",
+        "form": "Capsule",
+        "dose": "1 Unit",
+        "frequency": "twice daily before meals",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "10 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      }
+    ],
+    "tablet_count": 7,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0022",
+    "filename": "0022.jpg",
+    "image_url": "/images/0022.jpg",
+    "patient_name": "Divya Pillai",
+    "age": 70,
+    "gender": "Female",
+    "doctor": "Dr. R. N. Mukherjee (Internal Med)",
+    "date": "2026-10-11",
+    "description": "Azee tablet should be taken once in the morning for seven days. Tusq syrup should be taken as directed. Lan 40mg tablet should be taken once in the morning for seven days. Dolo 650mg tablet should be taken once in the morning.",
+    "medications": [
+      {
+        "name": "Azee 500 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "7 days",
+        "route": "Oral",
+        "category": "Antibiotic / Anti-fungal",
+        "category_color": "#3b82f6"
+      },
+      {
+        "name": "Tusq",
+        "form": "Syrup",
+        "dose": "1 tsp",
+        "frequency": "three times daily",
+        "times": [
+          "morning",
+          "afternoon",
+          "night"
+        ],
+        "duration": "As advised by doctor",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Pan 40 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily before breakfast",
+        "times": [],
+        "duration": "7 days",
+        "route": "Oral",
+        "category": "Gastro / CNS Specialty",
+        "category_color": "#10b981"
+      },
+      {
+        "name": "Dolo 650 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "as needed for fever/pain",
+        "times": [],
+        "duration": "As advised by doctor",
+        "route": "Oral",
+        "category": "Analgesic / Anti-inflammatory",
+        "category_color": "#ef4444"
+      }
+    ],
+    "tablet_count": 4,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0023",
+    "filename": "0023.jpg",
+    "image_url": "/images/0023.jpg",
+    "patient_name": "Tarun Malhotra",
+    "age": 42,
+    "gender": "Male",
+    "doctor": "Dr. A. K. Roy (Pulmonology)",
+    "date": "2026-10-01",
+    "description": "Azeitmocin 50mg tablet should be taken once in the morning for five days. Histon 4mg tablet should be taken once in the morning for thirty days. Elmon 10mg tablet should be taken once in the morning for twenty days.",
+    "medications": [
+      {
+        "name": "Azithrocin 500 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "8 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Histon 4 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "10 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Xelmon 10 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "20 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      }
+    ],
+    "tablet_count": 3,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0024",
+    "filename": "0024.jpg",
+    "image_url": "/images/0024.jpg",
+    "patient_name": "Neha Tripathi",
+    "age": 59,
+    "gender": "Female",
+    "doctor": "Dr. Meena Das (Cardiology)",
+    "date": "2026-10-02",
+    "description": "Megacoboote syrup should be taken 4 ml as directed. Obugein syrup should be taken . Deena syrup should be taken 3.75 ml for five days. Anmol Reetay 100mg suppository should be used as directed.",
+    "medications": [
+      {
+        "name": "Megacv Forte",
+        "form": "Syrup",
+        "dose": "4 ml",
+        "frequency": "three times daily",
+        "times": [
+          "morning",
+          "afternoon",
+          "night"
+        ],
+        "duration": "As advised by doctor",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Ibugesic",
+        "form": "Syrup",
+        "dose": "3 ml",
+        "frequency": "as needed for pain/fever",
+        "times": [],
+        "duration": "As advised by doctor",
+        "route": "Oral",
+        "category": "Analgesic / Anti-inflammatory",
+        "category_color": "#ef4444"
+      },
+      {
+        "name": "Alerid",
+        "form": "Syrup",
+        "dose": "3.75 ml",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "5 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Anmol Rectal Suppository 170 mg",
+        "form": "Suppository",
+        "dose": "1 Unit",
+        "frequency": "as needed",
+        "times": [],
+        "duration": "As advised by doctor",
+        "route": "Rectal",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      }
+    ],
+    "tablet_count": 4,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0025",
+    "filename": "0025.jpg",
+    "image_url": "/images/0025.jpg",
+    "patient_name": "Rohan Saxena",
+    "age": 31,
+    "gender": "Male",
+    "doctor": "Dr. D. K. Joshi (Gastroenterology)",
+    "date": "2026-10-03",
+    "description": "Doro Condic tablet half in the morning and half at night should be taken continuously. Sulphox Bel 80 syrup two teaspoons should be taken five times daily and continued. Ala tablet one should be taken at night for seven days. Mycomnr Ral should be taken three times daily for seven days. Revol 5 tablet one should be taken at night for seven days. Pirinx 20 tablet should be taken once in the morning and once at night for one month. Rianorial 5 tablet should be taken at night for two months.",
+    "medications": [
+      {
+        "name": "Doxocondin 400 mg",
+        "form": "Tablet",
+        "dose": "0.5 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "5 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Salprex Inhaler",
+        "form": "Inhaler",
+        "dose": "2 puffs",
+        "frequency": "twice daily with spacer",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "As advised by doctor",
+        "route": "Inhalation",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Alatrol 10 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "7 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Myconal Oral Gel",
+        "form": "Oral Gel",
+        "dose": "as directed",
+        "frequency": "three times daily",
+        "times": [
+          "morning",
+          "afternoon",
+          "night"
+        ],
+        "duration": "7 days",
+        "route": "Topical / Rinse",
+        "category": "Supplement / Vitamin",
+        "category_color": "#f59e0b"
+      },
+      {
+        "name": "Flugal 50 mg",
+        "form": "Capsule",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "7 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Finix 20 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "1 month",
+        "route": "Oral",
+        "category": "Gastro / CNS Specialty",
+        "category_color": "#10b981"
+      },
+      {
+        "name": "Rivotril 0.5 mg",
+        "form": "Tablet",
+        "dose": "0.5 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "1 month",
+        "route": "Oral",
+        "category": "Gastro / CNS Specialty",
+        "category_color": "#10b981"
+      }
+    ],
+    "tablet_count": 7,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0026",
+    "filename": "0026.jpg",
+    "image_url": "/images/0026.jpg",
+    "patient_name": "Rajesh Kumar",
+    "age": 48,
+    "gender": "Female",
+    "doctor": "Dr. V. K. Sharma (Neurology)",
+    "date": "2026-10-04",
+    "description": "Sumol DS syrup 4 ml should be taken four times daily as needed. Muctite LS syrup 2.5 ml should be taken three times daily. Meftal-F tablet one should be taken when needed for pain or fever.",
+    "medications": [
+      {
+        "name": "Sumol DS",
+        "form": "Syrup",
+        "dose": "4 ml",
+        "frequency": "every 4 hours as needed for fever",
+        "times": [],
+        "duration": "3 days",
+        "route": "Oral",
+        "category": "Analgesic / Anti-inflammatory",
+        "category_color": "#ef4444"
+      },
+      {
+        "name": "Mucolite LS",
+        "form": "Syrup",
+        "dose": "2.5 ml",
+        "frequency": "three times daily",
+        "times": [
+          "morning",
+          "afternoon",
+          "night"
+        ],
+        "duration": "3 days",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Meftal-P",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "as needed for severe fever/pain",
+        "times": [],
+        "duration": "3 days",
+        "route": "Oral",
+        "category": "Analgesic / Anti-inflammatory",
+        "category_color": "#ef4444"
+      }
+    ],
+    "tablet_count": 3,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  },
+  {
+    "id": "RX-MAP-0027",
+    "filename": "0027.jpg",
+    "image_url": "/images/0027.jpg",
+    "patient_name": "Ananya Sharma",
+    "age": 65,
+    "gender": "Male",
+    "doctor": "Dr. T. S. Nair (Dermatology)",
+    "date": "2026-10-05",
+    "description": "Frnadin 120 mg tablet should be taken once in the morning and once at night for two months. Monocazt 10 mg tablet should be taken at night for two months. Bolista 20 mg tablet should be taken at night for two months. Famotack 20 mg tablet should be taken once in the morning and once at night for two months.",
+    "medications": [
+      {
+        "name": "Fenadin 120 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "2 months",
+        "route": "Oral",
+        "category": "Analgesic / Anti-inflammatory",
+        "category_color": "#ef4444"
+      },
+      {
+        "name": "Monocast 10 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "2 months",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Bilista 20 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "once daily",
+        "times": [],
+        "duration": "2 months",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      },
+      {
+        "name": "Famotack 20 mg",
+        "form": "Tablet",
+        "dose": "1 Unit",
+        "frequency": "twice daily",
+        "times": [
+          "morning",
+          "night"
+        ],
+        "duration": "2 months",
+        "route": "Oral",
+        "category": "Rx Specialty Medication",
+        "category_color": "#38bdf8"
+      }
+    ],
+    "tablet_count": 4,
+    "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+    "dataset_group": "mapped",
+    "is_mapped_27": true,
+    "cer": 2.1,
+    "wer": 3.4,
+    "f1_score": 98.5,
+    "precision": 98.8,
+    "recall": 98.2,
+    "jaccard": 96.5,
+    "exact_match": 96.3
+  }
+]

@@ -1,0 +1,110 @@
+{
+  "id": "RX-MAP-0002",
+  "filename": "0002.jpg",
+  "image_url": "/images/0002.jpg",
+  "patient_name": "Ananya Sharma",
+  "age": 45,
+  "gender": "Female",
+  "doctor": "Dr. R. N. Mukherjee (Internal Med)",
+  "date": "2026-10-02",
+  "description": "Anuva 50 tablet should be taken once in the morning and once at night. Panicel (40) tablet should be taken once in the morning and once at night. Dufluso (10) tablet should be taken once in the morning once in the noon and once at night. Solas (100) tablet should be taken once in the morning and once at night. Conal Cal D tablet should be taken once in the noon.",
+  "medications": [
+    {
+      "name": "Bisdol 2.5 mg",
+      "form": "Tablet",
+      "dose": "0.5 Unit",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "1 month",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Renxit",
+      "form": "Tablet",
+      "dose": "0.5 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "2 months",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Anuva 50 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "14 days",
+      "route": "Oral",
+      "category": "Gastro / CNS Specialty",
+      "category_color": "#10b981"
+    },
+    {
+      "name": "Pantocid 40 mg",
+      "form": "Capsule",
+      "dose": "1 Unit",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "10 days",
+      "route": "Oral",
+      "category": "Gastro / CNS Specialty",
+      "category_color": "#10b981"
+    },
+    {
+      "name": "Deflux 10 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "20 days",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Solas 100 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "once daily",
+      "times": [],
+      "duration": "1 month",
+      "route": "Oral",
+      "category": "Gastro / CNS Specialty",
+      "category_color": "#10b981"
+    },
+    {
+      "name": "Coralcal-DX",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "3 months",
+      "route": "Oral",
+      "category": "Supplement / Vitamin",
+      "category_color": "#f59e0b"
+    }
+  ],
+  "tablet_count": 7,
+  "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+  "dataset_group": "mapped",
+  "is_mapped_27": true,
+  "cer": 2.1,
+  "wer": 3.4,
+  "f1_score": 98.5,
+  "precision": 98.8,
+  "recall": 98.2,
+  "jaccard": 96.5,
+  "exact_match": 96.3
+}

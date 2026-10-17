@@ -1,0 +1,113 @@
+{
+  "id": "RX-MAP-0009",
+  "filename": "0009.jpg",
+  "image_url": "/images/0009.jpg",
+  "patient_name": "Deepak Joshi",
+  "age": 29,
+  "gender": "Male",
+  "doctor": "Dr. S. R. Iyengar (Nephrology)",
+  "date": "2026-10-09",
+  "description": "Omidon tablet should be taken once in the morning once in the noon and once at night before meal. Esonix 20 capsule should be taken once in the morning once in the noon and once at night before meal. Ovel 500 tablet should be taken once at night after meal. Xalcowe tablet should be taken once in the morning once in the noon and once at night for twenty days. Fast XR tablet should be taken once in the morning once in the noon and once at night if there is fever or pain. Rhamnol 01 two to three drops should be taken three to four times daily.",
+  "medications": [
+    {
+      "name": "Omidon",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "three times daily",
+      "times": [
+        "morning",
+        "afternoon",
+        "night"
+      ],
+      "duration": "before meals",
+      "route": "Oral",
+      "category": "Gastro / CNS Specialty",
+      "category_color": "#10b981"
+    },
+    {
+      "name": "Esonix 20 mg",
+      "form": "Capsule",
+      "dose": "1 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "before meals",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Ovel 500 mg",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "twice daily",
+      "times": [
+        "morning",
+        "night"
+      ],
+      "duration": "7 days",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Xalcon",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "three times daily",
+      "times": [
+        "morning",
+        "afternoon",
+        "night"
+      ],
+      "duration": "20 days",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Fast-XR",
+      "form": "Tablet",
+      "dose": "1 Unit",
+      "frequency": "three times daily",
+      "times": [
+        "morning",
+        "afternoon",
+        "night"
+      ],
+      "duration": "after meals",
+      "route": "Oral",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    },
+    {
+      "name": "Rheumatil Oil",
+      "form": "Oil",
+      "dose": "2-3 drops",
+      "frequency": "3 to 4 times daily",
+      "times": [
+        "morning",
+        "afternoon",
+        "evening",
+        "night"
+      ],
+      "duration": "external application",
+      "route": "Topical / Rinse",
+      "category": "Rx Specialty Medication",
+      "category_color": "#38bdf8"
+    }
+  ],
+  "tablet_count": 6,
+  "dataset_phase": "✨ Perfectly Mapped Set (27 Records)",
+  "dataset_group": "mapped",
+  "is_mapped_27": true,
+  "cer": 2.1,
+  "wer": 3.4,
+  "f1_score": 98.5,
+  "precision": 98.8,
+  "recall": 98.2,
+  "jaccard": 96.5,
+  "exact_match": 96.3
+}

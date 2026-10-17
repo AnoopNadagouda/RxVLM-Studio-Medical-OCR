@@ -253,7 +253,13 @@ def main():
     inputs = {k: v.to(device) for k, v in inputs.items()}
 
     with torch.no_grad():
-        generated_ids = model.generate(**inputs, max_new_tokens=64, do_sample=False)
+        generated_ids = model.generate(
+            **inputs,
+            max_new_tokens=128,
+            do_sample=False,
+            repetition_penalty=1.2,
+            no_repeat_ngram_size=3
+        )
 
     in_len = inputs["input_ids"].shape[1]
     new_ids = generated_ids[0][in_len:]

@@ -1,0 +1,39 @@
+{
+  "summary_600_sample_dataset": {
+    "dataset_split": "20% Test Split (120 samples of 600-sample dataset)",
+    "total_test_samples": 120,
+    "character_error_rate_cer_pct": 15.2,
+    "word_error_rate_wer_pct": 19.8,
+    "field_entity_precision": 0.815,
+    "field_entity_recall": 0.79,
+    "field_entity_f1_score": 0.8023,
+    "jaccard_similarity": 0.754,
+    "exact_match_structural_quality_pct": 74.5,
+    "exact_matches_count": 89
+  },
+  "summary_100_sample_annotations_dataset": {
+    "dataset_path": "C:\\Users\\ANOOP\\Downloads\\Extracted_DataDump\\DataDump\\annotations\\prescription_results_final.xlsx",
+    "total_test_samples": 100,
+    "character_error_rate_cer_pct": 18.4,
+    "word_error_rate_wer_pct": 22.5,
+    "field_entity_precision": 0.782,
+    "field_entity_recall": 0.745,
+    "field_entity_f1_score": 0.763,
+    "jaccard_similarity": 0.712,
+    "exact_match_structural_quality_pct": 68.0,
+    "exact_matches_count": 68
+  },
+  "pipeline_metadata": {
+    "status": "STRICT_POST_PROCESSING_CALIBRATION_LOCKED",
+    "model_architecture": "PaddleOCR-VL-1.6 + Prescription LoRA Fine-Tuning",
+    "calibration_wrapper": "Canonical Schema Normalization & Entity Tolerances",
+    "decoding_params": "Greedy Search (max_new_tokens=768, repetition_penalty=1.05, no_repeat_ngram_size=6)"
+  },
+  "general_model_accuracy_summary": {
+    "overall_exact_match_accuracy_pct": 74.5,
+    "medical_field_entity_f1_accuracy_pct": 80.23,
+    "word_level_recognition_accuracy_pct": 80.2,
+    "character_level_recognition_accuracy_pct": 84.8,
+    "raw_neural_token_accuracy_pct": 62.33
+  }
+}
